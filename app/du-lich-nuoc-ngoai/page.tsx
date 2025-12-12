@@ -38,7 +38,7 @@ const internationalTours = [
     originalPrice: 18990000,
     rating: 4.9,
     reviews: 189,
-    image: "/seoul-korea-palace.jpg",
+    image: "/singapore-marina-bay-sands-night.jpg",
     badge: "Best seller",
   },
   {
@@ -49,7 +49,7 @@ const internationalTours = [
     price: 29990000,
     rating: 5.0,
     reviews: 145,
-    image: "/japan-tokyo-mount-fuji.jpg",
+    image: "/singapore-marina-bay-sands-night.jpg",
   },
   {
     id: "13",
@@ -60,7 +60,7 @@ const internationalTours = [
     originalPrice: 29990000,
     rating: 4.8,
     reviews: 78,
-    image: "/dubai-burj-khalifa.jpg",
+    image: "/singapore-marina-bay-sands-night.jpg",
     badge: "Luxury",
   },
   {
@@ -71,7 +71,7 @@ const internationalTours = [
     price: 49990000,
     rating: 4.9,
     reviews: 56,
-    image: "/europe-paris-eiffel.jpg",
+    image: "/singapore-marina-bay-sands-night.jpg",
   },
   {
     id: "15",
@@ -82,7 +82,7 @@ const internationalTours = [
     originalPrice: 13990000,
     rating: 4.7,
     reviews: 123,
-    image: "/bali-indonesia-temple.jpg",
+    image: "/singapore-marina-bay-sands-night.jpg",
     badge: "Deal hời",
   },
   {
@@ -93,7 +93,7 @@ const internationalTours = [
     price: 5990000,
     rating: 4.6,
     reviews: 167,
-    image: "/cambodia-angkor-wat.jpg",
+    image: "/singapore-marina-bay-sands-night.jpg",
   },
 ]
 
@@ -108,7 +108,7 @@ export default function DuLichNuocNgoaiPage() {
         <section className="relative h-[300px] md:h-[400px]">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(/world-travel-banner.jpg)` }}
+            style={{ backgroundImage: `url(/singapore-marina-bay-sands-night.jpg)` }}
           />
           <div className="absolute inset-0 bg-foreground/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">

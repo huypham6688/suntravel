@@ -408,6 +408,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/landing-os/landing-page-with-checklist (1)/node_modules/.pnpm/next@16.0.10_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageCircle$3e$__ = __turbopack_context__.i("[project]/Desktop/landing-os/landing-page-with-checklist (1)/node_modules/.pnpm/lucide-react@0.454.0_react@19.2.0/node_modules/lucide-react/dist/esm/icons/message-circle.js [app-client] (ecmascript) <export default as MessageCircle>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__ = __turbopack_context__.i("[project]/Desktop/landing-os/landing-page-with-checklist (1)/node_modules/.pnpm/lucide-react@0.454.0_react@19.2.0/node_modules/lucide-react/dist/esm/icons/phone.js [app-client] (ecmascript) <export default as Phone>");
 "use client";
 ;
 ;
@@ -416,30 +417,20 @@ function FloatingChat() {
         className: "fixed right-4 bottom-4 z-50 flex flex-col gap-3",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                href: "https://zalo.me/0903287313",
-                target: "_blank",
-                rel: "noopener noreferrer",
-                className: "w-14 h-14 bg-[#0068FF] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform",
-                title: "Chat Zalo",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                    viewBox: "0 0 48 48",
-                    className: "w-8 h-8 fill-white",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                        d: "M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm8.85 27.85c-.35.35-.8.53-1.25.53s-.9-.18-1.25-.53l-3.6-3.6-3.6 3.6c-.35.35-.8.53-1.25.53s-.9-.18-1.25-.53a1.77 1.77 0 010-2.5l3.6-3.6-3.6-3.6a1.77 1.77 0 012.5-2.5l3.6 3.6 3.6-3.6a1.77 1.77 0 012.5 2.5l-3.6 3.6 3.6 3.6c.7.7.7 1.8 0 2.5z"
-                    }, void 0, false, {
-                        fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/floating-chat.tsx",
-                        lineNumber: 17,
-                        columnNumber: 11
-                    }, this)
+                href: "tel:0903287313",
+                className: "w-14 h-14 bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform",
+                title: "Gọi ngay",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
+                    className: "w-7 h-7 text-white"
                 }, void 0, false, {
                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/floating-chat.tsx",
-                    lineNumber: 16,
-                    columnNumber: 9
+                    lineNumber: 14,
+                    columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/floating-chat.tsx",
                 lineNumber: 9,
-                columnNumber: 7
+                columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                 href: "https://m.me/suntravel",
@@ -451,19 +442,19 @@ function FloatingChat() {
                     className: "w-7 h-7 text-white"
                 }, void 0, false, {
                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/floating-chat.tsx",
-                    lineNumber: 29,
-                    columnNumber: 9
+                    lineNumber: 25,
+                    columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/floating-chat.tsx",
-                lineNumber: 22,
-                columnNumber: 7
+                lineNumber: 18,
+                columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/floating-chat.tsx",
         lineNumber: 7,
-        columnNumber: 5
+        columnNumber: 9
     }, this);
 }
 _c = FloatingChat;

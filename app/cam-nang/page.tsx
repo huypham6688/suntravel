@@ -45,7 +45,7 @@ const articles = [
     title: "Review chi tiết resort 5 sao Phú Quốc - Nơi nào đáng tiền nhất?",
     excerpt:
       "So sánh chi tiết các resort 5 sao hàng đầu tại Phú Quốc. Vinpearl, JW Marriott hay InterContinental - lựa chọn nào cho bạn?",
-    image: "/phu-quoc-resort-review.jpg",
+    image: "/sapa-vietnam-rice-fields-misty.jpg",
     date: "18/03/2025",
     author: "Ms. Hồng Anh",
     category: "Review",
@@ -56,7 +56,7 @@ const articles = [
     title: "Hướng dẫn xin visa Hàn Quốc 2025 - Tỷ lệ đậu 99%",
     excerpt:
       "Cập nhật mới nhất về thủ tục xin visa Hàn Quốc năm 2025. Hồ sơ cần chuẩn bị, lịch hẹn và những lưu ý quan trọng...",
-    image: "/korea-visa-guide.jpg",
+    image: "/sapa-vietnam-rice-fields-misty.jpg",
     date: "15/03/2025",
     author: "Ms. Quyên",
     category: "Hướng dẫn",
@@ -67,7 +67,7 @@ const articles = [
     title: "Ẩm thực đường phố Bangkok - 20 món ngon nhất định phải thử",
     excerpt:
       "Khám phá thiên đường ẩm thực đường phố Bangkok với những món ăn ngon khó cưỡng. Pad Thai, Tom Yum, Mango Sticky Rice...",
-    image: "/bangkok-street-food.jpg",
+    image: "/sapa-vietnam-rice-fields-misty.jpg",
     date: "12/03/2025",
     author: "Suntravel Team",
     category: "Ẩm thực",
@@ -86,7 +86,7 @@ export default function CamNangPage() {
         <section className="relative h-[300px] md:h-[400px]">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(/travel-guide-banner.jpg)` }}
+            style={{ backgroundImage: `url(/da-nang-golden-bridge-check-in.jpg)` }}
           />
           <div className="absolute inset-0 bg-foreground/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
@@ -122,7 +122,7 @@ export default function CamNangPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="relative h-[300px] lg:h-auto">
                   <Image
-                    src={articles[0].image || "/placeholder.svg"}
+                    src={articles[0].image || "/da-nang-golden-bridge-check-in.jpg"}
                     alt={articles[0].title}
                     fill
                     className="object-cover"

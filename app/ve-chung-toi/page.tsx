@@ -64,7 +64,7 @@ export default function VeChungToiPage() {
         <section className="relative h-[400px] md:h-[500px]">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(/about-us-banner.jpg)` }}
+            style={{ backgroundImage: `url(/phu-quoc-island-vietnam-beach-resort.jpg)` }}
           />
           <div className="absolute inset-0 bg-foreground/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
@@ -115,7 +115,7 @@ export default function VeChungToiPage() {
                 </div>
               </div>
               <div className="relative h-[400px] rounded-3xl overflow-hidden">
-                <Image src="/about-company-story.jpg" alt="Suntravel Story" fill className="object-cover" />
+                <Image src="/phu-quoc-island-vietnam-beach-resort.jpg" alt="Suntravel Story" fill className="object-cover" />
               </div>
             </div>
           </div>

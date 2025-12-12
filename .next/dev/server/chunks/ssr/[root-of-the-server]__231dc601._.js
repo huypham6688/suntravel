@@ -651,7 +651,7 @@ const articles = [
         id: "4",
         title: "Review chi tiết resort 5 sao Phú Quốc - Nơi nào đáng tiền nhất?",
         excerpt: "So sánh chi tiết các resort 5 sao hàng đầu tại Phú Quốc. Vinpearl, JW Marriott hay InterContinental - lựa chọn nào cho bạn?",
-        image: "/phu-quoc-resort-review.jpg",
+        image: "/sapa-vietnam-rice-fields-misty.jpg",
         date: "18/03/2025",
         author: "Ms. Hồng Anh",
         category: "Review",
@@ -661,7 +661,7 @@ const articles = [
         id: "5",
         title: "Hướng dẫn xin visa Hàn Quốc 2025 - Tỷ lệ đậu 99%",
         excerpt: "Cập nhật mới nhất về thủ tục xin visa Hàn Quốc năm 2025. Hồ sơ cần chuẩn bị, lịch hẹn và những lưu ý quan trọng...",
-        image: "/korea-visa-guide.jpg",
+        image: "/sapa-vietnam-rice-fields-misty.jpg",
         date: "15/03/2025",
         author: "Ms. Quyên",
         category: "Hướng dẫn",
@@ -671,7 +671,7 @@ const articles = [
         id: "6",
         title: "Ẩm thực đường phố Bangkok - 20 món ngon nhất định phải thử",
         excerpt: "Khám phá thiên đường ẩm thực đường phố Bangkok với những món ăn ngon khó cưỡng. Pad Thai, Tom Yum, Mango Sticky Rice...",
-        image: "/bangkok-street-food.jpg",
+        image: "/sapa-vietnam-rice-fields-misty.jpg",
         date: "12/03/2025",
         author: "Suntravel Team",
         category: "Ẩm thực",
@@ -703,7 +703,7 @@ function CamNangPage() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-cover bg-center",
                                 style: {
-                                    backgroundImage: `url(/travel-guide-banner.jpg)`
+                                    backgroundImage: `url(/da-nang-golden-bridge-check-in.jpg)`
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/cam-nang/page.tsx",
@@ -792,7 +792,7 @@ function CamNangPage() {
                                                 className: "relative h-[300px] lg:h-auto",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                                        src: articles[0].image || "/placeholder.svg",
+                                                        src: articles[0].image || "/da-nang-golden-bridge-check-in.jpg",
                                                         alt: articles[0].title,
                                                         fill: true,
                                                         className: "object-cover"

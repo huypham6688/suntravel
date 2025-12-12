@@ -72,7 +72,7 @@ export default function DichVuPage() {
         <section className="relative h-[300px] md:h-[400px]">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(/travel-services-banner.jpg)` }}
+            style={{ backgroundImage: `url(/phu-quoc-beach-sunset-vietnam.jpg)` }}
           />
           <div className="absolute inset-0 bg-foreground/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">

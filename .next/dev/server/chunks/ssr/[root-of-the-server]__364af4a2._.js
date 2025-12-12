@@ -991,7 +991,7 @@ const internationalTours = [
         originalPrice: 18990000,
         rating: 4.9,
         reviews: 189,
-        image: "/seoul-korea-palace.jpg",
+        image: "/singapore-marina-bay-sands-night.jpg",
         badge: "Best seller"
     },
     {
@@ -1002,7 +1002,7 @@ const internationalTours = [
         price: 29990000,
         rating: 5.0,
         reviews: 145,
-        image: "/japan-tokyo-mount-fuji.jpg"
+        image: "/singapore-marina-bay-sands-night.jpg"
     },
     {
         id: "13",
@@ -1013,7 +1013,7 @@ const internationalTours = [
         originalPrice: 29990000,
         rating: 4.8,
         reviews: 78,
-        image: "/dubai-burj-khalifa.jpg",
+        image: "/singapore-marina-bay-sands-night.jpg",
         badge: "Luxury"
     },
     {
@@ -1024,7 +1024,7 @@ const internationalTours = [
         price: 49990000,
         rating: 4.9,
         reviews: 56,
-        image: "/europe-paris-eiffel.jpg"
+        image: "/singapore-marina-bay-sands-night.jpg"
     },
     {
         id: "15",
@@ -1035,7 +1035,7 @@ const internationalTours = [
         originalPrice: 13990000,
         rating: 4.7,
         reviews: 123,
-        image: "/bali-indonesia-temple.jpg",
+        image: "/singapore-marina-bay-sands-night.jpg",
         badge: "Deal hời"
     },
     {
@@ -1046,7 +1046,7 @@ const internationalTours = [
         price: 5990000,
         rating: 4.6,
         reviews: 167,
-        image: "/cambodia-angkor-wat.jpg"
+        image: "/singapore-marina-bay-sands-night.jpg"
     }
 ];
 const continents = [
@@ -1073,7 +1073,7 @@ function DuLichNuocNgoaiPage() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-cover bg-center",
                                 style: {
-                                    backgroundImage: `url(/world-travel-banner.jpg)`
+                                    backgroundImage: `url(/singapore-marina-bay-sands-night.jpg)`
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/du-lich-nuoc-ngoai/page.tsx",
