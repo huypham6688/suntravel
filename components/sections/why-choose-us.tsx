@@ -1,0 +1,66 @@
+import { Shield, Clock, HeadphonesIcon, Award, Heart, Wallet } from "lucide-react"
+
+const features = [
+  {
+    icon: Shield,
+    title: "An toàn tuyệt đối",
+    description: "Cam kết đảm bảo an toàn cho khách hàng trong suốt hành trình với bảo hiểm du lịch toàn diện.",
+  },
+  {
+    icon: Clock,
+    title: "Hỗ trợ 24/7",
+    description: "Đội ngũ tư vấn viên luôn sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi trong suốt chuyến đi.",
+  },
+  {
+    icon: Award,
+    title: "Chất lượng hàng đầu",
+    description: "Hơn 15 năm kinh nghiệm với hàng nghìn tour thành công và khách hàng hài lòng.",
+  },
+  {
+    icon: Wallet,
+    title: "Giá cả hợp lý",
+    description: "Cam kết giá tốt nhất thị trường với nhiều ưu đãi hấp dẫn cho khách hàng thân thiết.",
+  },
+  {
+    icon: HeadphonesIcon,
+    title: "Dịch vụ chuyên nghiệp",
+    description: "Hướng dẫn viên giàu kinh nghiệm, thông thạo nhiều ngôn ngữ và am hiểu văn hóa địa phương.",
+  },
+  {
+    icon: Heart,
+    title: "Trải nghiệm độc đáo",
+    description: "Tour thiết kế riêng biệt, mang đến những trải nghiệm khác biệt và đáng nhớ.",
+  },
+]
+
+export function WhyChooseUs() {
+  return (
+    <section className="py-20 bg-secondary text-secondary-foreground">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <p className="text-primary font-semibold mb-2">Suntravel</p>
+          <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4">Vì Sao Bạn Nên Chọn Chúng Tôi?</h2>
+          <p className="text-secondary-foreground/80 max-w-2xl mx-auto">
+            Với hơn 15 năm kinh nghiệm trong ngành du lịch, chúng tôi tự hào mang đến những hành trình tuyệt vời nhất
+            cho bạn.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-secondary-foreground/5 rounded-2xl p-8 hover:bg-secondary-foreground/10 transition-colors"
+            >
+              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
+                <feature.icon className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 font-serif">{feature.title}</h3>
+              <p className="text-secondary-foreground/80">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
