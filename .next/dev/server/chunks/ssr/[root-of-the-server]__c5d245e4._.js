@@ -619,7 +619,9 @@ function VeChungToiPage() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-cover bg-center",
                                 style: {
-                                    backgroundImage: `url(/phu-quoc-island-vietnam-beach-resort.jpg)`
+                                    backgroundImage: `url(/doanhnhan.jpg)`,
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundPosition: 'center'
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
@@ -630,7 +632,7 @@ function VeChungToiPage() {
                                 className: "absolute inset-0 bg-foreground/60"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                lineNumber: 69,
+                                lineNumber: 73,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -641,7 +643,7 @@ function VeChungToiPage() {
                                         children: "Về Suntravel"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                        lineNumber: 71,
+                                        lineNumber: 75,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -649,13 +651,13 @@ function VeChungToiPage() {
                                         children: "Hơn 15 năm đồng hành cùng hàng triệu khách hàng trên mọi hành trình khám phá thế giới"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                        lineNumber: 72,
+                                        lineNumber: 76,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                lineNumber: 70,
+                                lineNumber: 74,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -677,7 +679,7 @@ function VeChungToiPage() {
                                                 className: "w-10 h-10 mx-auto mb-4 text-primary-foreground/80"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 88,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -685,7 +687,7 @@ function VeChungToiPage() {
                                                 children: stat.number
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                lineNumber: 85,
+                                                lineNumber: 89,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -693,28 +695,28 @@ function VeChungToiPage() {
                                                 children: stat.label
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                lineNumber: 86,
+                                                lineNumber: 90,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, index, true, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                        lineNumber: 83,
+                                        lineNumber: 87,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                lineNumber: 81,
+                                lineNumber: 85,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                            lineNumber: 80,
+                            lineNumber: 84,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                        lineNumber: 79,
+                        lineNumber: 83,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -731,7 +733,7 @@ function VeChungToiPage() {
                                                 children: "Câu chuyện của chúng tôi"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                lineNumber: 98,
+                                                lineNumber: 102,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -739,7 +741,7 @@ function VeChungToiPage() {
                                                 children: "Hành Trình 15 Năm Cùng Suntravel"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 103,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -749,33 +751,33 @@ function VeChungToiPage() {
                                                         children: "Được thành lập vào năm 2010, Suntravel bắt đầu từ một văn phòng nhỏ tại Hà Nội với đam mê mang đến những trải nghiệm du lịch tuyệt vời cho khách hàng Việt Nam."
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                        lineNumber: 103,
+                                                        lineNumber: 107,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Trải qua hơn 15 năm phát triển, chúng tôi đã phục vụ hơn 50,000 khách hàng, tổ chức hàng ngàn tour trong và ngoài nước, từ những chuyến đi gia đình ấm cúng đến những hành trình khám phá châu lục."
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                        lineNumber: 107,
+                                                        lineNumber: 111,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Với đội ngũ nhân viên chuyên nghiệp và tận tâm, Suntravel cam kết mang đến cho bạn những hành trình đáng nhớ nhất, nơi mỗi chuyến đi không chỉ là du lịch mà còn là những kỷ niệm vô giá."
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                        lineNumber: 111,
+                                                        lineNumber: 115,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                lineNumber: 102,
+                                                lineNumber: 106,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 101,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -787,28 +789,28 @@ function VeChungToiPage() {
                                             className: "object-cover"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                            lineNumber: 118,
+                                            lineNumber: 122,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                        lineNumber: 117,
+                                        lineNumber: 121,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                lineNumber: 96,
+                                lineNumber: 100,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                            lineNumber: 95,
+                            lineNumber: 99,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                        lineNumber: 94,
+                        lineNumber: 98,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -824,7 +826,7 @@ function VeChungToiPage() {
                                             children: "Giá trị cốt lõi"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                            lineNumber: 128,
+                                            lineNumber: 132,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -832,13 +834,13 @@ function VeChungToiPage() {
                                             children: "Điều Chúng Tôi Theo Đuổi"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 133,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 131,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -852,12 +854,12 @@ function VeChungToiPage() {
                                                         className: "w-8 h-8 text-primary-foreground"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                        lineNumber: 135,
+                                                        lineNumber: 139,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                    lineNumber: 134,
+                                                    lineNumber: 138,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -865,7 +867,7 @@ function VeChungToiPage() {
                                                     children: value.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                    lineNumber: 137,
+                                                    lineNumber: 141,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -873,29 +875,29 @@ function VeChungToiPage() {
                                                     children: value.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                    lineNumber: 138,
+                                                    lineNumber: 142,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                            lineNumber: 133,
+                                            lineNumber: 137,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                    lineNumber: 131,
+                                    lineNumber: 135,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                            lineNumber: 126,
+                            lineNumber: 130,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                        lineNumber: 125,
+                        lineNumber: 129,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -911,7 +913,7 @@ function VeChungToiPage() {
                                             children: "Đội ngũ của chúng tôi"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                            lineNumber: 149,
+                                            lineNumber: 153,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -919,13 +921,13 @@ function VeChungToiPage() {
                                             children: "Những Người Đồng Hành"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                            lineNumber: 150,
+                                            lineNumber: 154,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                    lineNumber: 148,
+                                    lineNumber: 152,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -942,12 +944,12 @@ function VeChungToiPage() {
                                                         className: "object-cover group-hover:scale-110 transition-transform duration-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                        lineNumber: 156,
+                                                        lineNumber: 160,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                    lineNumber: 155,
+                                                    lineNumber: 159,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -955,7 +957,7 @@ function VeChungToiPage() {
                                                     children: member.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                    lineNumber: 163,
+                                                    lineNumber: 167,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -963,29 +965,29 @@ function VeChungToiPage() {
                                                     children: member.role
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                    lineNumber: 164,
+                                                    lineNumber: 168,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                            lineNumber: 154,
+                                            lineNumber: 158,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                    lineNumber: 152,
+                                    lineNumber: 156,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                            lineNumber: 147,
+                            lineNumber: 151,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                        lineNumber: 146,
+                        lineNumber: 150,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1000,12 +1002,12 @@ function VeChungToiPage() {
                                         children: "Chứng nhận & Giải thưởng"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                        lineNumber: 175,
+                                        lineNumber: 179,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                    lineNumber: 174,
+                                    lineNumber: 178,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1022,28 +1024,28 @@ function VeChungToiPage() {
                                                 className: "w-12 h-12 text-secondary-foreground/50"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                                lineNumber: 183,
+                                                lineNumber: 187,
                                                 columnNumber: 19
                                             }, this)
                                         }, i, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                            lineNumber: 179,
+                                            lineNumber: 183,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                                    lineNumber: 177,
+                                    lineNumber: 181,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                            lineNumber: 173,
+                            lineNumber: 177,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                        lineNumber: 172,
+                        lineNumber: 176,
                         columnNumber: 9
                     }, this)
                 ]
@@ -1054,12 +1056,12 @@ function VeChungToiPage() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                lineNumber: 190,
+                lineNumber: 194,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$floating$2d$chat$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FloatingChat"], {}, void 0, false, {
                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/ve-chung-toi/page.tsx",
-                lineNumber: 191,
+                lineNumber: 195,
                 columnNumber: 7
             }, this)
         ]

@@ -64,7 +64,11 @@ export default function VeChungToiPage() {
         <section className="relative h-[400px] md:h-[500px]">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(/phu-quoc-island-vietnam-beach-resort.jpg)` }}
+            style={{
+              backgroundImage: `url(/doanhnhan.jpg)`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+            }}
           />
           <div className="absolute inset-0 bg-foreground/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
