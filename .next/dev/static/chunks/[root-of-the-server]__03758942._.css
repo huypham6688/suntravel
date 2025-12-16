@@ -1988,10 +1988,6 @@
     background-color: var(--color-bg);
   }
 
-  .bg-\[\#0068FF\] {
-    background-color: #0068ff;
-  }
-
   .bg-accent {
     background-color: var(--accent);
   }
@@ -2271,10 +2267,6 @@
 
   .fill-primary {
     fill: var(--primary);
-  }
-
-  .fill-white {
-    fill: var(--color-white);
   }
 
   .object-cover {

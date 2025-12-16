@@ -10,7 +10,7 @@ const banners = [
     title: "Khám phá Đà Nẵng",
     subtitle: "Combo 3N2Đ chỉ từ 2.990.000đ",
     description: "Bay thẳng + Khách sạn 4 sao + Buffet sáng",
-    image: "/da-nang-beach-beautiful-sunset-vietnam.jpg",
+    image: "/danang.jpg",
     cta: "Đặt ngay",
   },
   {
@@ -18,7 +18,7 @@ const banners = [
     title: "Du lịch Thái Lan",
     subtitle: "Tour Bangkok - Pattaya 5N4Đ",
     description: "Khởi hành hàng tuần - Giá chỉ từ 6.990.000đ",
-    image: "/bangkok-thailand-temple-golden.jpg",
+    image: "/thailan3.png",
     cta: "Xem chi tiết",
   },
   {
@@ -26,7 +26,7 @@ const banners = [
     title: "Phú Quốc Paradise",
     subtitle: "Thiên đường nghỉ dưỡng",
     description: "Resort 5 sao - Giảm đến 40%",
-    image: "/phu-quoc-island-vietnam-beach-resort.jpg",
+    image: "/phuquoc.jpg",
     cta: "Khám phá",
   },
 ]

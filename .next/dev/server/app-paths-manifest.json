@@ -1,12 +1,4 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/cam-nang/[id]/page": "app/cam-nang/[id]/page.js",
-  "/cam-nang/page": "app/cam-nang/page.js",
-  "/dich-vu/page": "app/dich-vu/page.js",
-  "/du-lich-nuoc-ngoai/page": "app/du-lich-nuoc-ngoai/page.js",
-  "/du-lich-trong-nuoc/page": "app/du-lich-trong-nuoc/page.js",
-  "/lien-he/page": "app/lien-he/page.js",
-  "/page": "app/page.js",
-  "/tour/[id]/page": "app/tour/[id]/page.js",
-  "/ve-chung-toi/page": "app/ve-chung-toi/page.js"
+  "/page": "app/page.js"
 }
