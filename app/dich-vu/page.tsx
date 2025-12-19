@@ -76,9 +76,9 @@ export default function DichVuPage() {
           />
           <div className="absolute inset-0 bg-foreground/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-background font-serif mb-4">Dịch Vụ Du Lịch</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-background font-serif mb-4">DỊCH VỤ DU LỊCH</h1>
             <p className="text-xl text-background/90 max-w-2xl">
-              Đa dạng dịch vụ du lịch chất lượng cao, đáp ứng mọi nhu cầu của bạn
+              Đa dạng các dịch vụ đi kèm cho cả khách lẻ và khách đoàn
             </p>
           </div>
         </section>

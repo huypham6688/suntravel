@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { MapPin, Phone, Mail, Facebook, Youtube, Instagram } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -8,30 +9,48 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company info */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl font-serif">S</span>
-              </div>
-              <span className="text-2xl font-bold text-primary-foreground font-serif">Suntravel</span>
+            <div className="mb-6">
+              <Link
+                  href="/"
+                  className="flex flex-col items-start gap-1"
+              >
+                <Image
+                    src="/logo2.png"
+                    alt="Suntravel Logo"
+                    width={64}
+                    height={64}
+                    priority
+                    className="object-contain scale-[2] translate-x-6 origin-center"
+                />
+
+
+              </Link>
             </div>
+
             <p className="text-secondary-foreground/80 mb-6">
-              Suntravel - Đồng hành cùng bạn trên mọi hành trình khám phá thế giới.
+              Uy tín dẫn đường tận tâm theo bước
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://youtube.com"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
               >
                 <Youtube className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
               >
                 <Instagram className="w-5 h-5" />
@@ -54,13 +73,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/dich-vu" className="hover:text-primary transition-colors">
-                  Dịch vụ du lịch
+                <Link href="/mice" className="hover:text-primary transition-colors">
+                  Dịch vụ MICE
                 </Link>
               </li>
               <li>
                 <Link href="/cam-nang" className="hover:text-primary transition-colors">
-                  Cẩm nang du lịch
+                  Dịch vụ du lịch
                 </Link>
               </li>
             </ul>

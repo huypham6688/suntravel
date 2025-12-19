@@ -175,7 +175,7 @@ const toursData = {
         originalPrice: 5990000,
         rating: 4.9,
         reviews: 234,
-        image: "/da-nang-golden-bridge-tour.jpg",
+        image: "/da-nang-ba-na-hills-golden-bridge.jpg",
         badge: "Best Seller",
         maxPeople: 20,
         description: "Khám phá vẻ đẹp miền Trung với tour Đà Nẵng - Hội An - Bà Nà Hills. Trải nghiệm Cầu Vàng nổi tiếng thế giới, phố cổ Hội An lung linh về đêm và nhiều điểm đến hấp dẫn khác.",
@@ -224,10 +224,10 @@ const toursData = {
             "Phụ thu phòng đơn: 1.500.000đ"
         ],
         gallery: [
-            "/da-nang-golden-bridge-tour.jpg",
-            "/hoi-an-ancient-town-night.jpg",
-            "/ba-na-hills-castle.jpg",
-            "/my-khe-beach-danang.jpg"
+            "/da-nang-ba-na-hills-golden-bridge.jpg",
+            "/da-nang-golden-bridge-check-in.jpg",
+            "/danang.jpg",
+            "/da-nang-beach-beautiful-sunset-vietnam.jpg"
         ],
         departureDate: [
             "05/04/2025",
@@ -246,7 +246,7 @@ const toursData = {
         originalPrice: 6490000,
         rating: 4.8,
         reviews: 189,
-        image: "/phu-quoc-sunset-beach-resort.jpg",
+        image: "/phu-quoc-beach-sunset-vietnam.jpg",
         badge: "Hot",
         maxPeople: 25,
         description: "Khám phá đảo ngọc Phú Quốc với những bãi biển hoang sơ, làn nước trong xanh và hệ sinh thái đa dạng. Tour bao gồm tham quan các điểm nổi tiếng và trải nghiệm ẩm thực hải sản tươi ngon.",
@@ -295,9 +295,9 @@ const toursData = {
             "Phụ thu phòng đơn"
         ],
         gallery: [
-            "/phu-quoc-sunset-beach-resort.jpg",
-            "/hon-thom-cable-car.jpg",
-            "/vinwonders-phu-quoc.jpg"
+            "/phu-quoc-beach-sunset-vietnam.jpg",
+            "/phu-quoc-island-vietnam-beach-resort.jpg",
+            "/phuquoc.jpg"
         ],
         departureDate: [
             "06/04/2025",
@@ -315,7 +315,7 @@ const toursData = {
         originalPrice: 14990000,
         rating: 4.9,
         reviews: 156,
-        image: "/singapore-marina-bay-night.jpg",
+        image: "/singapore-marina-bay-sands-night.jpg",
         badge: "Được yêu thích",
         maxPeople: 20,
         description: "Khám phá đảo quốc sư tử với kiến trúc hiện đại, ẩm thực đa dạng và những công trình biểu tượng. Tour bao gồm Universal Studios, Gardens by the Bay và nhiều điểm đến hấp dẫn.",
@@ -363,9 +363,9 @@ const toursData = {
             "Bữa ăn tự túc"
         ],
         gallery: [
-            "/singapore-marina-bay-night.jpg",
-            "/universal-studios-singapore.jpg",
-            "/gardens-by-the-bay.jpg"
+            "/singapore-marina-bay-sands-night.jpg",
+            "/thailan.jpg",
+            "/bangkok-thailand-temple.jpg"
         ],
         departureDate: [
             "10/04/2025",
@@ -447,6 +447,144 @@ const toursData = {
             "29/04/2025"
         ],
         category: "nuoc-ngoai"
+    },
+    "5": {
+        id: "5",
+        title: "Singapore - Malaysia 6N5Đ",
+        location: "Singapore • Kuala Lumpur",
+        duration: "6 ngày 5 đêm",
+        price: 13990000,
+        rating: 4.9,
+        reviews: 180,
+        image: "/singapore-marina-bay-sands-night.jpg",
+        badge: "Siêu hot",
+        maxPeople: 25,
+        description: "Combo hai quốc gia hiện đại bậc nhất Đông Nam Á. Tham quan Marina Bay Sands, Gardens by the Bay, Universal Studios và tháp đôi Petronas.",
+        highlights: [
+            "Check-in Marina Bay Sands & Gardens by the Bay",
+            "Vui chơi Universal Studios Singapore",
+            "Khám phá phố cổ Malacca",
+            "Tham quan tháp đôi Petronas, KLCC",
+            "Thưởng thức ẩm thực Peranakan & Malaysia"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Hà Nội - Singapore",
+                description: "City tour Marina Bay, Clarke Quay, Merlion."
+            },
+            {
+                day: 2,
+                title: "Sentosa",
+                description: "Universal Studios Singapore & Wings of Time show."
+            },
+            {
+                day: 3,
+                title: "Singapore - Malaysia",
+                description: "Di chuyển sang Kuala Lumpur, tham quan Putrajaya."
+            },
+            {
+                day: 4,
+                title: "Kuala Lumpur",
+                description: "Petronas Twin Towers, shopping Bukit Bintang."
+            },
+            {
+                day: 5,
+                title: "Malacca",
+                description: "Khám phá phố cổ Hà Lan, sông Malacca, Jonker Walk."
+            },
+            {
+                day: 6,
+                title: "Kuala Lumpur - Hà Nội",
+                description: "Mua sắm quà tặng, ra sân bay."
+            }
+        ],
+        includes: [
+            "Vé máy bay khứ hồi",
+            "Khách sạn 4 sao",
+            "Vé Universal Studios Singapore",
+            "Vé Gardens by the Bay",
+            "Xe riêng Singapore & Malaysia",
+            "HDV tiếng Việt"
+        ],
+        excludes: [
+            "Tip, chi phí cá nhân",
+            "Visa (nếu cần)",
+            "Bữa ăn ngoài chương trình"
+        ],
+        gallery: [
+            "/singapore-marina-bay-sands-night.jpg",
+            "/bangkok-thailand-temple-golden.jpg",
+            "/bangkok-thailand-temple.jpg"
+        ],
+        departureDate: [
+            "05/05/2025",
+            "12/05/2025",
+            "19/05/2025"
+        ],
+        category: "nuoc-ngoai"
+    },
+    "6": {
+        id: "6",
+        title: "Hạ Long - Cát Bà 3N2Đ",
+        location: "Quảng Ninh, Việt Nam",
+        duration: "3 ngày 2 đêm",
+        price: 3290000,
+        originalPrice: 3990000,
+        rating: 4.6,
+        reviews: 210,
+        image: "/ha-long-bay-vietnam-cruise.jpg",
+        badge: "Sale",
+        maxPeople: 30,
+        description: "Hành trình khám phá kỳ quan thiên nhiên thế giới vịnh Hạ Long và đảo Cát Bà. Trải nghiệm du thuyền, chèo kayak và thưởng thức hải sản tươi.",
+        highlights: [
+            "Du thuyền ngủ đêm vịnh Hạ Long",
+            "Chèo kayak, tắm biển đảo Titop",
+            "Khám phá hang Sửng Sốt",
+            "Tham quan đảo Cát Bà, làng chài",
+            "Buffet hải sản tươi sống"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Hà Nội - Hạ Long",
+                description: "Lên du thuyền, ăn trưa, thăm hang Sửng Sốt, chèo kayak."
+            },
+            {
+                day: 2,
+                title: "Vịnh Hạ Long - Cát Bà",
+                description: "Tắm biển Titop, di chuyển sang Cát Bà, nhận phòng."
+            },
+            {
+                day: 3,
+                title: "Cát Bà - Hà Nội",
+                description: "Tham quan pháo đài Thần Công, mua sắm đặc sản, về Hà Nội."
+            }
+        ],
+        includes: [
+            "Xe limousine khứ hồi",
+            "Du thuyền 4 sao",
+            "Phòng nghỉ Cát Bà 4*",
+            "Vé tham quan",
+            "HDV suốt tuyến"
+        ],
+        excludes: [
+            "Chi phí cá nhân",
+            "Đồ uống trên du thuyền",
+            "Tip HDV & lái xe"
+        ],
+        gallery: [
+            "/ha-long-bay-vietnam-cruise.jpg",
+            "/placeholder.jpg",
+            "/sapa-rice-terraces-vietnam-mountains.jpg"
+        ],
+        departureDate: [
+            "06/05/2025",
+            "13/05/2025",
+            "20/05/2025",
+            "27/05/2025"
+        ],
+        category: "trong-nuoc"
     }
 };
 async function TourDetailPage({ params }) {
@@ -471,14 +609,14 @@ async function TourDetailPage({ params }) {
                                 children: "Trang chủ"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                lineNumber: 300,
+                                lineNumber: 377,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                 className: "w-4 h-4"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                lineNumber: 303,
+                                lineNumber: 380,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -487,14 +625,14 @@ async function TourDetailPage({ params }) {
                                 children: tour.category === "trong-nuoc" ? "Du lịch trong nước" : "Du lịch nước ngoài"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                lineNumber: 304,
+                                lineNumber: 381,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                 className: "w-4 h-4"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                lineNumber: 310,
+                                lineNumber: 387,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -502,23 +640,23 @@ async function TourDetailPage({ params }) {
                                 children: tour.title
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                lineNumber: 311,
+                                lineNumber: 388,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                        lineNumber: 299,
+                        lineNumber: 376,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                    lineNumber: 298,
+                    lineNumber: 375,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                lineNumber: 297,
+                lineNumber: 374,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -539,7 +677,7 @@ async function TourDetailPage({ params }) {
                                             className: "object-cover"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                            lineNumber: 322,
+                                            lineNumber: 399,
                                             columnNumber: 15
                                         }, this),
                                         tour.badge && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Badge"], {
@@ -547,7 +685,7 @@ async function TourDetailPage({ params }) {
                                             children: tour.badge
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                            lineNumber: 324,
+                                            lineNumber: 401,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -561,12 +699,12 @@ async function TourDetailPage({ params }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 330,
+                                                        lineNumber: 407,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                    lineNumber: 329,
+                                                    lineNumber: 406,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
@@ -577,24 +715,24 @@ async function TourDetailPage({ params }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 333,
+                                                        lineNumber: 410,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                    lineNumber: 332,
+                                                    lineNumber: 409,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                            lineNumber: 328,
+                                            lineNumber: 405,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                    lineNumber: 321,
+                                    lineNumber: 398,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -608,17 +746,17 @@ async function TourDetailPage({ params }) {
                                                 className: "object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                lineNumber: 342,
+                                                lineNumber: 419,
                                                 columnNumber: 19
                                             }, this)
                                         }, index, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                            lineNumber: 341,
+                                            lineNumber: 418,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                    lineNumber: 339,
+                                    lineNumber: 416,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -629,7 +767,7 @@ async function TourDetailPage({ params }) {
                                             children: tour.title
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                            lineNumber: 354,
+                                            lineNumber: 431,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -642,20 +780,20 @@ async function TourDetailPage({ params }) {
                                                             className: "w-5 h-5 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                            lineNumber: 357,
+                                                            lineNumber: 434,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: tour.location
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                            lineNumber: 358,
+                                                            lineNumber: 435,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                    lineNumber: 356,
+                                                    lineNumber: 433,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -665,20 +803,20 @@ async function TourDetailPage({ params }) {
                                                             className: "w-5 h-5 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                            lineNumber: 361,
+                                                            lineNumber: 438,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: tour.duration
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                            lineNumber: 362,
+                                                            lineNumber: 439,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                    lineNumber: 360,
+                                                    lineNumber: 437,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -688,7 +826,7 @@ async function TourDetailPage({ params }) {
                                                             className: "w-5 h-5 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                            lineNumber: 365,
+                                                            lineNumber: 442,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -699,13 +837,13 @@ async function TourDetailPage({ params }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                            lineNumber: 366,
+                                                            lineNumber: 443,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                    lineNumber: 364,
+                                                    lineNumber: 441,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -715,7 +853,7 @@ async function TourDetailPage({ params }) {
                                                             className: "w-5 h-5 fill-primary text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                            lineNumber: 369,
+                                                            lineNumber: 446,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -723,7 +861,7 @@ async function TourDetailPage({ params }) {
                                                             children: tour.rating
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                            lineNumber: 370,
+                                                            lineNumber: 447,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -734,19 +872,19 @@ async function TourDetailPage({ params }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                            lineNumber: 371,
+                                                            lineNumber: 448,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                    lineNumber: 368,
+                                                    lineNumber: 445,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                            lineNumber: 355,
+                                            lineNumber: 432,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -754,13 +892,13 @@ async function TourDetailPage({ params }) {
                                             children: tour.description
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                            lineNumber: 374,
+                                            lineNumber: 451,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                    lineNumber: 353,
+                                    lineNumber: 430,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Tabs"], {
@@ -776,7 +914,7 @@ async function TourDetailPage({ params }) {
                                                     children: "Điểm nổi bật"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                    lineNumber: 380,
+                                                    lineNumber: 457,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -785,7 +923,7 @@ async function TourDetailPage({ params }) {
                                                     children: "Lịch trình"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                    lineNumber: 386,
+                                                    lineNumber: 463,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -794,13 +932,13 @@ async function TourDetailPage({ params }) {
                                                     children: "Bao gồm"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                    lineNumber: 392,
+                                                    lineNumber: 469,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                            lineNumber: 379,
+                                            lineNumber: 456,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -815,7 +953,7 @@ async function TourDetailPage({ params }) {
                                                                 className: "w-5 h-5 text-primary mt-0.5 flex-shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 404,
+                                                                lineNumber: 481,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -823,23 +961,23 @@ async function TourDetailPage({ params }) {
                                                                 children: item
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 405,
+                                                                lineNumber: 482,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, index, true, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 403,
+                                                        lineNumber: 480,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                lineNumber: 401,
+                                                lineNumber: 478,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                            lineNumber: 400,
+                                            lineNumber: 477,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -854,7 +992,7 @@ async function TourDetailPage({ params }) {
                                                                 className: "absolute left-0 top-0 w-4 h-4 rounded-full bg-primary -translate-x-[9px]"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 415,
+                                                                lineNumber: 492,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -870,7 +1008,7 @@ async function TourDetailPage({ params }) {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 417,
+                                                                        lineNumber: 494,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -878,29 +1016,29 @@ async function TourDetailPage({ params }) {
                                                                         children: day.description
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 420,
+                                                                        lineNumber: 497,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 416,
+                                                                lineNumber: 493,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, day.day, true, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 414,
+                                                        lineNumber: 491,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                lineNumber: 412,
+                                                lineNumber: 489,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                            lineNumber: 411,
+                                            lineNumber: 488,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -918,14 +1056,14 @@ async function TourDetailPage({ params }) {
                                                                         className: "w-5 h-5 text-green-500"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 431,
+                                                                        lineNumber: 508,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "Bao gồm"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 430,
+                                                                lineNumber: 507,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -937,25 +1075,25 @@ async function TourDetailPage({ params }) {
                                                                                 className: "w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                                lineNumber: 437,
+                                                                                lineNumber: 514,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             item
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 436,
+                                                                        lineNumber: 513,
                                                                         columnNumber: 25
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 434,
+                                                                lineNumber: 511,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 429,
+                                                        lineNumber: 506,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -967,14 +1105,14 @@ async function TourDetailPage({ params }) {
                                                                         className: "w-5 h-5 text-red-500"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 445,
+                                                                        lineNumber: 522,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "Không bao gồm"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 444,
+                                                                lineNumber: 521,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -986,48 +1124,48 @@ async function TourDetailPage({ params }) {
                                                                                 className: "w-4 h-4 text-red-500 mt-0.5 flex-shrink-0"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                                lineNumber: 451,
+                                                                                lineNumber: 528,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             item
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 450,
+                                                                        lineNumber: 527,
                                                                         columnNumber: 25
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 448,
+                                                                lineNumber: 525,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 443,
+                                                        lineNumber: 520,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                lineNumber: 428,
+                                                lineNumber: 505,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                            lineNumber: 427,
+                                            lineNumber: 504,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                    lineNumber: 378,
+                                    lineNumber: 455,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                            lineNumber: 319,
+                            lineNumber: 396,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1049,7 +1187,7 @@ async function TourDetailPage({ params }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 468,
+                                                        lineNumber: 545,
                                                         columnNumber: 21
                                                     }, this),
                                                     tour.originalPrice && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1061,13 +1199,13 @@ async function TourDetailPage({ params }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 473,
+                                                        lineNumber: 550,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                lineNumber: 466,
+                                                lineNumber: 543,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1078,7 +1216,7 @@ async function TourDetailPage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                lineNumber: 476,
+                                                lineNumber: 553,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1086,13 +1224,13 @@ async function TourDetailPage({ params }) {
                                                 children: "/người"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                lineNumber: 477,
+                                                lineNumber: 554,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                        lineNumber: 465,
+                                        lineNumber: 542,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1105,14 +1243,14 @@ async function TourDetailPage({ params }) {
                                                         className: "w-5 h-5 text-primary"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 482,
+                                                        lineNumber: 559,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Ngày khởi hành"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                lineNumber: 481,
+                                                lineNumber: 558,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1123,18 +1261,18 @@ async function TourDetailPage({ params }) {
                                                         children: date
                                                     }, index, false, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 487,
+                                                        lineNumber: 564,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                lineNumber: 485,
+                                                lineNumber: 562,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                        lineNumber: 480,
+                                        lineNumber: 557,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
@@ -1143,7 +1281,7 @@ async function TourDetailPage({ params }) {
                                         children: "Đặt Tour Ngay"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                        lineNumber: 498,
+                                        lineNumber: 575,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
@@ -1153,7 +1291,7 @@ async function TourDetailPage({ params }) {
                                         children: "Yêu cầu báo giá"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                        lineNumber: 502,
+                                        lineNumber: 579,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1164,7 +1302,7 @@ async function TourDetailPage({ params }) {
                                                 children: "Liên hệ tư vấn trực tiếp:"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                lineNumber: 511,
+                                                lineNumber: 588,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1180,12 +1318,12 @@ async function TourDetailPage({ params }) {
                                                                     className: "w-5 h-5 text-primary"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                    lineNumber: 518,
+                                                                    lineNumber: 595,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 517,
+                                                                lineNumber: 594,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1195,7 +1333,7 @@ async function TourDetailPage({ params }) {
                                                                         children: "Ms. Quyên"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 521,
+                                                                        lineNumber: 598,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1203,19 +1341,19 @@ async function TourDetailPage({ params }) {
                                                                         children: "0903.287.313"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 522,
+                                                                        lineNumber: 599,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 520,
+                                                                lineNumber: 597,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 513,
+                                                        lineNumber: 590,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1228,12 +1366,12 @@ async function TourDetailPage({ params }) {
                                                                     className: "w-5 h-5 text-primary"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                    lineNumber: 530,
+                                                                    lineNumber: 607,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 529,
+                                                                lineNumber: 606,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1243,7 +1381,7 @@ async function TourDetailPage({ params }) {
                                                                         children: "Ms. Hồng Anh"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 533,
+                                                                        lineNumber: 610,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1251,19 +1389,19 @@ async function TourDetailPage({ params }) {
                                                                         children: "0974.248.805"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 534,
+                                                                        lineNumber: 611,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 532,
+                                                                lineNumber: 609,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 525,
+                                                        lineNumber: 602,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1278,12 +1416,12 @@ async function TourDetailPage({ params }) {
                                                                     className: "w-5 h-5 text-blue-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                    lineNumber: 544,
+                                                                    lineNumber: 621,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 543,
+                                                                lineNumber: 620,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1293,7 +1431,7 @@ async function TourDetailPage({ params }) {
                                                                         children: "Chat Zalo"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 547,
+                                                                        lineNumber: 624,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1301,59 +1439,59 @@ async function TourDetailPage({ params }) {
                                                                         children: "Tư vấn nhanh 24/7"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                        lineNumber: 548,
+                                                                        lineNumber: 625,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                                lineNumber: 546,
+                                                                lineNumber: 623,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                        lineNumber: 537,
+                                                        lineNumber: 614,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                                lineNumber: 512,
+                                                lineNumber: 589,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                        lineNumber: 510,
+                                        lineNumber: 587,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                                lineNumber: 464,
+                                lineNumber: 541,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                            lineNumber: 463,
+                            lineNumber: 540,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                    lineNumber: 317,
+                    lineNumber: 394,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-                lineNumber: 316,
+                lineNumber: 393,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/app/tour/[id]/page.tsx",
-        lineNumber: 295,
+        lineNumber: 372,
         columnNumber: 5
     }, this);
 }

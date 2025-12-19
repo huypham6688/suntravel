@@ -1,5 +1,19 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/cam-nang/[id]/page": "app/cam-nang/[id]/page.js",
+  "/cam-nang/page": "app/cam-nang/page.js",
+  "/dich-vu/page": "app/dich-vu/page.js",
+  "/du-lich-nuoc-ngoai/page": "app/du-lich-nuoc-ngoai/page.js",
+  "/du-lich-trong-nuoc/page": "app/du-lich-trong-nuoc/page.js",
+  "/lien-he/page": "app/lien-he/page.js",
+  "/mice/hoi-nghi-hoi-thao/[id]/page": "app/mice/hoi-nghi-hoi-thao/[id]/page.js",
+  "/mice/hoi-nghi-hoi-thao/page": "app/mice/hoi-nghi-hoi-thao/page.js",
+  "/mice/page": "app/mice/page.js",
+  "/mice/team-building/[id]/page": "app/mice/team-building/[id]/page.js",
+  "/mice/team-building/page": "app/mice/team-building/page.js",
+  "/mice/tour-cong-tac/[id]/page": "app/mice/tour-cong-tac/[id]/page.js",
+  "/mice/tour-cong-tac/page": "app/mice/tour-cong-tac/page.js",
   "/page": "app/page.js",
+  "/tour/[id]/page": "app/tour/[id]/page.js",
   "/ve-chung-toi/page": "app/ve-chung-toi/page.js"
 }

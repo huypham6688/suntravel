@@ -300,7 +300,7 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
             </Link>
             <ChevronRight className="w-4 h-4" />
             <Link href="/cam-nang" className="hover:text-primary transition-colors">
-              Cẩm nang du lịch
+              Dịch vụ du lịch
             </Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-foreground line-clamp-1">{article.title}</span>

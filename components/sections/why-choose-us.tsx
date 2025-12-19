@@ -50,7 +50,7 @@ export function WhyChooseUs() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-secondary-foreground/5 rounded-2xl p-8 hover:bg-secondary-foreground/10 transition-colors"
+              className="bg-secondary-foreground/20 rounded-2xl p-8 hover:bg-secondary-foreground/10 transition-colors"
             >
               <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
                 <feature.icon className="w-8 h-8 text-primary-foreground" />

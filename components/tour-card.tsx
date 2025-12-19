@@ -9,13 +9,14 @@ interface TourCardProps {
   title: string
   location: string
   duration: string
-  price: number
+  price: number | string
   originalPrice?: number
   rating: number
   reviews: number
   image: string
   badge?: string
   maxPeople?: number
+  href?: string
 }
 
 export function TourCard({
@@ -30,6 +31,7 @@ export function TourCard({
   image,
   badge,
   maxPeople,
+  href,
 }: TourCardProps) {
   return (
     <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
@@ -79,14 +81,16 @@ export function TourCard({
                 {originalPrice.toLocaleString("vi-VN")}đ
               </span>
             )}
-            <p className="text-primary text-xl font-bold">{price.toLocaleString("vi-VN")}đ</p>
+            <p className="text-primary text-xl font-bold">
+              {typeof price === "number" ? `${price.toLocaleString("vi-VN")}đ` : price}
+            </p>
           </div>
           <Button
             asChild
             variant="outline"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
           >
-            <Link href={`/tour/${id}`}>Chi tiết</Link>
+            <Link href={href || `/tour/${id}`}>Chi tiết</Link>
           </Button>
         </div>
       </div>
