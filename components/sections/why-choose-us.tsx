@@ -38,7 +38,9 @@ export function WhyChooseUs() {
     <section className="py-20 bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <p className="text-primary font-semibold mb-2">Suntravel</p>
+          <p className="text-primary font-semibold text-3xl mb-2">
+            Suntravel
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4">Vì Sao Bạn Nên Chọn Chúng Tôi?</h2>
           <p className="text-secondary-foreground/80 max-w-2xl mx-auto">
             Với hơn 15 năm kinh nghiệm trong ngành du lịch, chúng tôi tự hào mang đến những hành trình tuyệt vời nhất
