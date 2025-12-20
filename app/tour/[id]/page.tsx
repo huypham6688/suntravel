@@ -1,6 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Header } from "@/components/header"
+import { FloatingChat } from "@/components/floating-chat"
+import { Footer } from "@/components/footer"
 import {
   MapPin,
   Clock,
@@ -369,7 +372,10 @@ export default async function TourDetailPage({ params }: { params: Promise<{ id:
   }
 
   return (
-    <div className="min-h-screen bg-background">
+      <>
+        <Header />
+
+        <div className="min-h-screen bg-background">
       {/* Breadcrumb */}
       <div className="bg-muted/50 py-4">
         <div className="container mx-auto px-4">
@@ -632,5 +638,8 @@ export default async function TourDetailPage({ params }: { params: Promise<{ id:
         </div>
       </div>
     </div>
+        <Footer />
+        <FloatingChat />
+      </>
   )
 }

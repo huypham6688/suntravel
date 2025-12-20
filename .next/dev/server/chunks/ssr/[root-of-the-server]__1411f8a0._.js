@@ -1469,7 +1469,7 @@ function WhyChooseUs() {
                     className: "text-center mb-16",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-primary font-semibold mb-2",
+                            className: "text-primary font-semibold text-3xl mb-2",
                             children: "Suntravel"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/sections/why-choose-us.tsx",
@@ -1481,7 +1481,7 @@ function WhyChooseUs() {
                             children: "Vì Sao Bạn Nên Chọn Chúng Tôi?"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/sections/why-choose-us.tsx",
-                            lineNumber: 42,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1489,7 +1489,7 @@ function WhyChooseUs() {
                             children: "Với hơn 15 năm kinh nghiệm trong ngành du lịch, chúng tôi tự hào mang đến những hành trình tuyệt vời nhất cho bạn."
                         }, void 0, false, {
                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/sections/why-choose-us.tsx",
-                            lineNumber: 43,
+                            lineNumber: 45,
                             columnNumber: 11
                         }, this)
                     ]
@@ -1509,12 +1509,12 @@ function WhyChooseUs() {
                                         className: "w-8 h-8 text-primary-foreground"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/sections/why-choose-us.tsx",
-                                        lineNumber: 56,
+                                        lineNumber: 58,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/sections/why-choose-us.tsx",
-                                    lineNumber: 55,
+                                    lineNumber: 57,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1522,7 +1522,7 @@ function WhyChooseUs() {
                                     children: feature.title
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/sections/why-choose-us.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 60,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$landing$2d$os$2f$landing$2d$page$2d$with$2d$checklist__$28$1$292f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1530,18 +1530,18 @@ function WhyChooseUs() {
                                     children: feature.description
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/sections/why-choose-us.tsx",
-                                    lineNumber: 59,
+                                    lineNumber: 61,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, index, true, {
                             fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/sections/why-choose-us.tsx",
-                            lineNumber: 51,
+                            lineNumber: 53,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Desktop/landing-os/landing-page-with-checklist (1)/components/sections/why-choose-us.tsx",
-                    lineNumber: 49,
+                    lineNumber: 51,
                     columnNumber: 9
                 }, this)
             ]
