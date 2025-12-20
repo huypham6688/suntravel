@@ -1,6 +1,6 @@
 var R=require("../../../../chunks/ssr/[turbopack]_runtime.js")("server/app/mice/team-building/[id]/page.js")
 R.c("server/chunks/ssr/[root-of-the-server]__55e5e6f0._.js")
-R.c("server/chunks/ssr/a17fa__pnpm_7743076a._.js")
+R.c("server/chunks/ssr/a17fa__pnpm_8ca1860e._.js")
 R.c("server/chunks/ssr/0ba01_next_dist_9da0a91d._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__7f148858._.js")
 R.c("server/chunks/ssr/0ba01_next_dist_client_components_builtin_global-error_993ad2f0.js")

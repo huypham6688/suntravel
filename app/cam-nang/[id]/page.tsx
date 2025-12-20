@@ -4,6 +4,9 @@ import { notFound } from "next/navigation"
 import { Calendar, User, Clock, ChevronRight, Tag, Facebook, Share2, ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Header } from "@/components/header"
+import { FloatingChat } from "@/components/floating-chat"
+import { Footer } from "@/components/footer"
 
 // Mock data - trong thực tế sẽ fetch từ database
 const articlesData: Record<string, Article> = {
@@ -262,6 +265,8 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
   const filteredRelated = relatedArticles.filter((a) => a.id !== id).slice(0, 2)
 
   return (
+      <>
+        <Header />
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <div className="relative h-[400px] md:h-[500px]">
@@ -418,5 +423,8 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
         </div>
       </div>
     </div>
+        <Footer />
+        <FloatingChat />
+      </>
   )
 }

@@ -1,6 +1,6 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/cam-nang/[id]/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__963850d2._.js")
-R.c("server/chunks/ssr/a17fa__pnpm_ff3ab161._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__24aa9e54._.js")
+R.c("server/chunks/ssr/a17fa__pnpm_c6400a9f._.js")
 R.c("server/chunks/ssr/0ba01_next_dist_9da0a91d._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__7f148858._.js")
 R.c("server/chunks/ssr/0ba01_next_dist_client_components_builtin_global-error_993ad2f0.js")

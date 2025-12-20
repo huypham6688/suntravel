@@ -1,4 +1,10 @@
 {
+  "/cam-nang/[id]/page": "app/cam-nang/[id]/page.js",
+  "/cam-nang/page": "app/cam-nang/page.js",
+  "/du-lich-trong-nuoc/page": "app/du-lich-trong-nuoc/page.js",
+  "/mice/team-building/[id]/page": "app/mice/team-building/[id]/page.js",
+  "/mice/team-building/page": "app/mice/team-building/page.js",
   "/page": "app/page.js",
-  "/tour/[id]/page": "app/tour/[id]/page.js"
+  "/tour/[id]/page": "app/tour/[id]/page.js",
+  "/ve-chung-toi/page": "app/ve-chung-toi/page.js"
 }
