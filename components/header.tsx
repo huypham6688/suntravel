@@ -9,8 +9,28 @@ import Image from "next/image"
 
 const navItems = [
   { name: "Trang chủ", href: "/" },
-  { name: "Du lịch trong nước", href: "/du-lich-trong-nuoc" },
-  { name: "Du lịch nước ngoài", href: "/du-lich-nuoc-ngoai" },
+{
+    name: "Du lịch trong nước",
+    href: "/du-lich-trong-nuoc",
+    submenu: [
+      { name: "Miền Bắc", href: "/du-lich-trong-nuoc/mien-bac" },
+      { name: "Miền Trung", href: "/du-lich-trong-nuoc/mien-trung" },
+      { name: "Miền Nam", href: "/du-lich-trong-nuoc/mien-nam" },
+      { name: "Tây Nguyên", href: "/du-lich-trong-nuoc/tay-nguyen" },
+    ],
+  },
+
+  {
+    name: "Du lịch nước ngoài",
+    href: "/du-lich-nuoc-ngoai",
+    submenu: [
+      { name: "Châu Á", href: "/du-lich-nuoc-ngoai/chau-a" },
+      { name: "Châu Âu", href: "/du-lich-nuoc-ngoai/chau-au" },
+      { name: "Châu Úc", href: "/du-lich-nuoc-ngoai/chau-uc" },
+      { name: "Châu Mỹ", href: "/du-lich-nuoc-ngoai/chau-my" },
+    ],
+  },
+
   {
     name: "MICE",
     href: "/mice",
@@ -83,7 +103,7 @@ export function Header() {
 
 
             {/* Desktop navigation */}
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-8 ml-[260px]">
               {navItems.map((item) => (
                   <div
                       key={item.name}
@@ -97,14 +117,12 @@ export function Header() {
                             className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1"
                         >
                           {item.name}
-                          {item.submenu && <ChevronDown className="h-4 w-4" />}
                         </Link>
                     ) : (
                         <button
                             className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 bg-transparent border-none cursor-pointer"
                         >
                           {item.name}
-                          {item.submenu && <ChevronDown className="h-4 w-4" />}
                         </button>
                     )}
 

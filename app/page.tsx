@@ -15,6 +15,7 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroBanner />
+        <SearchBar />
         <NewTours />
         <TravelGuides />
         <WhyChooseUs />

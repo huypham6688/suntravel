@@ -28,7 +28,7 @@ export function Footer() {
             </div>
 
             <p className="text-secondary-foreground/80 mb-6">
-              Uy tín dẫn đường tận tâm theo bước
+              Uy tín dẫn đường, tận tâm theo bước
             </p>
             <div className="flex gap-4">
               <a

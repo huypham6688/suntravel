@@ -57,7 +57,7 @@ export function HeroBanner() {
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 to-foreground/30" />
           <div className="relative container mx-auto px-4 h-full flex items-center">
             <div className="max-w-2xl text-background">
-              <p className="text-primary text-lg font-semibold mb-2">{banner.subtitle}</p>
+              <p className="text-orange-500 text-lg font-semibold mb-2">{banner.subtitle}</p>
               <h1 className="text-4xl md:text-6xl font-bold font-serif mb-4 text-balance">{banner.title}</h1>
               <p className="text-xl mb-8 text-background/90">{banner.description}</p>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
@@ -71,13 +71,13 @@ export function HeroBanner() {
       {/* Navigation arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 rounded-full flex items-center justify-center backdrop-blur-sm transition-colors"
+        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 rounded-full flex items-center justify-center backdrop-blur-sm transition-colors"
       >
         <ChevronLeft className="w-6 h-6 text-background" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 rounded-full flex items-center justify-center backdrop-blur-sm transition-colors"
+        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 rounded-full flex items-center justify-center backdrop-blur-sm transition-colors"
       >
         <ChevronRight className="w-6 h-6 text-background" />
       </button>
