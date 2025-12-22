@@ -83,8 +83,6 @@ export default function TourCongTac() {
         <>
             <Header />
 
-            {/* Dùng HeroBanner mặc định như các trang khác */}
-            <HeroBanner />
 
             {/* Danh sách tour */}
             <section className="py-20 bg-muted">

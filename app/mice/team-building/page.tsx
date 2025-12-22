@@ -43,8 +43,6 @@ export default function TeamBuilding() {
         <>
             <Header />
 
-            {/* Hero chung, không truyền props */}
-            <HeroBanner />
 
             <section className="py-16 bg-background">
                 <div className="container mx-auto px-4">

@@ -1,52 +1,105 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Poppins, Playfair_Display } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
-const _poppins = Poppins({
-  subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "600", "700"],
+// Cấu hình font Inter
+const inter = Inter({
+  subsets: ["vietnamese"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
-})
-const _playfair = Playfair_Display({ subsets: ["latin", "vietnamese"] })
+  variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["vietnamese"],
+  display: "swap",
+  variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
-  title: "Suntravel - Công ty Du lịch Hàng đầu Việt Nam",
+  title: {
+    default: "Suntravel - Công ty Du lịch Hàng đầu Việt Nam",
+    template: "%s | Suntravel",
+  },
   description:
-    "Suntravel - Đồng hành cùng bạn trên mọi hành trình khám phá thế giới. Tour trong nước, nước ngoài, dịch vụ du lịch chất lượng cao.",
-  keywords: ["du lịch", "tour", "travel", "Việt Nam", "du lịch trong nước", "du lịch nước ngoài", "Suntravel"],
-  generator: "v0.app",
-  icons: {
-    icon: [
+    "Suntravel - Đồng hành cùng bạn trên mọi hành trình khám phá thế giới. Chuyên tổ chức tour du lịch trong nước và quốc tế, dịch vụ visa, đặt vé máy bay, khách sạn uy tín, chất lượng.",
+  keywords: [
+    "du lịch",
+    "tour du lịch",
+    "du lịch việt nam",
+    "du lịch nước ngoài",
+    "suntravel",
+    "đặt tour",
+    "vé máy bay",
+    "khách sạn",
+  ],
+  authors: [{ name: "Suntravel" }],
+  creator: "Suntravel",
+  publisher: "Suntravel",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://suntravel.vn"), // Thay thế bằng domain thực tế của bạn
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Suntravel - Công ty Du lịch Hàng đầu Việt Nam",
+    description:
+      "Suntravel - Đồng hành cùng bạn trên mọi hành trình khám phá thế giới. Dịch vụ du lịch chuyên nghiệp, tận tâm.",
+    url: "https://suntravel.vn",
+    siteName: "Suntravel",
+    images: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/og-image.jpg", // Đảm bảo bạn có file ảnh này trong thư mục public
+        width: 1200,
+        height: 630,
+        alt: "Suntravel - Khám phá thế giới",
       },
     ],
-    apple: "/apple-icon.png",
+    locale: "vi_VN",
+    type: "website",
   },
-}
+  twitter: {
+    card: "summary_large_image",
+    title: "Suntravel - Công ty Du lịch Hàng đầu Việt Nam",
+    description:
+      "Suntravel - Đồng hành cùng bạn trên mọi hành trình khám phá thế giới.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
-      <body className={`${_poppins.className} font-sans antialiased`}>
+    <html lang="vi" className={`${inter.variable} ${playfair.variable}`}>
+      <body className={`${inter.className} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

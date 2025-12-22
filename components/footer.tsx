@@ -28,7 +28,7 @@ export function Footer() {
             </div>
 
             <p className="text-secondary-foreground/80 mb-6">
-              Uy tín dẫn đường tận tâm theo bước
+              Uy tín dẫn đường, tận tâm theo bước
             </p>
             <div className="flex gap-4">
               <a
@@ -110,12 +110,12 @@ export function Footer() {
             <div className="space-y-4">
               <div className="bg-secondary-foreground/10 p-4 rounded-lg">
                 <p className="font-semibold">Ms. Quyên</p>
-                <p className="text-primary text-lg font-bold">0903.287.313</p>
+                <p className="text-lg font-bold">0903.287.313</p>
                 <p className="text-sm text-secondary-foreground/70">Máy lẻ 17</p>
               </div>
               <div className="bg-secondary-foreground/10 p-4 rounded-lg">
                 <p className="font-semibold">Ms. Hồng Anh</p>
-                <p className="text-primary text-lg font-bold">0974.248.805</p>
+                <p className=" text-lg font-bold">0974.248.805</p>
                 <p className="text-sm text-secondary-foreground/70">Máy lẻ 16</p>
               </div>
             </div>

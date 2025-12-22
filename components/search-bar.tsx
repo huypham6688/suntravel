@@ -11,7 +11,6 @@ export function SearchBar() {
   return (
     <section className="relative -mt-16 z-10 container mx-auto px-4">
       <div className="bg-card rounded-2xl shadow-2xl p-6 md:p-8">
-        <h2 className="text-2xl font-bold text-card-foreground mb-6 font-serif">Tìm kiếm tour du lịch</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="relative">
             <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />

@@ -8,6 +8,7 @@ import { TravelGuides } from "@/components/sections/travel-guides"
 import { WhyChooseUs } from "@/components/sections/why-choose-us"
 import { Testimonials } from "@/components/sections/testimonials"
 import { ContactSection } from "@/components/sections/contact-section"
+import Partners from "@/components/partners"
 
 export default function HomePage() {
   return (
@@ -15,10 +16,12 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroBanner />
+        <SearchBar />
         <NewTours />
         <TravelGuides />
         <WhyChooseUs />
         <Testimonials />
+        <Partners />
         <ContactSection />
       </main>
       <Footer />

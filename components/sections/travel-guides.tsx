@@ -37,7 +37,7 @@ export function TravelGuides() {
         <div className="flex items-center justify-between mb-12">
           <div>
             <p className="text-primary font-semibold mb-2">Kinh nghiệm du lịch</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground font-serif">Cẩm Nang Du Lịch</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground font-serif">Thông tin Du Lịch</h2>
           </div>
           <Button
             asChild

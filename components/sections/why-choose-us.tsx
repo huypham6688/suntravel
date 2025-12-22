@@ -1,50 +1,65 @@
-import { Shield, Clock, HeadphonesIcon, Award, Heart, Wallet } from "lucide-react"
+import {
+  Shield,
+  Clock,
+  HeadphonesIcon,
+  Award,
+  Heart,
+  Wallet,
+} from "lucide-react";
 
 const features = [
   {
     icon: Shield,
     title: "An toàn tuyệt đối",
-    description: "Cam kết đảm bảo an toàn cho khách hàng trong suốt hành trình với bảo hiểm du lịch toàn diện.",
+    description:
+      "Cam kết đảm bảo an toàn cho khách hàng trong suốt hành trình với bảo hiểm du lịch toàn diện.",
   },
   {
     icon: Clock,
     title: "Hỗ trợ 24/7",
-    description: "Đội ngũ tư vấn viên luôn sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi trong suốt chuyến đi.",
+    description:
+      "Đội ngũ tư vấn viên luôn sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi trong suốt chuyến đi.",
   },
   {
     icon: Award,
     title: "Chất lượng hàng đầu",
-    description: "Hơn 15 năm kinh nghiệm với hàng nghìn tour thành công và khách hàng hài lòng.",
+    description:
+      "Hơn 15 năm kinh nghiệm với hàng nghìn tour thành công và khách hàng hài lòng.",
   },
   {
     icon: Wallet,
     title: "Giá cả hợp lý",
-    description: "Cam kết giá tốt nhất thị trường với nhiều ưu đãi hấp dẫn cho khách hàng thân thiết.",
+    description:
+      "Cam kết giá tốt nhất thị trường với nhiều ưu đãi hấp dẫn cho khách hàng thân thiết.",
   },
   {
     icon: HeadphonesIcon,
     title: "Dịch vụ chuyên nghiệp",
-    description: "Hướng dẫn viên giàu kinh nghiệm, thông thạo nhiều ngôn ngữ và am hiểu văn hóa địa phương.",
+    description:
+      "Hướng dẫn viên giàu kinh nghiệm, thông thạo nhiều ngôn ngữ và am hiểu văn hóa địa phương.",
   },
   {
     icon: Heart,
     title: "Trải nghiệm độc đáo",
-    description: "Tour thiết kế riêng biệt, mang đến những trải nghiệm khác biệt và đáng nhớ.",
+    description:
+      "Tour thiết kế riêng biệt, mang đến những trải nghiệm khác biệt và đáng nhớ.",
   },
-]
+];
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20 bg-secondary text-secondary-foreground">
+    <section className="py-20 bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <p className="text-primary font-semibold text-3xl mb-2">
+          <p className="text-secondary font-bold tracking-widest uppercase text-sm mb-2">
             Suntravel
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4">Vì Sao Bạn Nên Chọn Chúng Tôi?</h2>
-          <p className="text-secondary-foreground/80 max-w-2xl mx-auto">
-            Với hơn 15 năm kinh nghiệm trong ngành du lịch, chúng tôi tự hào mang đến những hành trình tuyệt vời nhất
-            cho bạn.
+          <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4 text-primary">
+            Vì Sao Bạn Nên Chọn Chúng Tôi?
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Với hơn 20 năm kinh nghiệm trong ngành du lịch, chúng tôi tự hào
+            mang đến những hành trình tuyệt vời nhất cho bạn.
           </p>
         </div>
 
@@ -52,17 +67,21 @@ export function WhyChooseUs() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-secondary-foreground/20 rounded-2xl p-8 hover:bg-secondary-foreground/10 transition-colors"
+              className="bg-white rounded-2xl p-8 shadow-sm border border-border/50 hover:shadow-xl hover:border-primary/20 transition-all duration-300 group"
             >
-              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
-                <feature.icon className="w-8 h-8 text-primary-foreground" />
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                <feature.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 font-serif">{feature.title}</h3>
-              <p className="text-secondary-foreground/80">{feature.description}</p>
+              <h3 className="text-xl font-bold mb-3 font-serif text-foreground group-hover:text-primary transition-colors">
+                {feature.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

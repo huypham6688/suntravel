@@ -1,216 +1,372 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { FloatingChat } from "@/components/floating-chat"
-import { Award, Users, MapPin, Calendar, Target, Heart, Lightbulb } from "lucide-react"
-import Image from "next/image"
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { FloatingChat } from "@/components/floating-chat";
+import {
+  Award,
+  Users,
+  MapPin,
+  Calendar,
+  Target,
+  Heart,
+  Lightbulb,
+} from "lucide-react";
+import Image from "next/image";
+import Partners from "@/components/partners";
 
 const stats = [
   { number: "15+", label: "Năm kinh nghiệm", icon: Calendar },
   { number: "50,000+", label: "Khách hàng hài lòng", icon: Users },
   { number: "500+", label: "Tour đa dạng", icon: MapPin },
   { number: "20+", label: "Giải thưởng", icon: Award },
-]
+];
 
 const values = [
   {
     icon: Target,
     title: "Sứ mệnh",
     description:
-        "Mang đến những trải nghiệm du lịch tuyệt vời nhất, giúp khách hàng khám phá thế giới với sự an tâm và hài lòng tuyệt đối.",
+      "Mang đến những trải nghiệm du lịch tuyệt vời nhất, giúp khách hàng khám phá thế giới với sự an tâm và hài lòng tuyệt đối.",
   },
   {
     icon: Heart,
     title: "Tận tâm",
     description:
-        "Chúng tôi đặt khách hàng làm trung tâm, luôn lắng nghe và thấu hiểu để mang đến dịch vụ tốt nhất có thể.",
+      "Chúng tôi đặt khách hàng làm trung tâm, luôn lắng nghe và thấu hiểu để mang đến dịch vụ tốt nhất có thể.",
   },
   {
     icon: Lightbulb,
     title: "Sáng tạo",
     description:
-        "Không ngừng đổi mới, thiết kế những tour du lịch độc đáo, mang đến trải nghiệm khác biệt cho khách hàng.",
+      "Không ngừng đổi mới, thiết kế những tour du lịch độc đáo, mang đến trải nghiệm khác biệt cho khách hàng.",
   },
-]
+];
 
-const partners = [ {
-  name: "Emirates",
-  logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1280px-Emirates_logo.svg.png",
-},
-  {
-    name: "Emirates",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1280px-Emirates_logo.svg.png",
-  },
-  {
-    name: "Emirates",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1280px-Emirates_logo.svg.png",
-  },
-  {
-    name: "Emirates",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1280px-Emirates_logo.svg.png",
-  },
-  {
-    name: "Emirates",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1280px-Emirates_logo.svg.png",
-  },
-  {
-    name: "Emirates",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1280px-Emirates_logo.svg.png",
-  },
-  {
-    name: "Emirates",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1280px-Emirates_logo.svg.png",
-  },
-  {
-    name: "Emirates",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1280px-Emirates_logo.svg.png",
-  },
-]
 
 export default function VeChungToiPage() {
   return (
-      <>
-        <Header />
-        <main>
-          {/* Hero */}
-          <section className="relative h-[400px] md:h-[500px]">
-            <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage: `url(/doanhnhan.jpg)`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'center',
-                }}
-            />
-            <div className="absolute inset-0 bg-foreground/60" />
-            <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-background font-serif mb-4">Về Suntravel</h1>
-              <p className="text-xl text-background/90 max-w-2xl">
-                Hơn 15 năm đồng hành cùng hàng triệu khách hàng trên mọi hành trình khám phá thế giới
-              </p>
-            </div>
-          </section>
+    <>
+      <Header />
+      <main>
+        {/* Hero */}
+        <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform hover:scale-105 duration-700"
+            style={{
+              backgroundImage: `url(/doanhnhan.jpg)`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30" />
+          <div className="relative container mx-auto px-4 z-10 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white font-serif mb-6 drop-shadow-md">
+              Về Suntravel
+            </h1>
+            <div className="h-1 w-24 bg-secondary mx-auto mb-6 rounded-full" />
+            <p className="text-xl md:text-2xl text-white/95 max-w-3xl mx-auto font-light leading-relaxed">
+              Hơn{" "}
+              <span className="font-bold text-secondary-foreground">
+                20 năm
+              </span>{" "}
+              đồng hành cùng hàng triệu khách hàng trên mọi hành trình khám phá
+              thế giới.
+            </p>
+          </div>
+        </section>
 
-          {/* Stats */}
-          <section className="py-16 bg-primary">
-            <div className="container mx-auto px-4">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                {stats.map((stat, index) => (
-                    <div key={index} className="text-center">
-                      <stat.icon className="w-10 h-10 mx-auto mb-4 text-primary-foreground/80" />
-                      <p className="text-4xl md:text-5xl font-bold text-primary-foreground font-serif">{stat.number}</p>
-                      <p className="text-primary-foreground/80 mt-2">{stat.label}</p>
-                    </div>
-                ))}
-              </div>
+        {/* Stats - Redesigned: White BG, Blue Text, Red Icons */}
+        <section className="py-12 bg-white border-b border-primary/5 shadow-sm relative z-20 -mt-8 mx-4 md:mx-auto max-w-6xl rounded-2xl">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-dashed divide-primary/20">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center px-4 group">
+                  <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                    <stat.icon className="w-8 h-8" />
+                  </div>
+                  <p className="text-4xl md:text-5xl font-bold text-primary font-serif mb-2">
+                    {index === 0 ? "20+" : stat.number}
+                  </p>
+                  <p className="text-muted-foreground font-medium uppercase tracking-wide text-xs">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Story */}
-          <section className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Intro & History - Clean & Typography Focused */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
                 <div>
-                  <p className="text-primary font-semibold mb-2">Câu chuyện của chúng tôi</p>
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground font-serif mb-6">
-                    Hành Trình 15 Năm Cùng Suntravel
+                  <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-2 block">
+                    Giới thiệu chung
+                  </span>
+                  <h2 className="text-4xl font-bold text-primary font-serif mb-6 relative inline-block">
+                    Định Vị & Phát Triển
+                    <span className="absolute bottom-0 left-0 w-1/3 h-1 bg-secondary rounded-full"></span>
                   </h2>
-                  <div className="space-y-4 text-muted-foreground">
-                    <p>
-                      Được thành lập vào năm 2010, Suntravel bắt đầu từ một văn phòng nhỏ tại Hà Nội với đam mê mang đến
-                      những trải nghiệm du lịch tuyệt vời cho khách hàng Việt Nam.
+                  <p className="text-foreground/80 text-lg leading-relaxed text-justify">
+                    Không chỉ đem lại những{" "}
+                    <strong className="text-secondary">
+                      ĐIỂM ĐẾN TRONG MƠ
+                    </strong>
+                    , trên hành trình phát triển, SUNTRAVEL định vị và luôn
+                    hướng tới chính mình trở thành một{" "}
+                    <span className="italic">"điểm đến"</span> phù hợp và tốt
+                    nhất với khách hàng từ dịch vụ, con người đến chất lượng,
+                    chi phí.
+                  </p>
+                </div>
+
+                <div className="bg-blue-50/50 p-8 rounded-2xl border-l-4 border-primary">
+                  <h3 className="text-2xl font-bold text-foreground font-serif mb-4 flex items-center gap-3">
+                    <span className="text-primary text-3xl">❝</span>
+                    Uy tín dẫn đường, tận tâm theo bước
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Trải qua hơn 20 năm xây dựng và phát triển, SUNTRAVEL là một
+                    trong những doanh nghiệp du lịch và tổ chức sự kiện có uy
+                    tín hàng đầu hiện nay.
+                  </p>
+
+                  <div className="space-y-3">
+                    <p className="font-semibold text-primary mb-2">
+                      Chúng tôi cung cấp:
                     </p>
-                    <p>
-                      Trải qua hơn 15 năm phát triển, chúng tôi đã phục vụ hơn 50,000 khách hàng, tổ chức hàng ngàn tour
-                      trong và ngoài nước, từ những chuyến đi gia đình ấm cúng đến những hành trình khám phá châu lục.
-                    </p>
-                    <p>
-                      Với đội ngũ nhân viên chuyên nghiệp và tận tâm, Suntravel cam kết mang đến cho bạn những hành trình
-                      đáng nhớ nhất, nơi mỗi chuyến đi không chỉ là du lịch mà còn là những kỷ niệm vô giá.
-                    </p>
+                    <ul className="grid grid-cols-1 gap-2">
+                      {[
+                        "Lữ hành quốc tế & nội địa",
+                        "Đại lý vé máy bay cấp 1",
+                        "Tổ chức sự kiện (MICE)",
+                        "Xúc tiến thương mại & Visa",
+                        "Team building & Đào tạo",
+                      ].map((item, i) => (
+                        <li
+                          key={i}
+                          className="flex items-center gap-3 text-sm text-foreground/80"
+                        >
+                          <Target className="w-4 h-4 text-secondary" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-                <div className="relative h-[400px] rounded-3xl overflow-hidden">
-                  <Image src="/phu-quoc-island-vietnam-beach-resort.jpg" alt="Suntravel Story" fill className="object-cover" />
+              </div>
+
+              <div className="relative h-[600px] rounded-[2rem] overflow-hidden shadow-2xl group">
+                <Image
+                  src="/phu-quoc-island-vietnam-beach-resort.jpg"
+                  alt="Suntravel Story"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-60"></div>
+                <div className="absolute bottom-8 left-8 right-8 text-white">
+                  <p className="text-2xl font-serif font-bold mb-2">
+                    Hành trình 20 năm
+                  </p>
+                  <p className="opacity-90">
+                    Kiến tạo những kỷ niệm vô giá cho hàng triệu khách hàng.
+                  </p>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Values */}
-          <section className="py-20 bg-muted">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <p className="text-primary font-semibold mb-2">Giá trị cốt lõi</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground font-serif">Điều Chúng Tôi Theo Đuổi</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {values.map((value, index) => (
-                    <div key={index} className="bg-card rounded-2xl p-8 text-center shadow-lg">
-                      <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <value.icon className="w-8 h-8 text-primary-foreground" />
-                      </div>
-                      <h3 className="text-xl font-semibold text-card-foreground mb-4 font-serif">{value.title}</h3>
-                      <p className="text-muted-foreground">{value.description}</p>
-                    </div>
-                ))}
-              </div>
+        {/* Mission, Vision, Motto - Cards with Blue/Red accents */}
+        <section className="py-24 bg-slate-50 relative overflow-hidden">
+          {/* Decor Elements */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-16">
+              <span className="text-secondary font-bold tracking-widest uppercase text-sm">
+                Giá trị cốt lõi
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mt-2">
+                Kim Chỉ Nam Hoạt Động
+              </h2>
             </div>
-          </section>
 
-          {/* Đối tác & Khách hàng - THAY THẾ PHẦN ĐỘI NGŨ */}
-          <section className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <p className="text-primary font-semibold mb-2">Hợp tác cùng chúng tôi</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground font-serif">
-                  Đối Tác & Khách Hàng Tin Cậy
-                </h2>
-                <p className="text-muted-foreground mt-4 max-w-3xl mx-auto">
-                  Chúng tôi tự hào hợp tác với những hãng hàng không, nền tảng đặt phòng và đối tác du lịch hàng đầu thế giới
-                  để mang đến dịch vụ chất lượng cao nhất cho khách hàng.
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Motto */}
+              <div className="group bg-white p-8 rounded-2xl shadow-lg border-t-4 border-transparent hover:border-secondary transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                  <Target className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 font-serif text-foreground group-hover:text-primary transition-colors">
+                  TÔN CHỈ - PHƯƠNG CHÂM
+                </h3>
+                <div className="h-px w-12 bg-border group-hover:bg-secondary mb-4 transition-colors"></div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Lấy khách hàng làm trung tâm.{" "}
+                  <strong className="text-primary">
+                    "Uy tín dẫn đường, tận tâm theo bước"
+                  </strong>
+                  . Phục vụ khách hàng một cách tận tâm, nhiệt thành và đầy
+                  trách nhiệm.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-10 items-center justify-items-center">
-                {partners.map((partner, index) => (
-                    <div
-                        key={index}
-                        className="group flex items-center justify-center w-full h-32 bg-muted/50 rounded-2xl p-6 transition-all hover:shadow-xl hover:scale-105"
-                    >
-                      <Image
-                          src={partner.logo}
-                          alt={partner.name}
-                          width={180}
-                          height={80}
-                          className="object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
-                      />
-                    </div>
-                ))}
+              {/* Mission */}
+              <div className="group bg-white p-8 rounded-2xl shadow-lg border-t-4 border-primary hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                  <Award className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 font-serif text-foreground group-hover:text-primary transition-colors">
+                  SỨ MỆNH
+                </h3>
+                <div className="h-px w-12 bg-border group-hover:bg-secondary mb-4 transition-colors"></div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Cung cấp giải pháp, sản phẩm và dịch vụ chất lượng cao. Thỏa
+                  mãn nhu cầu đa dạng của khách hàng trong nước và quốc tế với
+                  sự chuyên nghiệp cao nhất.
+                </p>
               </div>
-            </div>
-          </section>
 
-          {/* Certifications */}
-          <section className="py-16 bg-secondary">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-2xl font-bold text-secondary-foreground font-serif">Chứng nhận & Giải thưởng</h2>
-              </div>
-              <div className="flex flex-wrap justify-center items-center gap-8">
-                {[1, 2, 3, 4, 5].map((i) => (
-                    <div
-                        key={i}
-                        className="w-32 h-32 bg-secondary-foreground/10 rounded-2xl flex items-center justify-center"
-                    >
-                      <Award className="w-12 h-12 text-secondary-foreground/50" />
-                    </div>
-                ))}
+              {/* Vision */}
+              <div className="group bg-white p-8 rounded-2xl shadow-lg border-t-4 border-transparent hover:border-secondary transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                  <Lightbulb className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 font-serif text-foreground group-hover:text-primary transition-colors">
+                  TẦM NHÌN
+                </h3>
+                <div className="h-px w-12 bg-border group-hover:bg-secondary mb-4 transition-colors"></div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Phấn đấu trở thành doanh nghiệp hàng đầu trong các lĩnh vực tổ
+                  chức sự kiện, lữ hành, vé máy bay và các dịch vụ đi kèm.
+                </p>
               </div>
             </div>
-          </section>
-        </main>
-        <Footer />
-        <FloatingChat />
-      </>
-  )
+          </div>
+        </section>
+
+        {/* Operating Principles - Clean List Design */}
+        <section className="py-24 bg-white relative">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row gap-12 text-white bg-primary rounded-[3rem] overflow-hidden shadow-2xl relative">
+              <div className="absolute top-0 right-0 w-[500px] h-full bg-secondary/10 skew-x-12 translate-x-20"></div>
+
+              <div className="p-12 md:w-1/3 relative z-10 flex flex-col justify-center border-r border-white/10">
+                <h3 className="text-4xl font-bold font-serif mb-6">
+                  TÔN CHỈ
+                  <br />
+                  HOẠT ĐỘNG
+                </h3>
+                <p className="opacity-90 leading-relaxed mb-8">
+                  Cam kết cốt lõi của chúng tôi đối với các bên liên quan, đảm
+                  bảo sự phát triển bền vững và thịnh vượng.
+                </p>
+                <div className="w-20 h-2 bg-secondary rounded-full"></div>
+              </div>
+
+              <div className="p-12 md:w-2/3 grid grid-cols-1 gap-8 relative z-10">
+                <div className="flex gap-6 items-start">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-white">
+                    <Users className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-2 text-white">
+                      Đối với Khách hàng
+                    </h4>
+                    <p className="text-blue-100 text-sm leading-relaxed">
+                      Mang lại giá trị và lợi ích bền vững. Tiếp cận mới và hiện
+                      đại để mang đến sự hài lòng tuyệt đối.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-6 items-start">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-white">
+                    <Heart className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-2 text-white">
+                      Đối với Nhân viên
+                    </h4>
+                    <p className="text-blue-100 text-sm leading-relaxed">
+                      Xây dựng môi trường làm việc hiệu quả, văn hóa gắn kết.
+                      Phát huy tối đa nguồn nhân lực.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-6 items-start">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-white">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-2 text-white">
+                      Đối với Cộng đồng
+                    </h4>
+                    <p className="text-blue-100 text-sm leading-relaxed">
+                      Tích cực đóng góp vào sự phát triển chung. Bảo tồn di sản
+                      văn hóa và giá trị xã hội.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Fields of Activity - Grid with Hover Effects */}
+        <section className="py-24 bg-slate-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <span className="text-secondary font-bold tracking-widest uppercase text-sm">
+                Quy mô phát triển
+              </span>
+              <h2 className="text-4xl font-bold text-primary font-serif mt-2">
+                LĨNH VỰC HOẠT ĐỘNG
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[
+                "Dịch vụ lữ hành quốc tế và nội địa chuyên nghiệp",
+                "Dịch vụ vé máy bay",
+                "Tổ chức hội nghị, hội thảo, xúc tiến thương mại",
+                "Định hướng nghề nghiệp & Team building",
+                "Dịch vụ vận chuyển hành khách và hàng hoá",
+              ].map((field, idx) => (
+                <div
+                  key={idx}
+                  className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-[4rem] group-hover:from-secondary/10 transition-colors"></div>
+
+                  <div className="relative z-10 flex flex-col h-full">
+                    <span className="text-5xl font-bold text-slate-200 mb-4 group-hover:text-primary/20 transition-colors duration-300 font-serif">
+                      0{idx + 1}
+                    </span>
+                    <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors flex-grow">
+                      {field}
+                    </h4>
+                  </div>
+                </div>
+              ))}
+
+              {/* Decorative Box */}
+              <div className="flex items-center justify-center p-8 rounded-2xl border-2 border-dashed border-primary/20 bg-primary/5">
+                <p className="text-primary font-semibold text-center">
+                  Và nhiều dịch vụ mở rộng khác...
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Partners */}
+        <Partners />
+      </main>
+      <Footer />
+      <FloatingChat />
+    </>
+  );
 }

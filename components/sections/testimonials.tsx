@@ -62,8 +62,8 @@ export function Testimonials() {
     <section className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <p className="text-primary font-semibold mb-2">Khách hàng nói gì</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground font-serif">Đánh Giá Từ Khách Hàng</h2>
+          <p className="text-secondary font-semibold mb-2">Khách hàng nói gì</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary font-serif">Đánh Giá Từ Khách Hàng</h2>
         </div>
 
         <div className="relative max-w-4xl mx-auto">

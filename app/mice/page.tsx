@@ -1,48 +1,53 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { HeroBanner } from "@/components/hero-banner"
-import Link from "next/link"
-import { ArrowRight, Sparkles, Users, Presentation } from "lucide-react"
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { HeroBanner } from "@/components/hero-banner";
+import Link from "next/link";
+import { ArrowRight, Sparkles, Users, Presentation } from "lucide-react";
+import { JourneyDiary } from "@/components/sections/journey-diary";
 
 const services = [
   {
     title: "Tour Công Tác Doanh Nghiệp",
-    description: "Chuyến đi công tác trọn gói với vé máy bay, khách sạn 4-5 sao và hỗ trợ visa.",
+    description:
+      "Chuyến đi công tác trọn gói với vé máy bay, khách sạn 4-5 sao và hỗ trợ visa.",
     icon: Presentation,
     href: "/mice/tour-cong-tac",
     badge: "06 tuyến nổi bật",
   },
   {
     title: "Tổ Chức Hội Nghị - Hội Thảo",
-    description: "Setup trọn gói âm thanh ánh sáng, sân khấu, backdrop và lễ tân chuyên nghiệp.",
+    description:
+      "Setup trọn gói âm thanh ánh sáng, sân khấu, backdrop và lễ tân chuyên nghiệp.",
     icon: Sparkles,
     href: "/mice/hoi-nghi-hoi-thao",
     badge: "Từ 50 - 1.000 khách",
   },
   {
     title: "Team Building",
-    description: "Thiết kế kịch bản team building gắn kết, đo lường KPI rõ ràng cho đội ngũ.",
+    description:
+      "Thiết kế kịch bản team building gắn kết, đo lường KPI rõ ràng cho đội ngũ.",
     icon: Users,
     href: "/mice/team-building",
     badge: "15+ concept trò chơi",
   },
-]
+];
 
 export default function MiceOverviewPage() {
   return (
     <>
       <Header />
-
-      {/* Dùng hero mặc định của trang chủ cho MICE, không truyền props */}
-      <HeroBanner />
+      <JourneyDiary />
 
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Giải Pháp MICE Cho Doanh Nghiệp</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Giải Pháp MICE Cho Doanh Nghiệp
+            </h2>
             <p className="text-lg text-muted-foreground">
-              Suntravel thiết kế và vận hành trọn gói hội nghị, hội thảo, incentive, team building và sự kiện ra mắt
-              sản phẩm với tiêu chuẩn quốc tế.
+              Suntravel thiết kế và vận hành trọn gói hội nghị, hội thảo,
+              incentive, team building và sự kiện ra mắt sản phẩm với tiêu chuẩn
+              quốc tế.
             </p>
           </div>
 
@@ -61,8 +66,12 @@ export default function MiceOverviewPage() {
                     {item.badge}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{item.description}</p>
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  {item.description}
+                </p>
                 <div className="text-primary font-medium flex items-center gap-2">
                   Xem chi tiết
                   <ArrowRight className="w-4 h-4" />
@@ -75,6 +84,5 @@ export default function MiceOverviewPage() {
 
       <Footer />
     </>
-  )
+  );
 }
-

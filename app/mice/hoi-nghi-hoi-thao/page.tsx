@@ -42,10 +42,6 @@ export default function HoiNghiHoiThao() {
     return (
         <>
             <Header />
-
-            {/* Dùng hero chung, không truyền props */}
-            <HeroBanner />
-
             <section className="py-16 bg-background">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto text-center mb-12">
@@ -55,7 +51,6 @@ export default function HoiNghiHoiThao() {
                             kick-off, ra mắt sản phẩm với tiêu chuẩn khách sạn 4-5 sao, âm thanh ánh sáng chuyên nghiệp.
                         </p>
                     </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {conferences.map((c) => (
                             <TourCard

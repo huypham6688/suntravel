@@ -57,7 +57,7 @@ export function HeroBanner() {
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 to-foreground/30" />
           <div className="relative container mx-auto px-4 h-full flex items-center">
             <div className="max-w-2xl text-background">
-              <p className="text-primary text-lg font-semibold mb-2">{banner.subtitle}</p>
+              <p className=" text-lg font-semibold mb-2">{banner.subtitle}</p>
               <h1 className="text-4xl md:text-6xl font-bold font-serif mb-4 text-balance">{banner.title}</h1>
               <p className="text-xl mb-8 text-background/90">{banner.description}</p>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
