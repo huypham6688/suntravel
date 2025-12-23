@@ -1,6 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { X, ChevronLeft, ChevronRight, Camera, MapPin, Calendar, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import {
   Dialog,
   DialogContent,
@@ -8,12 +14,9 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { useState } from "react";
-import { X, ChevronLeft, ChevronRight, Camera } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
-// Mock data for journey diary images
+// Mock data (Dữ liệu giữ nguyên theo yêu cầu của bạn)
 const journeyImages = [
   {
     id: 1,
@@ -309,6 +312,7 @@ export function JourneyDiary() {
   return (
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
+        {/* Header Section (Giữ nguyên giao diện hiện tại) */}
         <div className="text-center mb-12">
           <h2 className="text-primary font-semibold mb-2 uppercase tracking-wider">
             Khoảnh khắc đáng nhớ
@@ -322,7 +326,7 @@ export function JourneyDiary() {
           </p>
         </div>
 
-        {/* Filter Buttons */}
+        {/* Filter Buttons (Giữ nguyên) */}
         <div className="mb-8 flex flex-wrap justify-center gap-3">
           {categories.map((category) => (
             <Button
@@ -341,6 +345,7 @@ export function JourneyDiary() {
           ))}
         </div>
 
+        {/* List Ảnh Ngoài (Giữ nguyên) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredImages.map((image) => (
             <Dialog
@@ -387,89 +392,133 @@ export function JourneyDiary() {
                 </div>
               </DialogTrigger>
 
-              {/* Full Screen Lightbox Modal */}
-              <DialogContent className="max-w-5xl w-full p-0 bg-background border-none shadow-xl flex flex-col rounded-xl overflow-hidden h-auto">
+              {/* LẤY GIAO DIỆN MODAL CHI TIẾT TỪ CODE CŨ */}
+              <DialogContent className="h-[90vh] max-w-[95vw] overflow-hidden rounded-3xl border-none p-0 lg:max-w-[85vw]">
                 <div className="sr-only">
                   <DialogTitle>{image.alt}</DialogTitle>
                   <DialogDescription>Xem ảnh chi tiết</DialogDescription>
                 </div>
+                <div className="flex h-full flex-col lg:flex-row">
+                  {/* Left: Image Viewer */}
+                  <div className="relative flex flex-1 items-center justify-center bg-black p-4">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setSelectedTourId(null)}
+                      className="absolute right-4 top-4 z-50 rounded-full bg-white/10 text-white backdrop-blur-md hover:bg-white/20 lg:hidden"
+                    >
+                      <X className="h-5 w-5" />
+                    </Button>
 
-                <div className="flex-1 relative w-full h-full flex items-center justify-center overflow-hidden bg-background">
-                  {selectedTour && (
-                    <div className="relative w-full h-[50vh] flex items-center justify-center p-4">
-                      <Image
-                        src={selectedTour.gallery[currentImageIndex]}
-                        alt={`${selectedTour.alt} - Ảnh ${
-                          currentImageIndex + 1
-                        }`}
-                        fill
-                        className="object-contain"
-                        priority
-                        quality={100}
-                      />
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={currentImageIndex}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        className="relative h-full w-full"
+                      >
+                        <Image
+                          src={selectedTour?.gallery[currentImageIndex] || ""}
+                          alt="Gallery"
+                          fill
+                          className="object-contain"
+                          priority
+                        />
+                      </motion.div>
+                    </AnimatePresence>
+
+                    {/* Nav Buttons */}
+                    <div className="pointer-events-none absolute inset-x-4 top-1/2 flex -translate-y-1/2 justify-between">
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handlePrev();
+                        }}
+                        className="pointer-events-auto h-12 w-12 rounded-full bg-white/10 text-white backdrop-blur-md hover:bg-white/20"
+                      >
+                        <ChevronLeft className="h-8 w-8" />
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNext();
+                        }}
+                        className="pointer-events-auto h-12 w-12 rounded-full bg-white/10 text-white backdrop-blur-md hover:bg-white/20"
+                      >
+                        <ChevronRight className="h-8 w-8" />
+                      </Button>
                     </div>
-                  )}
+                  </div>
 
-                  {/* Navigation Arrows */}
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/50 text-black hover:bg-white hover:text-black border border-black/10 shadow-sm z-10"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handlePrev();
-                    }}
-                  >
-                    <ChevronLeft className="w-8 h-8" />
-                  </Button>
+                  {/* Right: Info Sidebar (Từ code cũ) */}
+                  <div className="flex w-full flex-col bg-white p-8 lg:w-[380px]">
+                    <div className="flex-1">
+                      <Badge
+                        variant="outline"
+                        className="mb-4 border-orange-200 bg-orange-50 text-orange-600"
+                      >
+                        {selectedTour?.category}
+                      </Badge>
+                      <h2 className="mb-4 text-3xl font-bold leading-tight text-slate-900">
+                        {selectedTour?.alt}
+                      </h2>
 
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/50 text-black hover:bg-white hover:text-black border border-black/10 shadow-sm z-10"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNext();
-                    }}
-                  >
-                    <ChevronRight className="w-8 h-8" />
-                  </Button>
-                </div>
+                      <div className="mb-8 space-y-3">
+                        <div className="flex items-center gap-3 text-slate-600">
+                          <MapPin className="h-4 w-4 text-orange-500" />
+                          <span className="text-sm">
+                            {selectedTour?.tourName}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3 text-slate-600">
+                          <Calendar className="h-4 w-4 text-orange-500" />
+                          <span className="text-sm">
+                            Khởi hành: {selectedTour?.date}
+                          </span>
+                        </div>
+                      </div>
 
-                {/* Bottom Thumbnails & Info */}
-                <div className="bg-background border-t border-border p-4 shrink-0 z-50">
-                  <div className="container mx-auto max-w-7xl flex flex-col  items-center gap-6">
-                    <div className="text-foreground flex-1 text-center md:text-left">
-                      <h4 className="font-bold text-lg md:text-xl">
-                        {image.alt}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {image.tourName} • {image.date} •{" "}
-                        {currentImageIndex + 1}/{image.gallery.length}
+                      <p className="mb-6 text-sm leading-relaxed text-slate-500">
+                        Hình ảnh thực tế từ đoàn khách tham gia hành trình.
+                        Chúng tôi cam kết chất lượng dịch vụ và những trải
+                        nghiệm chân thực nhất.
                       </p>
-                    </div>
 
-                    <div className="flex gap-2 overflow-x-auto max-w-full pb-2 md:pb-0 scrollbar-hide">
-                      {selectedTour?.gallery.map((img, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setCurrentImageIndex(idx)}
-                          className={cn(
-                            "relative w-20 h-14 rounded-md overflow-hidden border-2 transition-all shrink-0",
-                            currentImageIndex === idx
-                              ? "border-primary opacity-100 ring-2 ring-primary/50"
-                              : "border-transparent opacity-40 hover:opacity-100"
-                          )}
-                        >
-                          <Image
-                            src={img}
-                            alt="thumbnail"
-                            fill
-                            className="object-cover"
-                          />
-                        </button>
-                      ))}
+                      <div className="grid grid-cols-4 gap-2">
+                        {selectedTour?.gallery.map((img, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => setCurrentImageIndex(idx)}
+                            className={cn(
+                              "relative aspect-square overflow-hidden rounded-xl transition-all",
+                              currentImageIndex === idx
+                                ? "ring-2 ring-orange-500 ring-offset-2"
+                                : "opacity-50 hover:opacity-100"
+                            )}
+                          >
+                            <Image
+                              src={img}
+                              alt="thumb"
+                              fill
+                              className="object-cover"
+                            />
+                          </button>
+                        ))}
+                      </div>
                     </div>
+                    <Link
+                      href="#contact"
+                      onClick={() => setSelectedTourId(null)}
+                    >
+                      <Button className="mt-8 flex w-full items-center justify-center rounded-md bg-orange-600 py-6 text-lg font-bold text-white shadow-lg shadow-orange-200 hover:bg-orange-700">
+                        Tư vấn Tour này
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </DialogContent>
