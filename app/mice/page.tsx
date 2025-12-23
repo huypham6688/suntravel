@@ -7,20 +7,18 @@ import { JourneyDiary } from "@/components/sections/journey-diary";
 
 const services = [
   {
-    title: "Tour Công Tác Doanh Nghiệp",
+    title: "Công tác doanh nghiệp",
     description:
       "Chuyến đi công tác trọn gói với vé máy bay, khách sạn 4-5 sao và hỗ trợ visa.",
     icon: Presentation,
     href: "/mice/tour-cong-tac",
-    badge: "06 tuyến nổi bật",
   },
   {
-    title: "Tổ Chức Hội Nghị - Hội Thảo",
+    title: "Hội nghị, hội thảo",
     description:
       "Setup trọn gói âm thanh ánh sáng, sân khấu, backdrop và lễ tân chuyên nghiệp.",
     icon: Sparkles,
     href: "/mice/hoi-nghi-hoi-thao",
-    badge: "Từ 50 - 1.000 khách",
   },
   {
     title: "Team Building",
@@ -28,7 +26,6 @@ const services = [
       "Thiết kế kịch bản team building gắn kết, đo lường KPI rõ ràng cho đội ngũ.",
     icon: Users,
     href: "/mice/team-building",
-    badge: "15+ concept trò chơi",
   },
 ];
 
@@ -36,7 +33,6 @@ export default function MiceOverviewPage() {
   return (
     <>
       <Header />
-      <JourneyDiary />
 
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
@@ -62,9 +58,6 @@ export default function MiceOverviewPage() {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
                     <item.icon className="w-6 h-6" />
                   </div>
-                  <span className="text-xs px-3 py-1 rounded-full bg-primary text-primary-foreground font-semibold">
-                    {item.badge}
-                  </span>
                 </div>
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                   {item.title}
@@ -81,6 +74,7 @@ export default function MiceOverviewPage() {
           </div>
         </div>
       </section>
+      <JourneyDiary />
 
       <Footer />
     </>

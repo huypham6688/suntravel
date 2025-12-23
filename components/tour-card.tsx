@@ -1,22 +1,22 @@
-import Image from "next/image"
-import Link from "next/link"
-import { MapPin, Clock, Star, Users } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import Image from "next/image";
+import Link from "next/link";
+import { MapPin, Clock, Star, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 interface TourCardProps {
-  id: string
-  title: string
-  location: string
-  duration: string
-  price: number | string
-  originalPrice?: number
-  rating: number
-  reviews: number
-  image: string
-  badge?: string
-  maxPeople?: number
-  href?: string
+  id: string;
+  title: string;
+  location: string;
+  duration: string;
+  price: number | string;
+  originalPrice?: number;
+  rating: number;
+  reviews: number;
+  image: string;
+  badge?: string;
+  maxPeople?: number;
+  href?: string;
 }
 
 export function TourCard({
@@ -42,7 +42,11 @@ export function TourCard({
           fill
           className="object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        {badge && <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">{badge}</Badge>}
+        {badge && (
+          <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
+            {badge}
+          </Badge>
+        )}
         {originalPrice && (
           <Badge className="absolute top-4 right-4 bg-destructive text-destructive-foreground">
             -{Math.round((1 - price / originalPrice) * 100)}%
@@ -54,7 +58,9 @@ export function TourCard({
           <MapPin className="w-4 h-4" />
           <span>{location}</span>
         </div>
-        <h3 className="font-semibold text-lg text-card-foreground mb-3 line-clamp-2 font-serif">{title}</h3>
+        <h3 className="font-semibold text-lg text-card-foreground mb-3 line-clamp-2 ">
+          {title}
+        </h3>
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
           <div className="flex items-center gap-1">
             <Clock className="w-4 h-4" />
@@ -72,7 +78,9 @@ export function TourCard({
             <Star className="w-4 h-4 fill-primary text-primary" />
             <span className="font-semibold text-card-foreground">{rating}</span>
           </div>
-          <span className="text-muted-foreground text-sm">({reviews} đánh giá)</span>
+          <span className="text-muted-foreground text-sm">
+            ({reviews} đánh giá)
+          </span>
         </div>
         <div className="flex items-center justify-between">
           <div>
@@ -82,7 +90,9 @@ export function TourCard({
               </span>
             )}
             <p className="text-primary text-xl font-bold">
-              {typeof price === "number" ? `${price.toLocaleString("vi-VN")}đ` : price}
+              {typeof price === "number"
+                ? `${price.toLocaleString("vi-VN")}đ`
+                : price}
             </p>
           </div>
           <Button
@@ -95,5 +105,5 @@ export function TourCard({
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react"
+import { useState } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -45,25 +45,29 @@ const testimonials = [
     content:
       "Resort 5 sao đúng như quảng cáo, bãi biển đẹp tuyệt vời. Đội ngũ hỗ trợ nhanh chóng khi mình cần đổi lịch. 10 điểm!",
   },
-]
+];
 
 export function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
-  }
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-  }
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
+  };
 
   return (
     <section className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-secondary font-semibold mb-2">Khách hàng nói gì</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary font-serif">Đánh Giá Từ Khách Hàng</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary ">
+            Đánh Giá Từ Khách Hàng
+          </h2>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
@@ -90,9 +94,15 @@ export function Testimonials() {
                 />
               </div>
               <div>
-                <h4 className="font-semibold text-card-foreground font-serif">{testimonials[currentIndex].name}</h4>
-                <p className="text-muted-foreground text-sm">{testimonials[currentIndex].location}</p>
-                <p className="text-primary text-sm font-medium">{testimonials[currentIndex].tour}</p>
+                <h4 className="font-semibold text-card-foreground ">
+                  {testimonials[currentIndex].name}
+                </h4>
+                <p className="text-muted-foreground text-sm">
+                  {testimonials[currentIndex].location}
+                </p>
+                <p className="text-primary text-sm font-medium">
+                  {testimonials[currentIndex].tour}
+                </p>
               </div>
             </div>
           </div>
@@ -128,5 +138,5 @@ export function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -54,7 +54,7 @@ export function WhyChooseUs() {
           <p className="text-secondary font-bold tracking-widest uppercase text-sm mb-2">
             Suntravel
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4 text-primary">
+          <h2 className="text-3xl md:text-4xl font-bold  mb-4 text-primary">
             Vì Sao Bạn Nên Chọn Chúng Tôi?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -72,7 +72,7 @@ export function WhyChooseUs() {
               <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
                 <feature.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3 font-serif text-foreground group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold mb-3  text-foreground group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">

@@ -1,7 +1,7 @@
-import { TourCard } from "@/components/tour-card"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { TourCard } from "@/components/tour-card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const tours = [
   {
@@ -72,7 +72,7 @@ const tours = [
     image: "/ha-long-bay-vietnam-cruise.jpg",
     badge: "Sale",
   },
-]
+];
 
 export function NewTours() {
   return (
@@ -81,7 +81,9 @@ export function NewTours() {
         <div className="flex items-center justify-between mb-12">
           <div>
             <p className="text-primary font-semibold mb-2">Ưu đãi đặc biệt</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground font-serif">Tour Mới - Deal Hời</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground ">
+              Tour Mới - Deal Hời
+            </h2>
           </div>
           <Button
             asChild
@@ -115,5 +117,5 @@ export function NewTours() {
         </div>
       </div>
     </section>
-  )
+  );
 }

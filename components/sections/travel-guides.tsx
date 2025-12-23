@@ -1,13 +1,14 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight, Calendar } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const guides = [
   {
     id: "1",
     title: "Top 10 điểm check-in không thể bỏ lỡ tại Đà Nẵng 2025",
-    excerpt: "Khám phá những địa điểm sống ảo đẹp nhất tại thành phố đáng sống nhất Việt Nam.",
+    excerpt:
+      "Khám phá những địa điểm sống ảo đẹp nhất tại thành phố đáng sống nhất Việt Nam.",
     image: "/da-nang-golden-bridge-check-in.jpg",
     date: "28/03/2025",
     category: "Trong nước",
@@ -15,7 +16,8 @@ const guides = [
   {
     id: "2",
     title: "Kinh nghiệm du lịch Thái Lan tự túc chi tiết từ A-Z",
-    excerpt: "Hướng dẫn đầy đủ cho chuyến du lịch Thái Lan đầu tiên của bạn với ngân sách tiết kiệm.",
+    excerpt:
+      "Hướng dẫn đầy đủ cho chuyến du lịch Thái Lan đầu tiên của bạn với ngân sách tiết kiệm.",
     image: "/thailand-bangkok-travel-guide.jpg",
     date: "25/03/2025",
     category: "Nước ngoài",
@@ -23,12 +25,13 @@ const guides = [
   {
     id: "3",
     title: "Sapa mùa nào đẹp nhất? Lịch trình 3 ngày 2 đêm hoàn hảo",
-    excerpt: "Tất tần tật về thời điểm lý tưởng và lịch trình chi tiết cho chuyến đi Sapa.",
+    excerpt:
+      "Tất tần tật về thời điểm lý tưởng và lịch trình chi tiết cho chuyến đi Sapa.",
     image: "/sapa-vietnam-rice-fields-misty.jpg",
     date: "20/03/2025",
     category: "Trong nước",
   },
-]
+];
 
 export function TravelGuides() {
   return (
@@ -36,8 +39,12 @@ export function TravelGuides() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-12">
           <div>
-            <p className="text-primary font-semibold mb-2">Kinh nghiệm du lịch</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground font-serif">Thông tin Du Lịch</h2>
+            <p className="text-primary font-semibold mb-2">
+              Kinh nghiệm du lịch
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground ">
+              Thông tin Du Lịch
+            </h2>
           </div>
           <Button
             asChild
@@ -73,10 +80,12 @@ export function TravelGuides() {
                   <Calendar className="w-4 h-4" />
                   <span>{guide.date}</span>
                 </div>
-                <h3 className="font-semibold text-lg text-card-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors font-serif">
+                <h3 className="font-semibold text-lg text-card-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors ">
                   <Link href={`/cam-nang/${guide.id}`}>{guide.title}</Link>
                 </h3>
-                <p className="text-muted-foreground line-clamp-2">{guide.excerpt}</p>
+                <p className="text-muted-foreground line-clamp-2">
+                  {guide.excerpt}
+                </p>
               </div>
             </article>
           ))}
@@ -96,5 +105,5 @@ export function TravelGuides() {
         </div>
       </div>
     </section>
-  )
+  );
 }

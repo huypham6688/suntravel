@@ -204,7 +204,7 @@ export default function DuLichTrongNuocPage() {
           />
           <div className="absolute inset-0 bg-foreground/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-background font-serif mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-background  mb-4">
               Du Lịch Trong Nước
             </h1>
             <p className="text-xl text-background/90 max-w-2xl">
@@ -215,7 +215,7 @@ export default function DuLichTrongNuocPage() {
         </section>
 
         {/* Filters */}
-        <section className="py-8 sticky top-18 z-30  bg-muted/95">
+        <section className="py-8 z-30  bg-muted/95">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
               <div className="flex flex-wrap gap-2">

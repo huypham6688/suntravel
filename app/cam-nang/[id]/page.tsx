@@ -1,19 +1,30 @@
-import Image from "next/image"
-import Link from "next/link"
-import { notFound } from "next/navigation"
-import { Calendar, User, Clock, ChevronRight, Tag, Facebook, Share2, ArrowLeft, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Header } from "@/components/header"
-import { FloatingChat } from "@/components/floating-chat"
-import { Footer } from "@/components/footer"
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import {
+  Calendar,
+  User,
+  Clock,
+  ChevronRight,
+  Tag,
+  Facebook,
+  Share2,
+  ArrowLeft,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Header } from "@/components/header";
+import { FloatingChat } from "@/components/floating-chat";
+import { Footer } from "@/components/footer";
 
 // Mock data - trong thực tế sẽ fetch từ database
 const articlesData: Record<string, Article> = {
   "1": {
     id: "1",
     title: "Top 10 điểm check-in không thể bỏ lỡ tại Đà Nẵng 2025",
-    excerpt: "Khám phá những địa điểm sống ảo đẹp nhất tại thành phố đáng sống nhất Việt Nam.",
+    excerpt:
+      "Khám phá những địa điểm sống ảo đẹp nhất tại thành phố đáng sống nhất Việt Nam.",
     content: `
       <p>Đà Nẵng - thành phố đáng sống nhất Việt Nam không chỉ nổi tiếng với những bãi biển tuyệt đẹp mà còn sở hữu vô vàn điểm check-in ấn tượng. Hãy cùng Suntravel khám phá top 10 địa điểm không thể bỏ lỡ khi đến Đà Nẵng năm 2025!</p>
       
@@ -65,7 +76,8 @@ const articlesData: Record<string, Article> = {
   "2": {
     id: "2",
     title: "Kinh nghiệm du lịch Thái Lan tự túc chi tiết từ A-Z",
-    excerpt: "Hướng dẫn đầy đủ cho chuyến du lịch Thái Lan đầu tiên của bạn với ngân sách tiết kiệm.",
+    excerpt:
+      "Hướng dẫn đầy đủ cho chuyến du lịch Thái Lan đầu tiên của bạn với ngân sách tiết kiệm.",
     content: `
       <p>Thái Lan là điểm đến yêu thích của du khách Việt Nam nhờ chi phí hợp lý, thủ tục đơn giản và vô vàn trải nghiệm thú vị. Bài viết này sẽ cung cấp cho bạn kinh nghiệm du lịch Thái Lan tự túc chi tiết nhất!</p>
       
@@ -143,7 +155,8 @@ const articlesData: Record<string, Article> = {
   "3": {
     id: "3",
     title: "Sapa mùa nào đẹp nhất? Lịch trình 3 ngày 2 đêm hoàn hảo",
-    excerpt: "Tất tần tật về thời điểm lý tưởng và lịch trình chi tiết cho chuyến đi Sapa.",
+    excerpt:
+      "Tất tần tật về thời điểm lý tưởng và lịch trình chi tiết cho chuyến đi Sapa.",
     content: `
       <p>Sapa - vùng đất của ruộng bậc thang, núi non hùng vĩ và văn hóa dân tộc đặc sắc. Vậy Sapa đẹp nhất vào mùa nào? Hãy cùng tìm hiểu qua bài viết chi tiết dưới đây!</p>
       
@@ -217,19 +230,19 @@ const articlesData: Record<string, Article> = {
     category: "Trong nước",
     tags: ["Sapa", "Tây Bắc", "Ruộng bậc thang", "Lịch trình"],
   },
-}
+};
 
 interface Article {
-  id: string
-  title: string
-  excerpt: string
-  content: string
-  image: string
-  date: string
-  author: string
-  readTime: string
-  category: string
-  tags: string[]
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  image: string;
+  date: string;
+  author: string;
+  readTime: string;
+  category: string;
+  tags: string[];
 }
 
 // Related articles
@@ -252,179 +265,233 @@ const relatedArticles = [
     image: "/sapa-vietnam-rice-fields-misty.jpg",
     date: "20/03/2025",
   },
-]
+];
 
-export default async function ArticleDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params
-  const article = articlesData[id]
+export default async function ArticleDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const article = articlesData[id];
 
   if (!article) {
-    notFound()
+    notFound();
   }
 
-  const filteredRelated = relatedArticles.filter((a) => a.id !== id).slice(0, 2)
+  const filteredRelated = relatedArticles
+    .filter((a) => a.id !== id)
+    .slice(0, 2);
 
   return (
-      <>
-        <Header />
-    <div className="min-h-screen bg-background">
-      {/* Hero */}
-      <div className="relative h-[400px] md:h-[500px]">
-        <Image src={article.image || "/placeholder.svg"} alt={article.title} fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
-          <div className="container mx-auto">
-            <Badge className="bg-secondary text-secondary-foreground mb-4">{article.category}</Badge>
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-serif max-w-4xl text-balance">
-              {article.title}
-            </h1>
-            <div className="flex flex-wrap items-center gap-4 text-white/80 text-sm">
-              <div className="flex items-center gap-2">
-                <User className="w-4 h-4" />
-                <span>{article.author}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <span>{article.date}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                <span>{article.readTime}</span>
+    <>
+      <Header />
+      <div className="min-h-screen bg-background">
+        {/* Hero */}
+        <div className="relative h-[400px] md:h-[500px]">
+          <Image
+            src={article.image || "/placeholder.svg"}
+            alt={article.title}
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
+            <div className="container mx-auto">
+              <Badge className="bg-secondary text-secondary-foreground mb-4">
+                {article.category}
+              </Badge>
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4  max-w-4xl text-balance">
+                {article.title}
+              </h1>
+              <div className="flex flex-wrap items-center gap-4 text-white/80 text-sm">
+                <div className="flex items-center gap-2">
+                  <User className="w-4 h-4" />
+                  <span>{article.author}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
+                  <span>{article.date}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  <span>{article.readTime}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Breadcrumb */}
-      <div className="bg-muted/50 py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Link href="/" className="hover:text-primary transition-colors">
-              Trang chủ
-            </Link>
-            <ChevronRight className="w-4 h-4" />
-            <Link href="/cam-nang" className="hover:text-primary transition-colors">
-              Dịch vụ du lịch
-            </Link>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-foreground line-clamp-1">{article.title}</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Main Content */}
-          <div className="lg:col-span-2">
-            {/* Article Content */}
-            <article
-              className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-foreground prose-p:text-muted-foreground prose-li:text-muted-foreground prose-strong:text-foreground prose-a:text-primary"
-              dangerouslySetInnerHTML={{ __html: article.content }}
-            />
-
-            {/* Tags */}
-            <div className="mt-8 pt-8 border-t">
-              <div className="flex items-center gap-2 flex-wrap">
-                <Tag className="w-5 h-5 text-muted-foreground" />
-                {article.tags.map((tag, index) => (
-                  <Badge key={index} variant="secondary" className="cursor-pointer hover:bg-secondary/80">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-
-            {/* Share */}
-            <div className="mt-6 flex items-center gap-4">
-              <span className="text-muted-foreground">Chia sẻ:</span>
-              <Button size="icon" variant="outline" className="rounded-full bg-transparent">
-                <Facebook className="w-4 h-4" />
-              </Button>
-              <Button size="icon" variant="outline" className="rounded-full bg-transparent">
-                <Share2 className="w-4 h-4" />
-              </Button>
-            </div>
-
-            {/* Navigation */}
-            <div className="mt-12 flex items-center justify-between gap-4">
-              <Button variant="outline" asChild className="flex-1 bg-transparent">
-                <Link href="/cam-nang">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Quay lại
-                </Link>
-              </Button>
-              <Button asChild className="flex-1 bg-primary hover:bg-primary/90">
-                <Link href="/lien-he">
-                  Liên hệ tư vấn
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
-            {/* CTA Card */}
-            <div className="bg-primary/10 rounded-2xl p-6 mb-8">
-              <h3 className="font-semibold text-foreground text-lg mb-3 font-serif">Cần tư vấn tour?</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                Liên hệ ngay Suntravel để được tư vấn các tour du lịch phù hợp với lịch trình và ngân sách của bạn!
-              </p>
-              <div className="space-y-3 mb-4">
-                <a href="tel:0903287313" className="flex items-center gap-2 text-sm text-foreground hover:text-primary">
-                  <span className="font-medium">Ms. Quyên:</span> 0903.287.313
-                </a>
-                <a href="tel:0974248805" className="flex items-center gap-2 text-sm text-foreground hover:text-primary">
-                  <span className="font-medium">Ms. Hồng Anh:</span> 0974.248.805
-                </a>
-              </div>
-              <Button asChild className="w-full bg-primary hover:bg-primary/90">
-                <Link href="/lien-he">Liên hệ ngay</Link>
-              </Button>
-            </div>
-
-            {/* Related Articles */}
-            <div className="bg-card rounded-2xl p-6">
-              <h3 className="font-semibold text-foreground text-lg mb-4 font-serif">Bài viết liên quan</h3>
-              <div className="space-y-4">
-                {filteredRelated.map((related) => (
-                  <Link
-                    key={related.id}
-                    href={`/cam-nang/${related.id}`}
-                    className="flex gap-4 group hover:bg-muted/50 p-2 rounded-lg -mx-2 transition-colors"
-                  >
-                    <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                      <Image
-                        src={related.image || "/placeholder.svg"}
-                        alt={related.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-card-foreground text-sm line-clamp-2 group-hover:text-primary transition-colors">
-                        {related.title}
-                      </h4>
-                      <p className="text-muted-foreground text-xs mt-1">{related.date}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-              <Button
-                asChild
-                variant="outline"
-                className="w-full mt-4 border-primary text-primary hover:bg-primary/10 bg-transparent"
+        {/* Breadcrumb */}
+        <div className="bg-muted/50 py-4">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Link href="/" className="hover:text-primary transition-colors">
+                Trang chủ
+              </Link>
+              <ChevronRight className="w-4 h-4" />
+              <Link
+                href="/cam-nang"
+                className="hover:text-primary transition-colors"
               >
-                <Link href="/cam-nang">Xem tất cả bài viết</Link>
-              </Button>
+                Dịch vụ du lịch
+              </Link>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-foreground line-clamp-1">
+                {article.title}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Main Content */}
+            <div className="lg:col-span-2">
+              {/* Article Content */}
+              <article
+                className="prose prose-lg max-w-none prose-headings: prose-headings:text-foreground prose-p:text-muted-foreground prose-li:text-muted-foreground prose-strong:text-foreground prose-a:text-primary"
+                dangerouslySetInnerHTML={{ __html: article.content }}
+              />
+
+              {/* Tags */}
+              <div className="mt-8 pt-8 border-t">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <Tag className="w-5 h-5 text-muted-foreground" />
+                  {article.tags.map((tag, index) => (
+                    <Badge
+                      key={index}
+                      variant="secondary"
+                      className="cursor-pointer hover:bg-secondary/80"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              {/* Share */}
+              <div className="mt-6 flex items-center gap-4">
+                <span className="text-muted-foreground">Chia sẻ:</span>
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="rounded-full bg-transparent"
+                >
+                  <Facebook className="w-4 h-4" />
+                </Button>
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="rounded-full bg-transparent"
+                >
+                  <Share2 className="w-4 h-4" />
+                </Button>
+              </div>
+
+              {/* Navigation */}
+              <div className="mt-12 flex items-center justify-between gap-4">
+                <Button
+                  variant="outline"
+                  asChild
+                  className="flex-1 bg-transparent"
+                >
+                  <Link href="/cam-nang">
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    Quay lại
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  className="flex-1 bg-primary hover:bg-primary/90"
+                >
+                  <Link href="/lien-he">
+                    Liên hệ tư vấn
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
+              {/* CTA Card */}
+              <div className="bg-primary/10 rounded-2xl p-6 mb-8">
+                <h3 className="font-semibold text-foreground text-lg mb-3 ">
+                  Cần tư vấn tour?
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Liên hệ ngay Suntravel để được tư vấn các tour du lịch phù hợp
+                  với lịch trình và ngân sách của bạn!
+                </p>
+                <div className="space-y-3 mb-4">
+                  <a
+                    href="tel:0903287313"
+                    className="flex items-center gap-2 text-sm text-foreground hover:text-primary"
+                  >
+                    <span className="font-medium">Ms. Quyên:</span> 0903.287.313
+                  </a>
+                  <a
+                    href="tel:0974248805"
+                    className="flex items-center gap-2 text-sm text-foreground hover:text-primary"
+                  >
+                    <span className="font-medium">Ms. Hồng Anh:</span>{" "}
+                    0974.248.805
+                  </a>
+                </div>
+                <Button
+                  asChild
+                  className="w-full bg-primary hover:bg-primary/90"
+                >
+                  <Link href="/lien-he">Liên hệ ngay</Link>
+                </Button>
+              </div>
+
+              {/* Related Articles */}
+              <div className="bg-card rounded-2xl p-6">
+                <h3 className="font-semibold text-foreground text-lg mb-4 ">
+                  Bài viết liên quan
+                </h3>
+                <div className="space-y-4">
+                  {filteredRelated.map((related) => (
+                    <Link
+                      key={related.id}
+                      href={`/cam-nang/${related.id}`}
+                      className="flex gap-4 group hover:bg-muted/50 p-2 rounded-lg -mx-2 transition-colors"
+                    >
+                      <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                        <Image
+                          src={related.image || "/placeholder.svg"}
+                          alt={related.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-card-foreground text-sm line-clamp-2 group-hover:text-primary transition-colors">
+                          {related.title}
+                        </h4>
+                        <p className="text-muted-foreground text-xs mt-1">
+                          {related.date}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full mt-4 border-primary text-primary hover:bg-primary/10 bg-transparent"
+                >
+                  <Link href="/cam-nang">Xem tất cả bài viết</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-        <Footer />
-        <FloatingChat />
-      </>
-  )
+      <Footer />
+      <FloatingChat />
+    </>
+  );
 }

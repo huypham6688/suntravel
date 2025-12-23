@@ -83,7 +83,7 @@ const Partners = () => {
           <span className="text-secondary font-bold tracking-widest uppercase text-sm">
             Hợp tác
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary font-serif mt-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary  mt-2">
             Đối Tác & Khách Hàng
           </h2>
         </div>
@@ -92,13 +92,13 @@ const Partners = () => {
           {partners.map((partner, index) => (
             <div
               key={index}
-              className="group relative aspect-3/2 w-full bg-white rounded-xl border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+              className="group relative aspect-3/2 w-full bg-white rounded-xl border border-border/50 hover:border-primary/30 "
             >
               <Image
                 src={partner.logo}
                 alt={partner.name}
                 fill
-                className="object-contain p-4 grayscale group-hover:grayscale-0 transition-all duration-300 hue-rotate-0 hover:hue-rotate-0"
+                className="object-contain p-4 transition-all duration-300"
               />
             </div>
           ))}

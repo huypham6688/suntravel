@@ -41,7 +41,6 @@ const values = [
   },
 ];
 
-
 export default function VeChungToiPage() {
   return (
     <>
@@ -59,7 +58,7 @@ export default function VeChungToiPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30" />
           <div className="relative container mx-auto px-4 z-10 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white font-serif mb-6 drop-shadow-md">
+            <h1 className="text-4xl md:text-6xl font-bold text-white  mb-6 drop-shadow-md">
               Về Suntravel
             </h1>
             <div className="h-1 w-24 bg-secondary mx-auto mb-6 rounded-full" />
@@ -83,7 +82,7 @@ export default function VeChungToiPage() {
                   <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
                     <stat.icon className="w-8 h-8" />
                   </div>
-                  <p className="text-4xl md:text-5xl font-bold text-primary font-serif mb-2">
+                  <p className="text-4xl md:text-5xl font-bold text-primary  mb-2">
                     {index === 0 ? "20+" : stat.number}
                   </p>
                   <p className="text-muted-foreground font-medium uppercase tracking-wide text-xs">
@@ -104,7 +103,7 @@ export default function VeChungToiPage() {
                   <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-2 block">
                     Giới thiệu chung
                   </span>
-                  <h2 className="text-4xl font-bold text-primary font-serif mb-6 relative inline-block">
+                  <h2 className="text-4xl font-bold text-primary  mb-6 relative inline-block">
                     Định Vị & Phát Triển
                     <span className="absolute bottom-0 left-0 w-1/3 h-1 bg-secondary rounded-full"></span>
                   </h2>
@@ -122,7 +121,7 @@ export default function VeChungToiPage() {
                 </div>
 
                 <div className="bg-blue-50/50 p-8 rounded-2xl border-l-4 border-primary">
-                  <h3 className="text-2xl font-bold text-foreground font-serif mb-4 flex items-center gap-3">
+                  <h3 className="text-2xl font-bold text-foreground  mb-4 flex items-center gap-3">
                     <span className="text-primary text-3xl">❝</span>
                     Uy tín dẫn đường, tận tâm theo bước
                   </h3>
@@ -166,9 +165,7 @@ export default function VeChungToiPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-60"></div>
                 <div className="absolute bottom-8 left-8 right-8 text-white">
-                  <p className="text-2xl font-serif font-bold mb-2">
-                    Hành trình 20 năm
-                  </p>
+                  <p className="text-2xl  font-bold mb-2">Hành trình 20 năm</p>
                   <p className="opacity-90">
                     Kiến tạo những kỷ niệm vô giá cho hàng triệu khách hàng.
                   </p>
@@ -189,7 +186,7 @@ export default function VeChungToiPage() {
               <span className="text-secondary font-bold tracking-widest uppercase text-sm">
                 Giá trị cốt lõi
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mt-2">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary  mt-2">
                 Kim Chỉ Nam Hoạt Động
               </h2>
             </div>
@@ -200,7 +197,7 @@ export default function VeChungToiPage() {
                 <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   <Target className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-serif text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold mb-4  text-foreground group-hover:text-primary transition-colors">
                   TÔN CHỈ - PHƯƠNG CHÂM
                 </h3>
                 <div className="h-px w-12 bg-border group-hover:bg-secondary mb-4 transition-colors"></div>
@@ -219,7 +216,7 @@ export default function VeChungToiPage() {
                 <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
                   <Award className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-serif text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold mb-4  text-foreground group-hover:text-primary transition-colors">
                   SỨ MỆNH
                 </h3>
                 <div className="h-px w-12 bg-border group-hover:bg-secondary mb-4 transition-colors"></div>
@@ -235,7 +232,7 @@ export default function VeChungToiPage() {
                 <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   <Lightbulb className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-serif text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold mb-4  text-foreground group-hover:text-primary transition-colors">
                   TẦM NHÌN
                 </h3>
                 <div className="h-px w-12 bg-border group-hover:bg-secondary mb-4 transition-colors"></div>
@@ -255,7 +252,7 @@ export default function VeChungToiPage() {
               <div className="absolute top-0 right-0 w-[500px] h-full bg-secondary/10 skew-x-12 translate-x-20"></div>
 
               <div className="p-12 md:w-1/3 relative z-10 flex flex-col justify-center border-r border-white/10">
-                <h3 className="text-4xl font-bold font-serif mb-6">
+                <h3 className="text-4xl font-bold  mb-6">
                   TÔN CHỈ
                   <br />
                   HOẠT ĐỘNG
@@ -322,7 +319,7 @@ export default function VeChungToiPage() {
               <span className="text-secondary font-bold tracking-widest uppercase text-sm">
                 Quy mô phát triển
               </span>
-              <h2 className="text-4xl font-bold text-primary font-serif mt-2">
+              <h2 className="text-4xl font-bold text-primary  mt-2">
                 LĨNH VỰC HOẠT ĐỘNG
               </h2>
             </div>
@@ -342,7 +339,7 @@ export default function VeChungToiPage() {
                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-[4rem] group-hover:from-secondary/10 transition-colors"></div>
 
                   <div className="relative z-10 flex flex-col h-full">
-                    <span className="text-5xl font-bold text-slate-200 mb-4 group-hover:text-primary/20 transition-colors duration-300 font-serif">
+                    <span className="text-5xl font-bold text-slate-200 mb-4 group-hover:text-primary/20 transition-colors duration-300 ">
                       0{idx + 1}
                     </span>
                     <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors flex-grow">

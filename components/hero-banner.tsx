@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const banners = [
   {
@@ -29,20 +29,22 @@ const banners = [
     image: "/phuquoc.jpg",
     cta: "Khám phá",
   },
-]
+];
 
 export function HeroBanner() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % banners.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
+      setCurrentSlide((prev) => (prev + 1) % banners.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % banners.length)
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + banners.length) % banners.length)
+  const nextSlide = () =>
+    setCurrentSlide((prev) => (prev + 1) % banners.length);
+  const prevSlide = () =>
+    setCurrentSlide((prev) => (prev - 1 + banners.length) % banners.length);
 
   return (
     <section className="relative h-[500px] md:h-[600px] overflow-hidden">
@@ -53,14 +55,24 @@ export function HeroBanner() {
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${banner.image})` }} />
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${banner.image})` }}
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 to-foreground/30" />
           <div className="relative container mx-auto px-4 h-full flex items-center">
             <div className="max-w-2xl text-background">
               <p className=" text-lg font-semibold mb-2">{banner.subtitle}</p>
-              <h1 className="text-4xl md:text-6xl font-bold font-serif mb-4 text-balance">{banner.title}</h1>
-              <p className="text-xl mb-8 text-background/90">{banner.description}</p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <h1 className="text-4xl md:text-6xl font-bold  mb-4 text-balance">
+                {banner.title}
+              </h1>
+              <p className="text-xl mb-8 text-background/90">
+                {banner.description}
+              </p>
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
                 {banner.cta}
               </Button>
             </div>
@@ -95,5 +107,5 @@ export function HeroBanner() {
         ))}
       </div>
     </section>
-  )
+  );
 }

@@ -3,7 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { X, ChevronLeft, ChevronRight, Camera, MapPin, Calendar, ArrowRight } from "lucide-react";
+import {
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Camera,
+  MapPin,
+  Calendar,
+  ArrowRight,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -257,7 +265,7 @@ const journeyImages = [
       "/mice/mui-ne-4.jpg",
     ],
   },
-   {
+  {
     id: 17,
     src: "/mice/ha-long-1.jpg",
     alt: "Đoàn khách Tour Nội địa - Hạ Long",
@@ -317,7 +325,7 @@ export function JourneyDiary() {
           <h2 className="text-primary font-semibold mb-2 uppercase tracking-wider">
             Khoảnh khắc đáng nhớ
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold font-serif text-foreground">
+          <h3 className="text-3xl md:text-4xl font-bold  text-foreground">
             Nhật Ký Hành Trình
           </h3>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
