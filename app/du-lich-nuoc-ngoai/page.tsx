@@ -20,6 +20,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 const internationalTours = [
   {
@@ -139,8 +140,11 @@ const asiaSubRegions = [
 const ITEMS_PER_PAGE = 8;
 
 export default function DuLichNuocNgoaiPage() {
+  const searchParams = useSearchParams();
+  const searchQuery = searchParams.get("search") || "";
+
   const [selectedFilter, setSelectedFilter] = useState("Tất cả");
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(searchQuery);
   const [sortOption, setSortOption] = useState("popular");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -148,6 +152,11 @@ export default function DuLichNuocNgoaiPage() {
   const isAsiaSelected =
     selectedFilter === "Châu Á" ||
     asiaSubRegions.some((sub) => sub.value === selectedFilter);
+
+  // Update searchTerm when URL parameter changes
+  useEffect(() => {
+    setSearchTerm(searchQuery);
+  }, [searchQuery]);
 
   // Reset page when filters change
   useEffect(() => {

@@ -8,6 +8,7 @@ import { Filter, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 // Enhanced data with 'region' field for filtering
 const domesticTours = [
@@ -127,10 +128,18 @@ const regions = ["Tất cả", "Miền Bắc", "Miền Trung", "Miền Nam", "T�
 const ITEMS_PER_PAGE = 8;
 
 export default function DuLichTrongNuocPage() {
+  const searchParams = useSearchParams();
+  const searchQuery = searchParams.get("search") || "";
+
   const [selectedRegion, setSelectedRegion] = useState("Tất cả");
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(searchQuery);
   const [sortOption, setSortOption] = useState("popular");
   const [currentPage, setCurrentPage] = useState(1);
+
+  // Update searchTerm when URL parameter changes
+  useEffect(() => {
+    setSearchTerm(searchQuery);
+  }, [searchQuery]);
 
   // Reset page when filters change
   useEffect(() => {
