@@ -191,16 +191,10 @@ export function Header() {
                     className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 uppercase text-sm"
                   >
                     {item.name}
-                    {(item.submenu || item.megaMenu) && (
-                      <ChevronDown className="h-4 w-4" />
-                    )}
                   </Link>
                 ) : (
                   <button className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 bg-transparent border-none cursor-pointer uppercase text-sm">
                     {item.name}
-                    {(item.submenu || item.megaMenu) && (
-                      <ChevronDown className="h-4 w-4" />
-                    )}
                   </button>
                 )}
 

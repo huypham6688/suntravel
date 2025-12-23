@@ -17,81 +17,278 @@ import { cn } from "@/lib/utils";
 const journeyImages = [
   {
     id: 1,
-    src: "/da-nang-ba-na-hills-golden-bridge.jpg",
-    alt: "Đoàn khách tại Cầu Vàng - Bà Nà Hills",
-    tourName: "Tour Đà Nẵng - Hội An",
-    date: "12/2024",
+    src: "/mice/my-1.jpeg",
+    alt: "Đoàn khách Tour Mỹ",
+    tourName: "Tour Châu Mỹ",
+    date: "09/2025",
+    category: "Tour Châu Mỹ",
     gallery: [
-      "/da-nang-ba-na-hills-golden-bridge.jpg",
-      "/phu-quoc-beach-sunset-vietnam.jpg",
-      "/sapa-rice-terraces-vietnam-mountains.jpg",
+      "/mice/my-1.jpeg",
+      "/mice/my-2.jpeg",
+      "/mice/my-3.jpeg",
+      "/mice/my-4.jpeg",
+      "/mice/my-5.jpeg",
+      "/mice/my-6.jpeg",
+      "/mice/my-7.jpeg",
+      "/mice/my-8.jpeg",
     ],
   },
   {
     id: 2,
-    src: "/phu-quoc-beach-sunset-vietnam.jpg",
-    alt: "Teambuilding bãi biển Phú Quốc",
-    tourName: "Teambuilding Phú Quốc",
-    date: "11/2024",
+    src: "/mice/hoa-anh-dao-1.jpg",
+    alt: "Mỹ hoa anh đào",
+    tourName: "Tour Châu Mỹ",
+    date: "04/2025",
+    category: "Tour Châu Mỹ",
     gallery: [
-      "/phu-quoc-beach-sunset-vietnam.jpg",
-      "/ha-long-bay-vietnam-cruise.jpg",
-      "/bangkok-thailand-temple.jpg",
+      "/mice/hoa-anh-dao-1.jpg",
+      "/mice/hoa-anh-dao-2.jpg",
+      "/mice/hoa-anh-dao-3.jpg",
+      "/mice/hoa-anh-dao-4.jpg",
+      "/mice/hoa-anh-dao-5.jpg",
     ],
   },
   {
     id: 3,
-    src: "/sapa-rice-terraces-vietnam-mountains.jpg",
-    alt: "Chinh phục đỉnh Fansipan",
-    tourName: "Tour Sapa - Fansipan",
-    date: "10/2024",
+    src: "/mice/chau-my-6.jpg",
+    alt: "Đoàn khách Tour Mỹ",
+    tourName: "Tour Châu Mỹ",
+    date: "09/2025",
+    category: "Tour Châu Mỹ",
     gallery: [
-      "/sapa-rice-terraces-vietnam-mountains.jpg",
-      "/da-nang-ba-na-hills-golden-bridge.jpg",
-      "/singapore-marina-bay-sands-night.jpg",
+      "/mice/chau-my-1.jpg",
+      "/mice/chau-my-2.jpg",
+      "/mice/chau-my-3.jpg",
+      "/mice/chau-my-4.jpg",
+      "/mice/chau-my-5.jpg",
+      "/mice/chau-my-6.jpg",
     ],
   },
   {
     id: 4,
-    src: "/ha-long-bay-vietnam-cruise.jpg",
-    alt: "Gala Dinner trên du thuyền Hạ Long",
-    tourName: "MICE Hạ Long",
-    date: "09/2024",
+    src: "/mice/my-sun-1.jpg",
+    alt: "Đoàn khách Tour Mỹ",
+    tourName: "Tour Châu Mỹ",
+    date: "02/2025",
+    category: "Tour Châu Mỹ",
     gallery: [
-      "/ha-long-bay-vietnam-cruise.jpg",
-      "/phu-quoc-beach-sunset-vietnam.jpg",
-      "/da-nang-ba-na-hills-golden-bridge.jpg",
+      "/mice/my-sun-1.jpg",
+      "/mice/my-sun-2.jpg",
+      "/mice/my-sun-3.jpg",
+      "/mice/my-sun-4.jpg",
+      "/mice/my-sun-5.jpg",
+      "/mice/my-sun-6.jpg",
     ],
   },
   {
     id: 5,
-    src: "/bangkok-thailand-temple.jpg",
-    alt: "Đoàn tham quan Chùa Vàng Thái Lan",
-    tourName: "Tour Thái Lan",
-    date: "08/2024",
+    src: "/mice/chau-uc-1.jpeg",
+    alt: "Đoàn khách Tour Úc",
+    tourName: "Tour Châu Úc",
+    date: "02/2025",
+    category: "Tour Châu Úc",
     gallery: [
-      "/bangkok-thailand-temple.jpg",
-      "/singapore-marina-bay-sands-night.jpg",
-      "/sapa-rice-terraces-vietnam-mountains.jpg",
+      "/mice/chau-uc-1.jpeg",
+      "/mice/chau-uc-2.jpeg",
+      "/mice/chau-uc-3.jpeg",
+      "/mice/chau-uc-4.jpg",
+      "/mice/chau-uc-5.jpeg",
     ],
   },
   {
     id: 6,
-    src: "/singapore-marina-bay-sands-night.jpg",
-    alt: "Khám phá Singapore về đêm",
-    tourName: "Tour Singapore - Malaysia",
-    date: "07/2024",
+    src: "/mice/chau-phi-1.jpg",
+    alt: "Đoàn khách Tour Châu Phi",
+    tourName: "Tour Châu Phi",
+    date: "02/2025",
+    category: "Tour Châu Phi",
     gallery: [
-      "/singapore-marina-bay-sands-night.jpg",
-      "/bangkok-thailand-temple.jpg",
-      "/ha-long-bay-vietnam-cruise.jpg",
+      "/mice/chau-phi-1.jpg",
+      "/mice/chau-phi-2.jpg",
+      "/mice/chau-phi-3.jpg",
+      "/mice/chau-phi-4.jpg",
+      "/mice/chau-phi-5.png",
     ],
   },
+  {
+    id: 7,
+    src: "/mice/nam-phi-1.jpg",
+    alt: "Đoàn khách Tour Nam Phi",
+    tourName: "Tour Châu Phi",
+    date: "02/2025",
+    category: "Tour Châu Phi",
+    gallery: [
+      "/mice/nam-phi-1.jpg",
+      "/mice/nam-phi-2.jpg",
+      "/mice/nam-phi-3.jpg",
+      "/mice/nam-phi-4.jpg",
+      "/mice/nam-phi-5.jpg",
+    ],
+  },
+  {
+    id: 8,
+    src: "/mice/nga-1.jpg",
+    alt: "Đoàn khách Tour Châu Âu - Nga",
+    tourName: "Tour Châu Âu",
+    date: "06/2025",
+    category: "Tour Châu Âu",
+    gallery: [
+      "/mice/nga-1.jpg",
+      "/mice/nga-2.jpg",
+      "/mice/nga-3.jpg",
+      "/mice/nga-4.jpg",
+      "/mice/nga-5.jpg",
+      "/mice/nga-6.jpg",
+    ],
+  },
+  {
+    id: 9,
+    src: "/mice/anh-1.jpg",
+    alt: "Đoàn khách Tour Châu Âu - Anh",
+    tourName: "Tour Châu Âu",
+    date: "09/2023",
+    category: "Tour Châu Âu",
+    gallery: ["/mice/anh-1.jpg", "/mice/anh-2.jpg", "/mice/anh-3.jpg"],
+  },
+  {
+    id: 10,
+    src: "/mice/cuu-trai-cau-1.jpg",
+    alt: "Đoàn khách Tour Châu Á - Trung Quốc - Cửu Trại Câu",
+    tourName: "Tour Châu Á",
+    date: "09/2024",
+    category: "Tour Châu Á",
+    gallery: [
+      "/mice/cuu-trai-cau-1.jpg",
+      "/mice/cuu-trai-cau-2.jpg",
+      "/mice/cuu-trai-cau-3.jpg",
+      "/mice/cuu-trai-cau-4.jpg",
+      "/mice/cuu-trai-cau-5.jpg",
+      "/mice/cuu-trai-cau-6.jpg",
+      "/mice/cuu-trai-cau-7.jpg",
+    ],
+  },
+  {
+    id: 11,
+    src: "/mice/le-chau-1.jpg",
+    alt: "Đoàn khách Tour Châu Á - Trung Quốc - Lệ Châu",
+    tourName: "Tour Châu Á",
+    date: "09/2024",
+    category: "Tour Châu Á",
+    gallery: [
+      "/mice/le-chau-1.jpg",
+      "/mice/le-chau-2.jpg",
+      "/mice/le-chau-3.jpg",
+      "/mice/le-chau-4.jpg",
+      "/mice/le-chau-5.jpg",
+    ],
+  },
+  {
+    id: 12,
+    src: "/mice/thai-lan-1.jpg",
+    alt: "Đoàn khách Tour Châu Á - Thái Lan",
+    tourName: "Tour Châu Á",
+    date: "09/2024",
+    category: "Tour Châu Á",
+    gallery: [
+      "/mice/thai-lan-1.jpg",
+      "/mice/thai-lan-2.jpg",
+      "/mice/thai-lan-3.jpg",
+      "/mice/thai-lan-4.jpg",
+    ],
+  },
+  {
+    id: 13,
+    src: "/mice/singapore-1.jpg",
+    alt: "Đoàn khách Tour Châu Á - Singapore",
+    tourName: "Tour Châu Á",
+    date: "09/2024",
+    category: "Tour Châu Á",
+    gallery: [
+      "/mice/singapore-1.jpg",
+      "/mice/singapore-2.jpg",
+      "/mice/singapore-3.jpg",
+      "/mice/singapore-4.jpg",
+    ],
+  },
+  {
+    id: 14,
+    src: "/mice/nhat-ban-1.jpeg",
+    alt: "Đoàn khách Tour Châu Á - Nhật Bản",
+    tourName: "Tour Châu Á",
+    date: "05/2024",
+    category: "Tour Châu Á",
+    gallery: [
+      "/mice/nhat-ban-1.jpeg",
+      "/mice/nhat-ban-2.jpg",
+      "/mice/nhat-ban-3.jpeg",
+      "/mice/nhat-ban-4.jpg",
+      "/mice/nhat-ban-5.jpg",
+    ],
+  },
+  {
+    id: 15,
+    src: "/mice/tra-co-1.jpg",
+    alt: "Đoàn khách Tour Nội địa - Trà Cổ",
+    tourName: "Nội địa",
+    date: "05/2024",
+    category: "Nội địa",
+    gallery: [
+      "/mice/tra-co-1.jpg",
+      "/mice/tra-co-2.jpg",
+      "/mice/tra-co-3.jpg",
+      "/mice/tra-co-4.jpg",
+      "/mice/tra-co-5.jpg",
+    ],
+  },
+  {
+    id: 16,
+    src: "/mice/mui-ne-1.jpg",
+    alt: "Đoàn khách Tour Nội địa - Mũi Né",
+    tourName: "Nội địa",
+    date: "05/2024",
+    category: "Nội địa",
+    gallery: [
+      "/mice/mui-ne-1.jpg",
+      "/mice/mui-ne-2.jpg",
+      "/mice/mui-ne-3.jpg",
+      "/mice/mui-ne-4.jpg",
+    ],
+  },
+   {
+    id: 17,
+    src: "/mice/ha-long-1.jpg",
+    alt: "Đoàn khách Tour Nội địa - Hạ Long",
+    tourName: "Nội địa",
+    date: "05/2024",
+    category: "Nội địa",
+    gallery: [
+      "/mice/ha-long-1.jpg",
+      "/mice/ha-long-2.jpg",
+      "/mice/ha-long-3.jpg",
+      "/mice/ha-long-4.jpg",
+    ],
+  },
+];
+
+const categories = [
+  "Tất cả",
+  "Nội địa",
+  "Tour Châu Á",
+  "Tour Châu Âu",
+  "Tour Châu Mỹ",
+  "Tour Châu Úc",
+  "Tour Châu Phi",
 ];
 
 export function JourneyDiary() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedTourId, setSelectedTourId] = useState<number | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState("Tất cả");
+
+  const filteredImages =
+    selectedCategory === "Tất cả"
+      ? journeyImages
+      : journeyImages.filter((img) => img.category === selectedCategory);
 
   const selectedTour = journeyImages.find((img) => img.id === selectedTourId);
 
@@ -125,8 +322,27 @@ export function JourneyDiary() {
           </p>
         </div>
 
+        {/* Filter Buttons */}
+        <div className="mb-8 flex flex-wrap justify-center gap-3">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant={selectedCategory === category ? "default" : "outline"}
+              onClick={() => setSelectedCategory(category)}
+              className={cn(
+                "rounded-full px-6 py-2 transition-all duration-200",
+                selectedCategory === category
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "hover:bg-primary/10 hover:text-primary"
+              )}
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {journeyImages.map((image) => (
+          {filteredImages.map((image) => (
             <Dialog
               key={image.id}
               open={selectedTourId === image.id}
@@ -222,7 +438,7 @@ export function JourneyDiary() {
 
                 {/* Bottom Thumbnails & Info */}
                 <div className="bg-background border-t border-border p-4 shrink-0 z-50">
-                  <div className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-6">
+                  <div className="container mx-auto max-w-7xl flex flex-col  items-center gap-6">
                     <div className="text-foreground flex-1 text-center md:text-left">
                       <h4 className="font-bold text-lg md:text-xl">
                         {image.alt}
