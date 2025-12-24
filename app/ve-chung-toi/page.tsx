@@ -224,7 +224,7 @@ export default function VeChungToiPage() {
             <div className="flex flex-col md:flex-row gap-12 text-white bg-primary rounded-[3rem] overflow-hidden shadow-2xl relative">
               <div className="absolute top-0 right-0 w-[500px] h-full bg-secondary/10 skew-x-12 translate-x-20"></div>
 
-              <div className="p-12 md:w-1/3 relative z-10 flex flex-col justify-center border-r border-white/10">
+              <div className="p-12 md:w-[36%] relative z-10 flex flex-col justify-center border-r border-white/10">
                 <h3 className="text-4xl font-bold  mb-6">
                   TÔN CHỈ
                   <br />
@@ -307,15 +307,15 @@ export default function VeChungToiPage() {
               ].map((field, idx) => (
                 <div
                   key={idx}
-                  className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-white/20 overflow-hidden"
+                  className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-white/20 overflow-hidden hover:scale-105"
                 >
                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-[4rem] group-hover:from-secondary/10 transition-colors"></div>
 
                   <div className="relative z-10 flex flex-col h-full">
-                    <span className="text-5xl font-bold text-slate-200 mb-4 group-hover:text-primary/20 transition-colors duration-300 ">
+                    <span className="text-5xl font-bold text-red-500 mb-4 transition-colors duration-300">
                       0{idx + 1}
                     </span>
-                    <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors flex-grow">
+                    <h4 className="text-lg font-bold text-black group-hover:text-blue-600 transition-colors flex-grow">
                       {field}
                     </h4>
                   </div>

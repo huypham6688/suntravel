@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, useMemo } from "react";
-import { ChevronsLeft, ChevronsRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { journeyImages } from "./journey-diary"; // Import shared data
@@ -72,8 +72,7 @@ export function DreamDestination() {
               aria-label="Previous page"
             >
               <div className="relative w-24 h-24">
-                <ChevronsLeft className="w-full h-full text-primary/20 absolute top-0 left-2" />
-                <ChevronsLeft className="w-full h-full text-red-500 relative z-10 transition-transform group-hover:-translate-x-1" />
+                <ChevronLeft className="w-full h-full text-red-500 relative z-10 transition-transform group-hover:-translate-x-1" />
               </div>
             </button>
             <button
@@ -83,8 +82,7 @@ export function DreamDestination() {
               aria-label="Next page"
             >
               <div className="relative w-24 h-24">
-                <ChevronsRight className="w-full h-full text-primary/20 absolute top-0 right-2" />
-                <ChevronsRight className="w-full h-full text-red-500 relative z-10 transition-transform group-hover:translate-x-1" />
+                <ChevronRight className="w-full h-full text-red-500 relative z-10 transition-transform group-hover:translate-x-1" />
               </div>
             </button>
           </div>
