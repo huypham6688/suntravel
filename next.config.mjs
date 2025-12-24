@@ -1,11 +1,11 @@
+import { withPayload } from '@payloadcms/next/withPayload'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  // Your Next.js config here
   images: {
-    unoptimized: true,
+    domains: ['localhost', 'lh3.googleusercontent.com'],
   },
 }
 
-export default nextConfig
+export default withPayload(nextConfig)
