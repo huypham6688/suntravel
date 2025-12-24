@@ -221,15 +221,15 @@ export default function DuLichNuocNgoaiPage() {
           <div
             className="absolute inset-0 bg-cover bg-bottom"
             style={{
-              backgroundImage: `url(/thailan3.png)`,
+              backgroundImage: `url(/newyork.jpg)`,
             }}
           />
-          <div className="absolute inset-0 bg-foreground/60" />
+          <div className="absolute inset-0 bg-black/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
             <h1 className="text-4xl md:text-5xl capitalize font-bold text-background  mb-4">
               Du Lịch Nước Ngoài
             </h1>
-            <p className="text-xl text-background/90 max-w-2xl">
+            <p className="text-xl text-background/90 max-w-3xl">
               Khám phá thế giới rộng lớn với những hành trình đáng nhớ cùng
               Suntravel
             </p>

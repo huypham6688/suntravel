@@ -40,7 +40,7 @@ export default function MiceOverviewPage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url(/banner-mice.jpg)`,
+              backgroundImage: `url(/hoian.jpg)`,
             }}
           />
           <div className="absolute inset-0 bg-foreground/60" />
@@ -49,7 +49,7 @@ export default function MiceOverviewPage() {
               Du Lịch MICE 
             </h1>
             <p className="text-xl text-background/90 max-w-2xl">
-              Giải pháp tổ chức sự kiện, hội nghị và du lịch khen thưởng trọn gói, đẳng cấp quốc tế cho doanh nghiệp.
+              Giải pháp tổ chức tour công tác, hội nghị, hội thảo và team building trọn gói dành cho doanh nghiệp.
             </p>
           </div>
         </section>
@@ -60,11 +60,6 @@ export default function MiceOverviewPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
               Giải Pháp MICE Cho Doanh Nghiệp
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Suntravel thiết kế và vận hành trọn gói hội nghị, hội thảo,
-              incentive, team building và sự kiện ra mắt sản phẩm với tiêu chuẩn
-              quốc tế.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

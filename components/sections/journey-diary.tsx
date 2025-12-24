@@ -323,7 +323,7 @@ export function JourneyDiary() {
   const [selectedCategory, setSelectedCategory] = useState("Tất cả");
   const [currentPage, setCurrentPage] = useState(0);
   const searchParams = useSearchParams();
-  const ITEMS_PER_PAGE = 6;
+  const ITEMS_PER_PAGE = 8;
 
   useEffect(() => {
     const category = searchParams.get("category");
@@ -468,7 +468,7 @@ export function JourneyDiary() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
             >
               {currentImages.map((image) => (
                 <Dialog

@@ -207,7 +207,7 @@ export default function DuLichTrongNuocPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-background capitalize mb-4">
               Du Lịch Trong Nước
             </h1>
-            <p className="text-xl text-background/90 max-w-2xl">
+            <p className="text-xl text-background/90 max-w-3xl">
               Khám phá vẻ đẹp Việt Nam từ Bắc vào Nam với những tour du lịch
               chất lượng cao
             </p>
