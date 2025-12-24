@@ -3,14 +3,15 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const banners = [
   {
     id: 1,
-    title: "Khám phá Đà Nẵng",
+    title: "Du lịch Paris - Pháp",
     subtitle: "Combo 3N2Đ chỉ từ 2.990.000đ",
     description: "Bay thẳng + Khách sạn 4 sao + Buffet sáng",
-    image: "/danang.jpg",
+    image: "/paris.jpg",
     cta: "Đặt ngay",
   },
   {
@@ -19,15 +20,15 @@ const banners = [
     subtitle: "Tour Bangkok - Pattaya 5N4Đ",
     description: "Khởi hành hàng tuần - Giá chỉ từ 6.990.000đ",
     image: "/thailan3.png",
-    cta: "Xem chi tiết",
+    cta: "Đặt ngay",
   },
   {
     id: 3,
-    title: "Phú Quốc Paradise",
+    title: "Du lịch London - Anh",
     subtitle: "Thiên đường nghỉ dưỡng",
     description: "Resort 5 sao - Giảm đến 40%",
-    image: "/phuquoc.jpg",
-    cta: "Khám phá",
+    image: "/london.jpg",
+    cta: "Đặt ngay",
   },
 ];
 
@@ -81,12 +82,11 @@ export function HeroBanner({ items = banners }: HeroBannerProps) {
               <p className="text-xl mb-8 text-background/90">
                 {banner.description}
               </p>
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              <Link
+                href="/lien-he"
               >
-                {banner.cta}
-              </Button>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer">{banner.cta}</Button>
+              </Link>
             </div>
           </div>
         </div>

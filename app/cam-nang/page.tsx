@@ -153,8 +153,6 @@ const videos = [
 
 const categories = [
   "Tất cả",
-  "Trong nước",
-  "Nước ngoài",
   "Review",
   "Hướng dẫn",
   "Ẩm thực",

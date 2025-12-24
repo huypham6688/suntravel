@@ -22,12 +22,12 @@ export default function LienHePage() {
         {/* Hero */}
         <section className="relative h-[300px] md:h-[350px]">
           <div
-            className="absolute inset-0 bg-cover bg-bottom"
+            className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url(/contact.avif)`,
+              backgroundImage: `url(/contact.jpg)`,
             }}
           />
-          <div className="absolute inset-0 bg-foreground/60" />
+          <div className="absolute inset-0 bg-black/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-background capitalize mb-4">
               Liên Hệ
