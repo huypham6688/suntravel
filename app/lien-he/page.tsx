@@ -29,7 +29,7 @@ export default function LienHePage() {
           />
           <div className="absolute inset-0 bg-foreground/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-background  mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-background capitalize mb-4">
               Liên Hệ
             </h1>
             <p className="text-xl text-background/90 max-w-2xl">
@@ -212,36 +212,54 @@ export default function LienHePage() {
                     Kết nối với chúng tôi
                   </h3>
                   <div className="flex gap-4">
-                    <a
-                      href="#"
-                      className="w-12 h-12 bg-card rounded-xl flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                      <Facebook className="w-6 h-6" />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-12 h-12 bg-card rounded-xl flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                      <Youtube className="w-6 h-6" />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-12 h-12 bg-card rounded-xl flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                      <Instagram className="w-6 h-6" />
-                    </a>
+                     <a
+                href="https://www.facebook.com/suntravel.com.vn"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                title="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://zalo.me/0974248805"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                title="Zalo"
+              >
+                {/* Fallback to text 'Z' if no icon, or use an image if available. Since it's a footer, text or simple styling is safer if no icon. But let's check if we can use an image or text. Using a bold 'Z' for now as placeholder or Image if available. Previous file had /zalo.svg */}
+                <span className="font-bold text-xs">Zalo</span>
+              </a>
+              <a
+                href="tel:02439393539"
+                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                title="Hotline"
+              >
+                <Phone className="w-5 h-5" />
+              </a>
+              <a
+                href="mailto:info@suntravel.vn"
+                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                title="Email"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
                   </div>
                 </div>
 
                 {/* Map placeholder */}
                 <div className="bg-muted rounded-2xl h-[250px] flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-2" />
-                    <p className="text-muted-foreground">Google Maps</p>
-                    <p className="text-sm text-muted-foreground">
-                      Số 1B, Ngô Quyền, Hoàn Kiếm, Hà Nội
-                    </p>
-                  </div>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4582.38536363215!2d105.8539260759698!3d21.02879198777617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abea699d228d%3A0xc4fe33fbe045fa6c!2zMUIgUC4gTmfDtCBRdXnhu4FuLCBMw70gVGjDoWkgVOG7lSwgSG_DoG4gS2nhur9tLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e1!3m2!1svi!2s!4v1766561359455!5m2!1svi!2s"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full rounded-2xl"
+                  ></iframe>
                 </div>
               </div>
             </div>

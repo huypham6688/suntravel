@@ -88,19 +88,49 @@ const Partners = () => {
           </h2>
         </div>
 
-        <div className="relative w-full overflow-hidden mask-fade-sides">
+        <div className="relative w-full overflow-hidden mask-fade-sides space-y-8">
+          {/* First Row */}
           <div className="flex w-max animate-marquee space-x-12">
-            {[...partners, ...partners].map((partner, index) => (
+            {[
+              ...partners.slice(0, Math.ceil(partners.length / 2)),
+              ...partners.slice(0, Math.ceil(partners.length / 2)),
+            ].map((partner, index) => (
               <div
-                key={index}
-                className="group relative h-32 w-56 shrink-0 "
+                key={`row1-${index}`}
+                className="group relative h-28 w-48 shrink-0"
               >
-                <div className="absolute inset-0 bg-white rounded-xl border border-border/50 hover:border-primary/30 flex items-center justify-center p-4">
+                <div className="absolute inset-0 bg-white rounded-xl border border-border/50 hover:border-primary/30 flex items-center justify-center p-4 shadow-sm hover:shadow-md transition-all duration-300">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
-                    width={160}
-                    height={100}
+                    width={140}
+                    height={90}
+                    className="object-contain max-w-full max-h-full transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Second Row */}
+          <div
+            className="flex w-max animate-marquee space-x-12"
+            style={{ animationDirection: "reverse" }}
+          >
+            {[
+              ...partners.slice(Math.ceil(partners.length / 2)),
+              ...partners.slice(Math.ceil(partners.length / 2)),
+            ].map((partner, index) => (
+              <div
+                key={`row2-${index}`}
+                className="group relative h-28 w-48 shrink-0"
+              >
+                <div className="absolute inset-0 bg-white rounded-xl border border-border/50 hover:border-primary/30 flex items-center justify-center p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={140}
+                    height={90}
                     className="object-contain max-w-full max-h-full transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>

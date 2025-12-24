@@ -7,7 +7,7 @@ export function FloatingChat() {
         <div className="fixed right-4 bottom-4 z-50 flex flex-col gap-3">
             {/* Phone Call */}
             <a
-                href="tel:0903287313"
+                href="tel:02439393539"
                 className="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
                 title="Gọi ngay"
             >
@@ -16,7 +16,7 @@ export function FloatingChat() {
 
             {/* Zalo */}
             <a
-                href="https://zalo.me/0903287313"
+                href="https://zalo.me/0974248805"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"

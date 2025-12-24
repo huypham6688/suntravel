@@ -72,7 +72,7 @@ export function WhyChooseUs() {
               <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
                 <feature.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3  text-foreground group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold mb-3  text-secondary group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">

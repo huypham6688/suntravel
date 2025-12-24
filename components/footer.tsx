@@ -43,7 +43,7 @@ export function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://zalo.me/0903287313"
+                href="https://zalo.me/0974248805"
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
@@ -53,7 +53,7 @@ export function Footer() {
                 <span className="font-bold text-xs">Zalo</span>
               </a>
               <a
-                href="tel:0903287313"
+                href="tel:02439393539"
                 className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
                 title="Hotline"
               >

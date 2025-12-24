@@ -77,13 +77,13 @@ export default function VeChungToiPage() {
         {/* Stats - Redesigned: White BG, Blue Text, Red Icons */}
         <section className="py-12 bg-white border-b border-primary/5 shadow-sm relative z-20 -mt-8 mx-4 md:mx-auto max-w-6xl rounded-2xl">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-dashed divide-primary/20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-x divide-dashed divide-primary/20">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center px-4 group">
                   <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
                     <stat.icon className="w-8 h-8" />
                   </div>
-                  <p className="text-4xl md:text-5xl font-bold text-primary  mb-2">
+                  <p className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:text-red-600 group-hover:scale-125">
                     {index === 0 ? "20+" : stat.number}
                   </p>
                   <p className="text-muted-foreground font-medium uppercase tracking-wide text-xs">
@@ -106,7 +106,6 @@ export default function VeChungToiPage() {
                   </span>
                   <h2 className="text-4xl font-bold text-primary  mb-6 relative inline-block">
                     Định Vị & Phát Triển
-                    <span className="absolute bottom-0 left-0 w-1/3 h-1 bg-secondary rounded-full"></span>
                   </h2>
                   <p className="text-foreground/80 text-lg leading-relaxed text-justify">
                     Không chỉ đem lại những{" "}
@@ -287,18 +286,18 @@ export default function VeChungToiPage() {
         </section>
 
         {/* Fields of Activity - Grid with Hover Effects */}
-        <section className="py-24 bg-slate-50">
+        <section className="py-24 bg-primary">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <span className="text-secondary font-bold tracking-widest uppercase text-sm">
+              <span className="text-white/80 font-bold tracking-widest uppercase text-sm">
                 Quy mô phát triển
               </span>
-              <h2 className="text-4xl font-bold text-primary  mt-2">
+              <h2 className="text-4xl font-bold text-white mt-2">
                 LĨNH VỰC HOẠT ĐỘNG
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto ">
               {[
                 "Dịch vụ lữ hành quốc tế và nội địa chuyên nghiệp",
                 "Dịch vụ vé máy bay",
@@ -308,7 +307,7 @@ export default function VeChungToiPage() {
               ].map((field, idx) => (
                 <div
                   key={idx}
-                  className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden"
+                  className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-white/20 overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-[4rem] group-hover:from-secondary/10 transition-colors"></div>
 
@@ -324,8 +323,8 @@ export default function VeChungToiPage() {
               ))}
 
               {/* Decorative Box */}
-              <div className="flex items-center justify-center p-8 rounded-2xl border-2 border-dashed border-primary/20 bg-primary/5">
-                <p className="text-primary font-semibold text-center">
+              <div className="flex items-center justify-center p-8 rounded-2xl border-2 border-dashed border-white/30 bg-white/10">
+                <p className="text-white font-semibold text-center">
                   Và nhiều dịch vụ mở rộng khác...
                 </p>
               </div>

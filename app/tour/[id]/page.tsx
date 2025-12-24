@@ -768,7 +768,7 @@ export default async function TourDetailPage({
                       </div>
                     </a>
                     <a
-                      href="https://zalo.me/0903287313"
+                      href="https://zalo.me/0974248805"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"

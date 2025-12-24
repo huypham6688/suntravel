@@ -198,7 +198,7 @@ export default function CamNangPage() {
           />
           <div className="absolute inset-0 bg-foreground/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-background  mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-background capitalize mb-4">
               Thông tin Du Lịch
             </h1>
             <p className="text-xl text-background/90 max-w-2xl">

@@ -88,7 +88,7 @@ const navItems = [
     href: "/mice",
     submenu: [
       { name: "Công Tác Doanh Nghiệp", href: "/mice?category=Công tác doanh nghiệp#journey-diary" },
-      { name: "Hội nghị, Hội Thảo", href: "/mice?category=Hội nghị, hội thảo#journey-diary" },
+      { name: "Hội Nghị, Hội Thảo", href: "/mice?category=Hội nghị, hội thảo#journey-diary" },
       { name: "Team Building", href: "/mice?category=Team Building#journey-diary" },
     ],
   },
