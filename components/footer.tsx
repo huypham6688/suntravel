@@ -1,6 +1,13 @@
-import Link from "next/link"
-import { MapPin, Phone, Mail, Facebook, Youtube, Instagram } from "lucide-react"
-import Image from "next/image"
+import Link from "next/link";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Facebook,
+  Youtube,
+  Instagram,
+} from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -10,20 +17,15 @@ export function Footer() {
           {/* Company info */}
           <div>
             <div className="mb-6">
-              <Link
-                  href="/"
-                  className="flex flex-col items-start gap-1"
-              >
+              <Link href="/" className="flex flex-col items-start gap-1">
                 <Image
-                    src="/logo2.png"
-                    alt="Suntravel Logo"
-                    width={64}
-                    height={64}
-                    priority
-                    className="object-contain scale-[2] translate-x-6 origin-center"
+                  src="/logo2.png"
+                  alt="Suntravel Logo"
+                  width={64}
+                  height={64}
+                  priority
+                  className="object-contain scale-[2] translate-x-6 origin-center"
                 />
-
-
               </Link>
             </div>
 
@@ -32,28 +34,37 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/suntravel.com.vn"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                title="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://zalo.me/0903287313"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                title="Zalo"
               >
-                <Youtube className="w-5 h-5" />
+                {/* Fallback to text 'Z' if no icon, or use an image if available. Since it's a footer, text or simple styling is safer if no icon. But let's check if we can use an image or text. Using a bold 'Z' for now as placeholder or Image if available. Previous file had /zalo.svg */}
+                <span className="font-bold text-xs">Zalo</span>
               </a>
               <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                href="tel:0903287313"
+                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                title="Hotline"
               >
-                <Instagram className="w-5 h-5" />
+                <Phone className="w-5 h-5" />
+              </a>
+              <a
+                href="mailto:info@suntravel.vn"
+                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                title="Email"
+              >
+                <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -63,22 +74,34 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-6">Liên kết nhanh</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/du-lich-trong-nuoc" className="hover:text-primary transition-colors">
+                <Link
+                  href="/du-lich-trong-nuoc"
+                  className="hover:text-primary transition-colors"
+                >
                   Du lịch trong nước
                 </Link>
               </li>
               <li>
-                <Link href="/du-lich-nuoc-ngoai" className="hover:text-primary transition-colors">
+                <Link
+                  href="/du-lich-nuoc-ngoai"
+                  className="hover:text-primary transition-colors"
+                >
                   Du lịch nước ngoài
                 </Link>
               </li>
               <li>
-                <Link href="/mice" className="hover:text-primary transition-colors">
+                <Link
+                  href="/mice"
+                  className="hover:text-primary transition-colors"
+                >
                   Dịch vụ MICE
                 </Link>
               </li>
               <li>
-                <Link href="/cam-nang" className="hover:text-primary transition-colors">
+                <Link
+                  href="/cam-nang"
+                  className="hover:text-primary transition-colors"
+                >
                   Dịch vụ du lịch
                 </Link>
               </li>
@@ -111,12 +134,16 @@ export function Footer() {
               <div className="bg-secondary-foreground/10 p-4 rounded-lg">
                 <p className="font-semibold">Ms. Quyên</p>
                 <p className="text-lg font-bold">0903.287.313</p>
-                <p className="text-sm text-secondary-foreground/70">Máy lẻ 17</p>
+                <p className="text-sm text-secondary-foreground/70">
+                  Máy lẻ 17
+                </p>
               </div>
               <div className="bg-secondary-foreground/10 p-4 rounded-lg">
                 <p className="font-semibold">Ms. Hồng Anh</p>
                 <p className=" text-lg font-bold">0974.248.805</p>
-                <p className="text-sm text-secondary-foreground/70">Máy lẻ 16</p>
+                <p className="text-sm text-secondary-foreground/70">
+                  Máy lẻ 16
+                </p>
               </div>
             </div>
           </div>
@@ -127,5 +154,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

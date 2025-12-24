@@ -22,9 +22,9 @@ export default function LienHePage() {
         {/* Hero */}
         <section className="relative h-[300px] md:h-[350px]">
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-bottom"
             style={{
-              backgroundImage: `url(/vietnamese-man-business-portrait.jpg)`,
+              backgroundImage: `url(/contact.avif)`,
             }}
           />
           <div className="absolute inset-0 bg-foreground/60" />
@@ -95,7 +95,7 @@ export default function LienHePage() {
         {/* Contact Form & Map */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12">
               {/* Contact Form */}
               <div>
                 <h2 className="text-3xl font-bold text-foreground  mb-6">

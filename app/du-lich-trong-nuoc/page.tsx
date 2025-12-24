@@ -199,7 +199,7 @@ export default function DuLichTrongNuocPage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url(/phu-quoc-beach-sunset-vietnam.jpg)`,
+              backgroundImage: `url(/phuquoc.jpg)`,
             }}
           />
           <div className="absolute inset-0 bg-foreground/60" />

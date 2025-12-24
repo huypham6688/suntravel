@@ -48,16 +48,16 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-20  bg-primary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <p className="text-secondary font-bold tracking-widest uppercase text-sm mb-2">
+          <p className="text-white font-bold tracking-widest uppercase text-sm mb-2">
             Suntravel
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold  mb-4 text-primary">
+          <h2 className="text-3xl md:text-4xl font-bold  mb-4 text-white">
             Vì Sao Bạn Nên Chọn Chúng Tôi?
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white max-w-2xl mx-auto leading-relaxed">
             Với hơn 20 năm kinh nghiệm trong ngành du lịch, chúng tôi tự hào
             mang đến những hành trình tuyệt vời nhất cho bạn.
           </p>

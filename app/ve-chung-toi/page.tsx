@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Partners from "@/components/partners";
+import { DreamDestination } from "@/components/sections/dream-destination";
 
 const stats = [
   { number: "15+", label: "Năm kinh nghiệm", icon: Calendar },
@@ -112,7 +113,7 @@ export default function VeChungToiPage() {
                     <strong className="text-secondary">
                       ĐIỂM ĐẾN TRONG MƠ
                     </strong>
-                    , trên hành trình phát triển, SUNTRAVEL định vị và luôn
+                    , trên hành trình phát triển, Suntravel định vị và luôn
                     hướng tới chính mình trở thành một{" "}
                     <span className="italic">"điểm đến"</span> phù hợp và tốt
                     nhất với khách hàng từ dịch vụ, con người đến chất lượng,
@@ -126,39 +127,16 @@ export default function VeChungToiPage() {
                     Uy tín dẫn đường, tận tâm theo bước
                   </h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Trải qua hơn 20 năm xây dựng và phát triển, SUNTRAVEL là một
+                    Trải qua hơn 20 năm xây dựng và phát triển, Suntravel là một
                     trong những doanh nghiệp du lịch và tổ chức sự kiện có uy
                     tín hàng đầu hiện nay.
                   </p>
-
-                  <div className="space-y-3">
-                    <p className="font-semibold text-primary mb-2">
-                      Chúng tôi cung cấp:
-                    </p>
-                    <ul className="grid grid-cols-1 gap-2">
-                      {[
-                        "Lữ hành quốc tế & nội địa",
-                        "Đại lý vé máy bay cấp 1",
-                        "Tổ chức sự kiện (MICE)",
-                        "Xúc tiến thương mại & Visa",
-                        "Team building & Đào tạo",
-                      ].map((item, i) => (
-                        <li
-                          key={i}
-                          className="flex items-center gap-3 text-sm text-foreground/80"
-                        >
-                          <Target className="w-4 h-4 text-secondary" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
               </div>
 
-              <div className="relative h-[600px] rounded-[2rem] overflow-hidden shadow-2xl group">
+              <div className="relative h-150 rounded-[2rem] overflow-hidden shadow-2xl group">
                 <Image
-                  src="/phu-quoc-island-vietnam-beach-resort.jpg"
+                  src="/about.png"
                   alt="Suntravel Story"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -175,68 +153,64 @@ export default function VeChungToiPage() {
           </div>
         </section>
 
-        {/* Mission, Vision, Motto - Cards with Blue/Red accents */}
+        {/* Mission, Vision, Motto - Redesigned Section */}
         <section className="py-24 bg-slate-50 relative overflow-hidden">
           {/* Decor Elements */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
           <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-16">
-              <span className="text-secondary font-bold tracking-widest uppercase text-sm">
-                Giá trị cốt lõi
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary  mt-2">
-                Kim Chỉ Nam Hoạt Động
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Motto */}
-              <div className="group bg-white p-8 rounded-2xl shadow-lg border-t-4 border-transparent hover:border-secondary transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                  <Target className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4  text-foreground group-hover:text-primary transition-colors">
-                  TÔN CHỈ - PHƯƠNG CHÂM
-                </h3>
-                <div className="h-px w-12 bg-border group-hover:bg-secondary mb-4 transition-colors"></div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Lấy khách hàng làm trung tâm.{" "}
-                  <strong className="text-primary">
-                    "Uy tín dẫn đường, tận tâm theo bước"
-                  </strong>
-                  . Phục vụ khách hàng một cách tận tâm, nhiệt thành và đầy
-                  trách nhiệm.
-                </p>
-              </div>
-
-              {/* Mission */}
-              <div className="group bg-white p-8 rounded-2xl shadow-lg border-t-4 border-primary hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+              {/* Mission - Sứ Mệnh */}
+              <div className="group bg-white p-8 rounded-2xl shadow-lg border-t-4 border-primary hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Award className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4  text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold mb-4 text-primary group-hover:text-primary/80 transition-colors">
                   SỨ MỆNH
                 </h3>
-                <div className="h-px w-12 bg-border group-hover:bg-secondary mb-4 transition-colors"></div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <div className="h-1 w-12 bg-primary/20 group-hover:bg-primary mb-6 transition-colors duration-300 rounded-full"></div>
+                <p className="text-muted-foreground leading-relaxed flex-grow">
                   Cung cấp giải pháp, sản phẩm và dịch vụ chất lượng cao. Thỏa
                   mãn nhu cầu đa dạng của khách hàng trong nước và quốc tế với
                   sự chuyên nghiệp cao nhất.
                 </p>
               </div>
 
-              {/* Vision */}
-              <div className="group bg-white p-8 rounded-2xl shadow-lg border-t-4 border-transparent hover:border-secondary transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+              {/* Motto - Tôn Chỉ (Center & Highlighted) */}
+              <div className="group bg-white p-8 rounded-2xl shadow-xl border-t-4 border-red-500 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative md:-mt-4 md:mb-4 z-10 flex flex-col">
+                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <Target className="w-32 h-32 text-red-500" />
+                </div>
+
+                <div className="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <Target className="w-10 h-10" />
+                </div>
+                <h3 className="text-3xl font-bold mb-4 text-red-600 transition-colors">
+                  TÔN CHỈ
+                </h3>
+                <div className="h-1 w-20 bg-red-100 group-hover:bg-red-500 mb-6 transition-colors duration-300 rounded-full"></div>
+                <div className="space-y-4 flex-grow">
+                  <p className="text-lg font-medium text-foreground">
+                    "Uy tín dẫn đường, tận tâm theo bước"
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    Lấy khách hàng làm trung tâm. Phục vụ khách hàng một cách
+                    tận tâm, nhiệt thành và đầy trách nhiệm.
+                  </p>
+                </div>
+              </div>
+
+              {/* Vision - Tầm Nhìn */}
+              <div className="group bg-white p-8 rounded-2xl shadow-lg border-t-4 border-primary hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Lightbulb className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4  text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold mb-4 text-primary group-hover:text-primary/80 transition-colors">
                   TẦM NHÌN
                 </h3>
-                <div className="h-px w-12 bg-border group-hover:bg-secondary mb-4 transition-colors"></div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <div className="h-1 w-12 bg-primary/20 group-hover:bg-primary mb-6 transition-colors duration-300 rounded-full"></div>
+                <p className="text-muted-foreground leading-relaxed flex-grow">
                   Phấn đấu trở thành doanh nghiệp hàng đầu trong các lĩnh vực tổ
                   chức sự kiện, lữ hành, vé máy bay và các dịch vụ đi kèm.
                 </p>
@@ -359,6 +333,8 @@ export default function VeChungToiPage() {
           </div>
         </section>
 
+        {/* Dream Destination */}
+        <DreamDestination />
         {/* Partners */}
         <Partners />
       </main>

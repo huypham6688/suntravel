@@ -219,9 +219,9 @@ export default function DuLichNuocNgoaiPage() {
         {/* Hero Section */}
         <section className="relative h-75 md:h-100">
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-bottom"
             style={{
-              backgroundImage: `url(/phu-quoc-beach-sunset-vietnam.jpg)`,
+              backgroundImage: `url(/thailan3.png)`,
             }}
           />
           <div className="absolute inset-0 bg-foreground/60" />

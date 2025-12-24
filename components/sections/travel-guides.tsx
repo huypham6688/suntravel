@@ -40,7 +40,7 @@ export function TravelGuides() {
         <div className="flex items-center justify-between mb-12">
           <div>
             <p className="text-primary font-semibold mb-2">
-              Kinh nghiệm du lịch
+              Thông tin Du Lịch
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground ">
               Thông tin Du Lịch

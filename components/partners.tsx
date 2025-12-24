@@ -88,20 +88,25 @@ const Partners = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="group relative aspect-3/2 w-full bg-white rounded-xl border border-border/50 hover:border-primary/30 "
-            >
-              <Image
-                src={partner.logo}
-                alt={partner.name}
-                fill
-                className="object-contain p-4 transition-all duration-300"
-              />
-            </div>
-          ))}
+        <div className="relative w-full overflow-hidden mask-fade-sides">
+          <div className="flex w-max animate-marquee space-x-12">
+            {[...partners, ...partners].map((partner, index) => (
+              <div
+                key={index}
+                className="group relative h-32 w-56 shrink-0 "
+              >
+                <div className="absolute inset-0 bg-white rounded-xl border border-border/50 hover:border-primary/30 flex items-center justify-center p-4">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={160}
+                    height={100}
+                    className="object-contain max-w-full max-h-full transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

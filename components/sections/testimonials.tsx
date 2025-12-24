@@ -60,6 +60,14 @@ export function Testimonials() {
     );
   };
 
+  const getVisibleTestimonials = () => {
+    const items = [];
+    for (let i = 0; i < 3; i++) {
+      items.push(testimonials[(currentIndex + i) % testimonials.length]);
+    }
+    return items;
+  };
+
   return (
     <section className="py-20 bg-muted">
       <div className="container mx-auto px-4">
@@ -70,54 +78,68 @@ export function Testimonials() {
           </h2>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="bg-card rounded-3xl p-8 md:p-12 shadow-xl">
-            <Quote className="w-12 h-12 text-primary/30 mb-6" />
+        <div className="relative max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {getVisibleTestimonials().map((testimonial, index) => (
+              <div
+                key={testimonial.id}
+                className={`bg-card rounded-3xl p-8 shadow-xl flex flex-col ${
+                  index > 0 ? "hidden md:flex" : "flex"
+                }`}
+              >
+                <div className="mb-6">
+                  <Quote className="w-10 h-10 text-primary/30" />
+                </div>
 
-            <div className="flex items-center gap-1 mb-6">
-              {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-              ))}
-            </div>
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-primary text-primary"
+                    />
+                  ))}
+                </div>
 
-            <p className="text-lg md:text-xl text-card-foreground mb-8 leading-relaxed">
-              {`"${testimonials[currentIndex].content}"`}
-            </p>
-
-            <div className="flex items-center gap-4">
-              <div className="relative w-16 h-16 rounded-full overflow-hidden">
-                <Image
-                  src={testimonials[currentIndex].avatar || "/placeholder.svg"}
-                  alt={testimonials[currentIndex].name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <h4 className="font-semibold text-card-foreground ">
-                  {testimonials[currentIndex].name}
-                </h4>
-                <p className="text-muted-foreground text-sm">
-                  {testimonials[currentIndex].location}
+                <p className="text-base text-card-foreground mb-6 leading-relaxed grow">
+                  {`"${testimonial.content}"`}
                 </p>
-                <p className="text-primary text-sm font-medium">
-                  {testimonials[currentIndex].tour}
-                </p>
+
+                <div className="flex items-center gap-4 mt-auto">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0">
+                    <Image
+                      src={testimonial.avatar || "/placeholder.svg"}
+                      alt={testimonial.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-card-foreground text-sm">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-muted-foreground text-xs">
+                      {testimonial.location}
+                    </p>
+                    <p className="text-primary text-xs font-medium mt-1">
+                      {testimonial.tour}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
 
           {/* Navigation */}
-          <div className="flex justify-center gap-4 mt-8">
+          <div className="flex justify-center gap-4 mt-10">
             <button
               onClick={prevTestimonial}
-              className="w-12 h-12 bg-card rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="w-10 h-10 bg-card rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-primary-foreground transition-colors"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextTestimonial}
-              className="w-12 h-12 bg-card rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="w-10 h-10 bg-card rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-primary-foreground transition-colors"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

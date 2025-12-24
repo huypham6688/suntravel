@@ -31,24 +31,36 @@ const banners = [
   },
 ];
 
-export function HeroBanner() {
+export interface BannerItem {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  cta: string;
+}
+
+interface HeroBannerProps {
+  items?: BannerItem[];
+}
+
+export function HeroBanner({ items = banners }: HeroBannerProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % banners.length);
+      setCurrentSlide((prev) => (prev + 1) % items.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [items.length]);
 
-  const nextSlide = () =>
-    setCurrentSlide((prev) => (prev + 1) % banners.length);
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % items.length);
   const prevSlide = () =>
-    setCurrentSlide((prev) => (prev - 1 + banners.length) % banners.length);
+    setCurrentSlide((prev) => (prev - 1 + items.length) % items.length);
 
   return (
     <section className="relative h-[500px] md:h-[600px] overflow-hidden">
-      {banners.map((banner, index) => (
+      {items.map((banner, index) => (
         <div
           key={banner.id}
           className={`absolute inset-0 transition-opacity duration-700 ${
@@ -96,7 +108,7 @@ export function HeroBanner() {
 
       {/* Dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-        {banners.map((_, index) => (
+        {items.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}

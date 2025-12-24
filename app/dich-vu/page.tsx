@@ -118,13 +118,13 @@ export default function DichVuPage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url(/phu-quoc-beach-sunset-vietnam.jpg)`,
+              backgroundImage: `url(/danang.jpg)`,
             }}
           />
           <div className="absolute inset-0 bg-foreground/60" />
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-background  mb-4">
-              DỊCH VỤ DU LỊCH
+              Dịch vụ du lịch
             </h1>
             <p className="text-xl text-background/90 max-w-2xl">
               Đa dạng các dịch vụ đi kèm cho cả khách lẻ và khách đoàn
@@ -144,7 +144,7 @@ export default function DichVuPage() {
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                     <service.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
-                  <h3 className="text-xl font-semibold text-card-foreground mb-3 ">
+                  <h3 className="text-xl font-semibold text-red-600 mb-3 ">
                     {service.title}
                   </h3>
                   <p className="text-muted-foreground mb-6 text-sm">

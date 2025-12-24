@@ -1,11 +1,20 @@
-"use client"
+"use client";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingChat } from "@/components/floating-chat";
-import { Calendar, User, ArrowRight, Play, Clock, Eye } from "lucide-react";
+import {
+  Calendar,
+  User,
+  ArrowRight,
+  Play,
+  Clock,
+  Eye,
+  Search,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -154,6 +163,26 @@ const categories = [
 
 export default function CamNangPage() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("Tất cả");
+
+  const filteredArticles = articles.filter((article) => {
+    const matchesSearch =
+      article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "Tất cả" || article.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  const filteredVideos = videos.filter((video) => {
+    const matchesSearch = video.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "Tất cả" || video.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <>
@@ -164,7 +193,7 @@ export default function CamNangPage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url(/da-nang-golden-bridge-check-in.jpg)`,
+              backgroundImage: `url(/banner-du-lich.webp)`,
             }}
           />
           <div className="absolute inset-0 bg-foreground/60" />
@@ -182,24 +211,38 @@ export default function CamNangPage() {
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <Tabs defaultValue="articles" className="w-full">
-              <div className="flex flex-col md:flex-row items-center justify-between mb-8 gap-4">
-                <TabsList className="bg-muted p-1">
-                  <TabsTrigger value="articles" className="px-6">
-                    Bài viết
-                  </TabsTrigger>
-                  <TabsTrigger value="videos" className="px-6">
-                    Video
-                  </TabsTrigger>
-                </TabsList>
+              <div className="flex flex-col gap-6 mb-8">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                  <TabsList className="bg-muted p-1">
+                    <TabsTrigger value="articles" className="px-6">
+                      Bài viết
+                    </TabsTrigger>
+                    <TabsTrigger value="videos" className="px-6">
+                      Video
+                    </TabsTrigger>
+                  </TabsList>
 
-                {/* Categories Filter (Can be adapted for both tabs, kept static for now) */}
-                <div className="flex flex-wrap gap-2 justify-center md:justify-end">
-                  {categories.slice(0, 4).map((category) => (
+                  <div className="relative w-full md:w-72">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                    <Input
+                      placeholder="Tìm kiếm..."
+                      className="pl-9 bg-white"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                  {categories.map((category) => (
                     <Button
                       key={category}
-                      variant={category === "Tất cả" ? "default" : "ghost"}
+                      variant={
+                        selectedCategory === category ? "default" : "outline"
+                      }
                       size="sm"
-                      className=""
+                      onClick={() => setSelectedCategory(category)}
+                      className="rounded-full"
                     >
                       {category}
                     </Button>
@@ -209,93 +252,103 @@ export default function CamNangPage() {
 
               <TabsContent value="articles" className="space-y-12">
                 {/* Featured Article */}
-                <article className="bg-card rounded-3xl overflow-hidden shadow-xl border border-border">
-                  <div className="grid grid-cols-1 lg:grid-cols-2">
-                    <div className="relative h-[300px] lg:h-auto">
-                      <Image
-                        src={
-                          articles[0].image ||
-                          "/da-nang-golden-bridge-check-in.jpg"
-                        }
-                        alt={articles[0].title}
-                        fill
-                        className="object-cover"
-                      />
-                      <span className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
-                        Nổi bật
-                      </span>
-                    </div>
-                    <div className="p-8 lg:p-12 flex flex-col justify-center">
-                      <span className="text-primary font-medium mb-2">
-                        {articles[0].category}
-                      </span>
-                      <h2 className="text-2xl lg:text-3xl font-bold text-card-foreground mb-4">
-                        {articles[0].title}
-                      </h2>
-                      <p className="text-muted-foreground mb-6">
-                        {articles[0].excerpt}
-                      </p>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" />
-                          {articles[0].date}
+                {filteredArticles.length > 0 ? (
+                  <>
+                    <article className="bg-card rounded-3xl overflow-hidden shadow-xl border border-border">
+                      <div className="grid grid-cols-1 lg:grid-cols-2">
+                        <div className="relative h-[300px] lg:h-auto">
+                          <Image
+                            src={
+                              filteredArticles[0].image ||
+                              "/da-nang-golden-bridge-check-in.jpg"
+                            }
+                            alt={filteredArticles[0].title}
+                            fill
+                            className="object-cover"
+                          />
+                          <span className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
+                            Nổi bật
+                          </span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <User className="w-4 h-4" />
-                          {articles[0].author}
-                        </div>
-                      </div>
-                      <Button
-                        asChild
-                        className="w-fit bg-primary hover:bg-primary/90 text-primary-foreground"
-                      >
-                        <Link href={`/cam-nang/${articles[0].id}`}>
-                          Đọc thêm
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </article>
-
-                {/* Other Articles Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {articles.slice(1).map((article) => (
-                    <article
-                      key={article.id}
-                      className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-border"
-                    >
-                      <div className="relative h-52 overflow-hidden">
-                        <Image
-                          src={article.image || "/placeholder.svg"}
-                          alt={article.title}
-                          fill
-                          className="object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        <span className="absolute top-4 left-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                          {article.category}
-                        </span>
-                      </div>
-                      <div className="p-6">
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                          <div className="flex items-center gap-1">
-                            <Calendar className="w-4 h-4" />
-                            {article.date}
+                        <div className="p-8 lg:p-12 flex flex-col justify-center">
+                          <span className="text-primary font-medium mb-2">
+                            {filteredArticles[0].category}
+                          </span>
+                          <h2 className="text-2xl lg:text-3xl font-bold text-card-foreground mb-4">
+                            {filteredArticles[0].title}
+                          </h2>
+                          <p className="text-muted-foreground mb-6">
+                            {filteredArticles[0].excerpt}
+                          </p>
+                          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
+                            <div className="flex items-center gap-2">
+                              <Calendar className="w-4 h-4" />
+                              {filteredArticles[0].date}
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <User className="w-4 h-4" />
+                              {filteredArticles[0].author}
+                            </div>
                           </div>
-                          <span>{article.readTime}</span>
+                          <Button
+                            asChild
+                            className="w-fit bg-primary hover:bg-primary/90 text-primary-foreground"
+                          >
+                            <Link href={`/cam-nang/${filteredArticles[0].id}`}>
+                              Đọc thêm
+                              <ArrowRight className="w-4 h-4 ml-2" />
+                            </Link>
+                          </Button>
                         </div>
-                        <h3 className="font-semibold text-lg text-card-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                          <Link href={`/cam-nang/${article.id}`}>
-                            {article.title}
-                          </Link>
-                        </h3>
-                        <p className="text-muted-foreground line-clamp-2 text-sm">
-                          {article.excerpt}
-                        </p>
                       </div>
                     </article>
-                  ))}
-                </div>
+
+                    {/* Other Articles Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {filteredArticles.slice(1).map((article) => (
+                        <article
+                          key={article.id}
+                          className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-border"
+                        >
+                          <div className="relative h-52 overflow-hidden">
+                            <Image
+                              src={article.image || "/placeholder.svg"}
+                              alt={article.title}
+                              fill
+                              className="object-cover group-hover:scale-110 transition-transform duration-500"
+                            />
+                            <span className="absolute top-4 left-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                              {article.category}
+                            </span>
+                          </div>
+                          <div className="p-6">
+                            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                              <div className="flex items-center gap-1">
+                                <Calendar className="w-4 h-4" />
+                                {article.date}
+                              </div>
+                              <span>{article.readTime}</span>
+                            </div>
+                            <h3 className="font-semibold text-lg text-card-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                              <Link href={`/cam-nang/${article.id}`}>
+                                {article.title}
+                              </Link>
+                            </h3>
+                            <p className="text-muted-foreground line-clamp-2 text-sm">
+                              {article.excerpt}
+                            </p>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <div className="text-center py-20">
+                    <p className="text-muted-foreground text-lg">
+                      Không tìm thấy bài viết nào phù hợp.
+                    </p>
+                  </div>
+                )}
 
                 <div className="flex justify-center pt-8">
                   <Button
@@ -313,7 +366,7 @@ export default function CamNangPage() {
                 className="space-y-8 animate-in fade-in-50 duration-500"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {videos.map((video) => (
+                  {filteredVideos.map((video) => (
                     <div
                       key={video.id}
                       className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-border cursor-pointer"
