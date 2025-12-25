@@ -1,9 +1,65 @@
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+"use client";
+import { MapPin, Phone, Mail, Clock, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { toast } from "sonner";
+
+const formSchema = z.object({
+  fullName: z.string().min(2, "Họ tên phải có ít nhất 2 ký tự"),
+  email: z.string().email("Email không hợp lệ"),
+  phone: z.string().min(10, "Số điện thoại không hợp lệ"),
+  message: z.string().min(5, "Nội dung phải có ít nhất 5 ký tự"),
+  tourOfInterest: z.string().optional(),
+  confirm_email: z.string().optional(),
+});
+
+type FormData = z.infer<typeof formSchema>;
 
 export function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+  });
+
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Có lỗi xảy ra");
+      }
+
+      toast.success("Gửi yêu cầu thành công!");
+      reset();
+    } catch (error: any) {
+      toast.error(
+        error.message || "Gửi yêu cầu thất bại, vui lòng thử lại sau."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -86,16 +142,92 @@ export function ContactSection() {
             <h3 className="text-2xl font-bold text-card-foreground mb-6 ">
               Gửi yêu cầu tư vấn
             </h3>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input placeholder="Họ và tên *" className="h-12" />
-                <Input placeholder="Số điện thoại *" className="h-12" />
+                <div className="space-y-2">
+                  <Input
+                    placeholder="Họ và tên *"
+                    className="h-12"
+                    {...register("fullName")}
+                  />
+                  {errors.fullName && (
+                    <p className="text-sm text-destructive">
+                      {errors.fullName.message}
+                    </p>
+                  )}
+                </div>
+                <div className="space-y-2">
+                  <Input
+                    placeholder="Số điện thoại *"
+                    className="h-12"
+                    {...register("phone")}
+                  />
+                  {errors.phone && (
+                    <p className="text-sm text-destructive">
+                      {errors.phone.message}
+                    </p>
+                  )}
+                </div>
               </div>
-              <Input placeholder="Email" type="email" className="h-12" />
-              <Input placeholder="Tour bạn quan tâm" className="h-12" />
-              <Textarea placeholder="Nội dung yêu cầu" rows={4} />
-              <Button className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground">
-                Gửi yêu cầu
+              <div className="space-y-2">
+                <Input
+                  placeholder="Email"
+                  type="email"
+                  className="h-12"
+                  {...register("email")}
+                />
+                {errors.email && (
+                  <p className="text-sm text-destructive">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
+
+              {/* Honeypot field (hidden) */}
+              <input
+                type="text"
+                className="hidden"
+                autoComplete="off"
+                {...register("confirm_email")}
+              />
+              <div className="space-y-2">
+                <Input
+                  placeholder="Tour bạn quan tâm"
+                  className="h-12"
+                  {...register("tourOfInterest")}
+                />
+                {errors.tourOfInterest && (
+                  <p className="text-sm text-destructive">
+                    {errors.tourOfInterest.message}
+                  </p>
+                )}
+              </div>
+              <div className="space-y-2">
+                <Textarea
+                  placeholder="Nội dung yêu cầu"
+                  rows={4}
+                  {...register("message")}
+                />
+                {errors.message && (
+                  <p className="text-sm text-destructive">
+                    {errors.message.message}
+                  </p>
+                )}
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Đang gửi...
+                  </>
+                ) : (
+                  "Gửi yêu cầu"
+                )}
               </Button>
             </form>
           </div>

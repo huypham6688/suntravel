@@ -158,20 +158,20 @@ export function Header() {
         {/* Main navigation */}
         <nav className="xl:max-w-[1536px] mx-auto px-6 lg:px-4 xl:px-4 2xl:px-4 py-4 relative">
           <div className="flex items-center justify-between">
-            <Link href="/" className="relative w-[160px] h-[64px] flex items-center">
+            <Link href="/" className="relative w-[140px] h-[64px] flex items-center">
               <Image
-                  src="/logo.png"
+                  src="/logo1.png"
                   alt="Suntravel Logo"
                   fill
                   priority
                   sizes="555px"
-                  className="object-contain scale-[4] xl:scale-[5]"
+                  className="object-contain "
               />
             </Link>
 
 
             {/* Desktop navigation */}
-            <div className="hidden lg:flex items-center gap-6 2xl:gap-8">
+            <div className="hidden lg:flex items-center gap-6 lg:gap-4 2xl:gap-8">
               {navItems.map((item) => (
                   <div
                       key={item.name}

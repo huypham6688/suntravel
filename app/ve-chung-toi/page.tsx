@@ -160,60 +160,46 @@ export default function VeChungToiPage() {
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-              {/* Mission - Sứ Mệnh */}
-              <div className="group bg-white p-8 rounded-2xl shadow-lg border-t-4 border-primary hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                  <Award className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-primary group-hover:text-primary/80 transition-colors">
-                  SỨ MỆNH
-                </h3>
-                <div className="h-1 w-12 bg-primary/20 group-hover:bg-primary mb-6 transition-colors duration-300 rounded-full"></div>
-                <p className="text-muted-foreground leading-relaxed flex-grow">
-                  Cung cấp giải pháp, sản phẩm và dịch vụ chất lượng cao. Thỏa
-                  mãn nhu cầu đa dạng của khách hàng trong nước và quốc tế với
-                  sự chuyên nghiệp cao nhất.
-                </p>
-              </div>
+              {[
+                {
+                  icon: Award,
+                  title: "SỨ MỆNH",
+                  description:
+                    "Cung cấp giải pháp, sản phẩm và dịch vụ chất lượng cao. Thỏa mãn nhu cầu đa dạng của khách hàng trong nước và quốc tế với sự chuyên nghiệp cao nhất.",
+                },
+                {
+                  icon: Target,
+                  title: "TÔN CHỈ",
+                  description:
+                    '"Uy tín dẫn đường, tận tâm theo bước"\nLấy khách hàng làm trung tâm. Phục vụ khách hàng một cách tận tâm, nhiệt thành và đầy trách nhiệm.',
+                },
+                {
+                  icon: Lightbulb,
+                  title: "TẦM NHÌN",
+                  description:
+                    "Phấn đấu trở thành doanh nghiệp hàng đầu trong các lĩnh vực tổ chức sự kiện, lữ hành, vé máy bay và các dịch vụ đi kèm.",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="group bg-white p-8 rounded-2xl shadow-lg border-t-4 border-primary hover:border-red-500 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden flex flex-col"
+                >
+                  <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none">
+                    <item.icon className="w-32 h-32 text-red-500" />
+                  </div>
 
-              {/* Motto - Tôn Chỉ (Center & Highlighted) */}
-              <div className="group bg-white p-8 rounded-2xl shadow-xl border-t-4 border-red-500 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative md:-mt-4 md:mb-4 z-10 flex flex-col">
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Target className="w-32 h-32 text-red-500" />
-                </div>
-
-                <div className="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300 shadow-sm">
-                  <Target className="w-10 h-10" />
-                </div>
-                <h3 className="text-3xl font-bold mb-4 text-red-600 transition-colors">
-                  TÔN CHỈ
-                </h3>
-                <div className="h-1 w-20 bg-red-100 group-hover:bg-red-500 mb-6 transition-colors duration-300 rounded-full"></div>
-                <div className="space-y-4 flex-grow">
-                  <p className="text-lg font-medium text-foreground">
-                    "Uy tín dẫn đường, tận tâm theo bước"
+                  <div className="w-16 h-16 bg-blue-50 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300 relative z-10">
+                    <item.icon className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-primary group-hover:text-red-600 transition-colors relative z-10">
+                    {item.title}
+                  </h3>
+                  <div className="h-1 w-12 bg-primary/20 group-hover:bg-red-500 group-hover:w-20 mb-6 transition-all duration-300 rounded-full relative z-10"></div>
+                  <p className="text-muted-foreground leading-relaxed flex-grow whitespace-pre-line relative z-10">
+                    {item.description}
                   </p>
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    Lấy khách hàng làm trung tâm. Phục vụ khách hàng một cách
-                    tận tâm, nhiệt thành và đầy trách nhiệm.
-                  </p>
                 </div>
-              </div>
-
-              {/* Vision - Tầm Nhìn */}
-              <div className="group bg-white p-8 rounded-2xl shadow-lg border-t-4 border-primary hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                  <Lightbulb className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-primary group-hover:text-primary/80 transition-colors">
-                  TẦM NHÌN
-                </h3>
-                <div className="h-1 w-12 bg-primary/20 group-hover:bg-primary mb-6 transition-colors duration-300 rounded-full"></div>
-                <p className="text-muted-foreground leading-relaxed flex-grow">
-                  Phấn đấu trở thành doanh nghiệp hàng đầu trong các lĩnh vực tổ
-                  chức sự kiện, lữ hành, vé máy bay và các dịch vụ đi kèm.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
