@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import ToursManagement from "./ToursManagement";
+import Image from "next/image";
 
 type Tab = "dashboard" | "tours";
 
@@ -45,10 +46,10 @@ export default function AdminDashboard() {
         <header className="bg-white shadow-sm border-b">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <h1 className="text-xl font-bold text-gray-900">Suntravel CMS</h1>
+              <Image src="/logo.png" alt="Logo" width={200} height={100} />
               <div className="flex items-center gap-4">
                 {user && (
-                    <span className="text-sm text-gray-600">{user.email}</span>
+                    <span className="hidden sm:block text-sm text-gray-600">{user.email}</span>
                 )}
                 <button
                     onClick={handleLogout}
