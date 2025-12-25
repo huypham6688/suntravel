@@ -104,7 +104,7 @@ export async function POST(req: Request) {
     const { data, error } = await resend.emails.send({
       from,
       to: [to],
-      subject: `[Website Contact] ${fullName} - ${phone}`,
+      subject: `Liên hệ mới từ khách hàng: ${fullName} - ${phone}`,
       replyTo: email,
       html: emailHtml,
     });

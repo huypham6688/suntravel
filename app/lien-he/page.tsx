@@ -1,20 +1,69 @@
+"use client";
+
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingChat } from "@/components/floating-chat";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  Facebook,
-  Youtube,
-  Instagram,
-} from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { toast } from "sonner";
+
+const formSchema = z.object({
+  fullName: z.string().min(2, "Họ tên phải có ít nhất 2 ký tự"),
+  email: z.string().email("Email không hợp lệ"),
+  phone: z.string().min(10, "Số điện thoại không hợp lệ"),
+  message: z.string().min(5, "Nội dung phải có ít nhất 5 ký tự"),
+  tourOfInterest: z.string().optional(),
+  confirm_email: z.string().optional(),
+});
+
+type FormData = z.infer<typeof formSchema>;
 
 export default function LienHePage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+  });
+
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Có lỗi xảy ra");
+      }
+
+      toast.success("Gửi yêu cầu thành công!");
+      reset();
+    } catch (error: any) {
+      toast.error(
+        error.message || "Gửi yêu cầu thất bại, vui lòng thử lại sau."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Header />
@@ -105,25 +154,40 @@ export default function LienHePage() {
                   Điền thông tin bên dưới, chúng tôi sẽ liên hệ lại với bạn
                   trong thời gian sớm nhất.
                 </p>
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
+                    <div className="space-y-2">
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Họ và tên *
                       </label>
-                      <Input placeholder="Nhập họ và tên" className="h-12" />
+                      <Input
+                        placeholder="Nhập họ và tên"
+                        className="h-12"
+                        {...register("fullName")}
+                      />
+                      {errors.fullName && (
+                        <p className="text-sm text-destructive">
+                          {errors.fullName.message}
+                        </p>
+                      )}
                     </div>
-                    <div>
+                    <div className="space-y-2">
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Số điện thoại *
                       </label>
                       <Input
                         placeholder="Nhập số điện thoại"
                         className="h-12"
+                        {...register("phone")}
                       />
+                      {errors.phone && (
+                        <p className="text-sm text-destructive">
+                          {errors.phone.message}
+                        </p>
+                      )}
                     </div>
                   </div>
-                  <div>
+                  <div className="space-y-2">
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Email
                     </label>
@@ -131,34 +195,92 @@ export default function LienHePage() {
                       placeholder="Nhập email"
                       type="email"
                       className="h-12"
+                      {...register("email")}
                     />
+                    {errors.email && (
+                      <p className="text-sm text-destructive">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
-                  <div>
+
+                  {/* Honeypot field (hidden) */}
+                  <input
+                    type="text"
+                    className="hidden"
+                    autoComplete="off"
+                    {...register("confirm_email")}
+                  />
+
+                  <div className="space-y-2">
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Dịch vụ quan tâm
                     </label>
-                    <select className="w-full h-12 px-4 border border-input rounded-lg bg-background text-foreground">
-                      <option>Chọn dịch vụ</option>
-                      <option>Du lịch trong nước</option>
-                      <option>Du lịch nước ngoài</option>
-                      <option>Đặt vé máy bay</option>
-                      <option>Đặt phòng khách sạn</option>
-                      <option>Thuê xe du lịch</option>
-                      <option>Làm visa</option>
-                      <option>Khác</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        className="w-full h-12 px-4 border border-input rounded-lg bg-background text-foreground appearance-none"
+                        {...register("tourOfInterest")}
+                      >
+                        <option value="">Chọn dịch vụ</option>
+                        <option value="Du lịch trong nước">
+                          Du lịch trong nước
+                        </option>
+                        <option value="Du lịch nước ngoài">
+                          Du lịch nước ngoài
+                        </option>
+                        <option value="Đặt vé máy bay">Đặt vé máy bay</option>
+                        <option value="Đặt phòng khách sạn">
+                          Đặt phòng khách sạn
+                        </option>
+                        <option value="Thuê xe du lịch">Thuê xe du lịch</option>
+                        <option value="Làm visa">Làm visa</option>
+                        <option value="Khác">Khác</option>
+                      </select>
+                      {/* Chevron down icon for select */}
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-foreground">
+                        <svg
+                          className="fill-current h-4 w-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                      </div>
+                    </div>
+                    {errors.tourOfInterest && (
+                      <p className="text-sm text-destructive">
+                        {errors.tourOfInterest.message}
+                      </p>
+                    )}
                   </div>
-                  <div>
+                  <div className="space-y-2">
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Nội dung yêu cầu
                     </label>
                     <Textarea
                       placeholder="Mô tả chi tiết yêu cầu của bạn..."
                       rows={5}
+                      {...register("message")}
                     />
+                    {errors.message && (
+                      <p className="text-sm text-destructive">
+                        {errors.message.message}
+                      </p>
+                    )}
                   </div>
-                  <Button className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground">
-                    Gửi yêu cầu
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-semibold"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Đang gửi...
+                      </>
+                    ) : (
+                      "Gửi yêu cầu"
+                    )}
                   </Button>
                 </form>
               </div>
@@ -183,7 +305,12 @@ export default function LienHePage() {
                         <p className="font-semibold text-foreground">
                           Ms. Quyên
                         </p>
-                        <p className="text-primary font-bold">0903.287.313</p>
+                        <a
+                          href="tel:0903287313"
+                          className="text-primary font-bold hover:underline"
+                        >
+                          0903.287.313
+                        </a>
                         <p className="text-muted-foreground text-sm">
                           Máy lẻ 17
                         </p>
@@ -197,7 +324,12 @@ export default function LienHePage() {
                         <p className="font-semibold text-foreground">
                           Ms. Hồng Anh
                         </p>
-                        <p className="text-primary font-bold">0974.248.805</p>
+                        <a
+                          href="tel:0974248805"
+                          className="text-primary font-bold hover:underline"
+                        >
+                          0974.248.805
+                        </a>
                         <p className="text-muted-foreground text-sm">
                           Máy lẻ 16
                         </p>
@@ -212,39 +344,38 @@ export default function LienHePage() {
                     Kết nối với chúng tôi
                   </h3>
                   <div className="flex gap-4">
-                     <a
-                href="https://www.facebook.com/suntravel.com.vn"
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
-                title="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://zalo.me/0974248805"
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
-                title="Zalo"
-              >
-                {/* Fallback to text 'Z' if no icon, or use an image if available. Since it's a footer, text or simple styling is safer if no icon. But let's check if we can use an image or text. Using a bold 'Z' for now as placeholder or Image if available. Previous file had /zalo.svg */}
-                <span className="font-bold text-xs">Zalo</span>
-              </a>
-              <a
-                href="tel:02439393539"
-                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
-                title="Hotline"
-              >
-                <Phone className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:info@suntravel.vn"
-                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
-                title="Email"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
+                    <a
+                      href="https://www.facebook.com/suntravel.com.vn"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                      title="Facebook"
+                    >
+                      <Facebook className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="https://zalo.me/0974248805"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                      title="Zalo"
+                    >
+                      <span className="font-bold text-xs">Zalo</span>
+                    </a>
+                    <a
+                      href="tel:02439393539"
+                      className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                      title="Hotline"
+                    >
+                      <Phone className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="mailto:info@suntravel.vn"
+                      className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                      title="Email"
+                    >
+                      <Mail className="w-5 h-5" />
+                    </a>
                   </div>
                 </div>
 
