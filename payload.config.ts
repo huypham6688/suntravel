@@ -3,7 +3,8 @@ import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import path from "path";
 import sharp from "sharp";
-import { Users, Tours } from "./collections";
+import { Users, Tours, ServiceTourismCollection } from "./collections";
+import { TourismCategoryCollection } from "./collections/TourismCategories";
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || "http://localhost:3000",
@@ -17,7 +18,7 @@ export default buildConfig({
     admin: '/admin',
   },
 
-  collections: [Users, Tours],
+  collections: [Users, Tours, ServiceTourismCollection, TourismCategoryCollection],
 
   editor: lexicalEditor({}),
 

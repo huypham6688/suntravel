@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import ToursManagement from "./ToursManagement";
+import ServiceTourismManager from "./ServiceTourismManager";
+import CategoryManager from "./ServiceTourismManager/CategoriesManager";
 import Image from "next/image";
 
-type Tab = "dashboard" | "tours";
+type Tab = "dashboard" | "tours" | 'tourism' | 'categories';
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
@@ -86,6 +88,26 @@ export default function AdminDashboard() {
               >
                 Tours
               </button>
+              <button
+                  onClick={() => setActiveTab("tourism")}
+                  className={`px-6 py-3 text-sm font-medium whitespace-nowrap ${
+                      activeTab === "tours"
+                          ? "border-b-2 border-blue-500 text-blue-600"
+                          : "text-gray-500 hover:text-gray-700"
+                  }`}
+              >
+                Thông tin du lịch
+              </button>
+              <button
+                  onClick={() => setActiveTab("categories")}
+                  className={`px-6 py-3 text-sm font-medium whitespace-nowrap ${
+                      activeTab === "tours"
+                          ? "border-b-2 border-blue-500 text-blue-600"
+                          : "text-gray-500 hover:text-gray-700"
+                  }`}
+              >
+                Danh mục
+              </button>
             </nav>
           </div>
 
@@ -106,6 +128,9 @@ export default function AdminDashboard() {
             )}
 
             {activeTab === "tours" && <ToursManagement />}
+            {activeTab === 'tourism' && <ServiceTourismManager />}
+            {activeTab === 'categories' && <CategoryManager />}
+
           </div>
         </div>
       </div>
