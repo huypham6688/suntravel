@@ -37,7 +37,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         <Container style={container}>
           <Section style={logoContainer}>
             <Img
-              src={`https://suntravel-orpin.vercel.app/logo.png`}
+              src={`https://suntravel-orpin.vercel.app/logo1.png`}
               width="200"
               height="60"
               alt="Suntravel Logo"
