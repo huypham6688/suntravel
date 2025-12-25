@@ -21,10 +21,10 @@ export function Footer() {
                 <Image
                   src="/logo2.png"
                   alt="Suntravel Logo"
-                  width={64}
-                  height={64}
+                  width={180}
+                  height={60}
                   priority
-                  className="object-contain scale-[2] translate-x-6 origin-center"
+                  className="object-contain translate-x-6 origin-center"
                 />
               </Link>
             </div>
