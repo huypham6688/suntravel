@@ -211,26 +211,36 @@ export default function JourneyGalleryCRUD({ onStatsUpdate }: Props) {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Bạn có chắc chắn muốn xóa mục này?")) return;
+    toast("Bạn có chắc chắn muốn xóa mục này?", {
+      action: {
+        label: "Xóa",
+        onClick: async () => {
+          try {
+            const response = await fetch(`/api/journey-gallery/${id}`, {
+              method: "DELETE",
+            });
 
-    try {
-      const response = await fetch(`/api/journey-gallery/${id}`, {
-        method: "DELETE",
-      });
+            const data = await response.json();
 
-      const data = await response.json();
-
-      if (data.success) {
-        toast.success("Xóa thành công!");
-        fetchItems();
-        onStatsUpdate?.();
-      } else {
-        toast.error("Có lỗi xảy ra khi xóa");
-      }
-    } catch (error) {
-      console.error("Error deleting:", error);
-      toast.error("Có lỗi xảy ra khi xóa");
-    }
+            if (data.success) {
+              toast.success("Xóa thành công!");
+              fetchItems();
+              onStatsUpdate?.();
+            } else {
+              toast.error("Có lỗi xảy ra khi xóa");
+            }
+          } catch (error) {
+            console.error("Error deleting:", error);
+            toast.error("Có lỗi xảy ra khi xóa");
+          }
+        },
+      },
+      cancel: {
+        label: "Hủy",
+        onClick: () => {},
+      },
+      duration: 5000,
+    });
   };
 
   const selectMedia = (mediaId: string) => {

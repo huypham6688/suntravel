@@ -86,23 +86,33 @@ export default function ToursManagement() {
   };
 
   const deleteTour = async (id: string) => {
-    if (!confirm("Bạn có chắc muốn xóa tour này?")) return;
+    toast("Bạn có chắc muốn xóa tour này?", {
+      action: {
+        label: "Xóa",
+        onClick: async () => {
+          try {
+            const response = await fetch(`/api/tours/${id}`, {
+              method: "DELETE",
+            });
 
-    try {
-      const response = await fetch(`/api/tours/${id}`, {
-        method: "DELETE",
-      });
-
-      if (response.ok) {
-        toast.success("Xóa tour thành công!");
-        fetchTours();
-      } else {
-        toast.error("Xóa tour thất bại!");
-      }
-    } catch (error) {
-      console.error("Error deleting tour:", error);
-      toast.error("Có lỗi xảy ra!");
-    }
+            if (response.ok) {
+              toast.success("Xóa tour thành công!");
+              fetchTours();
+            } else {
+              toast.error("Xóa tour thất bại!");
+            }
+          } catch (error) {
+            console.error("Error deleting tour:", error);
+            toast.error("Có lỗi xảy ra!");
+          }
+        },
+      },
+      cancel: {
+        label: "Hủy",
+        onClick: () => {},
+      },
+      duration: 5000,
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

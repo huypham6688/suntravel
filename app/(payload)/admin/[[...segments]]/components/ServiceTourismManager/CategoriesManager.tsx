@@ -98,27 +98,35 @@ export default function CategoryManager() {
   };
 
   const handleDelete = async (id: string) => {
-    if (
-      !confirm(
-        "Xóa danh mục này có thể ảnh hưởng đến các bài viết đang thuộc danh mục này. Bạn chắc chắn chứ?"
-      )
-    )
-      return;
+    toast(
+      "Xóa danh mục này có thể ảnh hưởng đến các bài viết đang thuộc danh mục này. Bạn chắc chắn chứ?",
+      {
+        action: {
+          label: "Xóa",
+          onClick: async () => {
+            try {
+              const response = await fetch(`/api/categories?id=${id}`, {
+                method: "DELETE",
+              });
 
-    try {
-      const response = await fetch(`/api/categories?id=${id}`, {
-        method: "DELETE",
-      });
-
-      if (response.ok) {
-        toast.success("Xóa thành công!");
-        fetchCategories();
-      } else {
-        toast.error("Xóa thất bại");
+              if (response.ok) {
+                toast.success("Xóa thành công!");
+                fetchCategories();
+              } else {
+                toast.error("Xóa thất bại");
+              }
+            } catch (error) {
+              console.error("Lỗi xóa:", error);
+            }
+          },
+        },
+        cancel: {
+          label: "Hủy",
+          onClick: () => {},
+        },
+        duration: 8000,
       }
-    } catch (error) {
-      console.error("Lỗi xóa:", error);
-    }
+    );
   };
 
   if (view === "list") {

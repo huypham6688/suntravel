@@ -148,21 +148,32 @@ export default function ServiceTourismManager() {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Bạn có chắc chắn muốn xóa bài viết này?")) return;
-    try {
-      const response = await fetch(`/api/info-tourism?id=${id}`, {
-        method: "DELETE",
-      });
+    toast("Bạn có chắc chắn muốn xóa bài viết này?", {
+      action: {
+        label: "Xóa",
+        onClick: async () => {
+          try {
+            const response = await fetch(`/api/info-tourism?id=${id}`, {
+              method: "DELETE",
+            });
 
-      if (response.ok) {
-        toast.success("Xóa thành công!");
-        fetchTourism();
-      } else {
-        toast.error("Xóa thất bại");
-      }
-    } catch (error) {
-      console.error("Lỗi xóa:", error);
-    }
+            if (response.ok) {
+              toast.success("Xóa thành công!");
+              fetchTourism();
+            } else {
+              toast.error("Xóa thất bại");
+            }
+          } catch (error) {
+            console.error("Lỗi xóa:", error);
+          }
+        },
+      },
+      cancel: {
+        label: "Hủy",
+        onClick: () => {},
+      },
+      duration: 5000,
+    });
   };
 
   if (view === "list") {
@@ -246,7 +257,7 @@ export default function ServiceTourismManager() {
           </div>
 
           {/* BẢNG DANH SÁCH (DESKTOP) */}
-          <div className="hidden md:block bg-white rounded-xl shadow-sm border overflow-hidden">
+          <div className="hidden md:block bg-white rounded-xl shadow-sm border overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
@@ -259,7 +270,7 @@ export default function ServiceTourismManager() {
                   <th className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase">
                     Tags
                   </th>
-                  <th className="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase">
+                  <th className="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase whitespace-nowrap">
                     Thao tác
                   </th>
                 </tr>
@@ -280,7 +291,7 @@ export default function ServiceTourismManager() {
                       key={item.id}
                       className="hover:bg-gray-50 transition-colors"
                     >
-                      <td className="px-6 py-4">
+                      <td className="px-6 py-4 max-w-xs">
                         <div className="flex items-center gap-3">
                           <img
                             src={item.thumbnail}
@@ -320,7 +331,7 @@ export default function ServiceTourismManager() {
                           ))}
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-right space-x-2">
+                      <td className="px-6 py-4 text-right space-x-2 whitespace-nowrap">
                         <button
                           onClick={() => handleEdit(item)}
                           className="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors"
