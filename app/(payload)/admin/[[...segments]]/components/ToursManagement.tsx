@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { toast } from "sonner";
 import { Tour, View } from "./tours/types";
 import TourList from "./tours/TourList";
 import TourForm from "./tours/TourForm";
@@ -93,14 +94,14 @@ export default function ToursManagement() {
       });
 
       if (response.ok) {
-        alert("Xóa tour thành công!");
+        toast.success("Xóa tour thành công!");
         fetchTours();
       } else {
-        alert("Xóa tour thất bại!");
+        toast.error("Xóa tour thất bại!");
       }
     } catch (error) {
       console.error("Error deleting tour:", error);
-      alert("Có lỗi xảy ra!");
+      toast.error("Có lỗi xảy ra!");
     }
   };
 
@@ -121,19 +122,19 @@ export default function ToursManagement() {
       const result = await response.json();
 
       if (response.ok) {
-        alert(
+        toast.success(
           editingTour ? "Cập nhật tour thành công!" : "Tạo tour thành công!"
         );
         setView("list");
         setEditingTour(null);
         setFormData(initialFormState);
       } else {
-        alert(`Có lỗi xảy ra: ${result.error || "Unknown error"}`);
+        toast.error(`Có lỗi xảy ra: ${result.error || "Unknown error"}`);
         console.error("Error details:", result);
       }
     } catch (error) {
       console.error("Error saving tour:", error);
-      alert("Có lỗi xảy ra!");
+      toast.error("Có lỗi xảy ra!");
     } finally {
       setLoading(false);
     }
