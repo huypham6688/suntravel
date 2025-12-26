@@ -6,6 +6,7 @@ import ToursManagement from "./ToursManagement";
 import ServiceTourismManager from "./ServiceTourismManager";
 import CategoryManager from "./ServiceTourismManager/CategoriesManager";
 import JourneyGalleryCRUD from "./JourneyGalleryCRUD";
+import VideosCRUD from "./VideosCRUD";
 import CompanyInfoManager from "./CompanyInfoManager";
 import Image from "next/image";
 import {
@@ -22,6 +23,7 @@ import {
   BookOpen,
   LogOut,
   ChevronRight,
+  MonitorPlay,
 } from "lucide-react";
 
 type Tab =
@@ -30,7 +32,8 @@ type Tab =
   | "tourism"
   | "categories"
   | "gallery"
-  | "company-info";
+  | "company-info"
+  | "videos";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
@@ -116,6 +119,13 @@ export default function AdminDashboard() {
       icon: ImageIcon,
       color: "text-pink-600",
       bgColor: "bg-pink-50",
+    },
+    {
+      id: "videos",
+      label: "Videos",
+      icon: MonitorPlay,
+      color: "text-red-600",
+      bgColor: "bg-red-50",
     },
     {
       id: "company-info",
@@ -407,6 +417,20 @@ export default function AdminDashboard() {
                           nhật khoảnh khắc đẹp.
                         </p>
                       </div>
+
+                      <div className="group p-4 border border-gray-100 rounded-xl hover:border-red-200 hover:bg-red-50 transition-all cursor-pointer">
+                        <h3 className="font-medium text-gray-900 flex items-center justify-between">
+                          Videos
+                          <ChevronRight
+                            size={16}
+                            className="text-gray-400 group-hover:text-red-500"
+                          />
+                        </h3>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Quản lý video, phim tư liệu và các khoảnh khắc hành
+                          trình sinh động.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -417,6 +441,7 @@ export default function AdminDashboard() {
             {activeTab === "tourism" && <ServiceTourismManager />}
             {activeTab === "categories" && <CategoryManager />}
             {activeTab === "gallery" && <JourneyGalleryCRUD />}
+            {activeTab === "videos" && <VideosCRUD />}
             {activeTab === "company-info" && <CompanyInfoManager />}
           </main>
         </div>
