@@ -146,9 +146,9 @@ export default function AdminDashboard() {
               <Image
                 src="/logo.png"
                 alt="Logo"
-                width={120}
+                width={200}
                 height={80}
-                className="w-32 h-auto object-contain"
+                className="w-[200px] h-auto object-contain"
               />
               <span className="hidden md:inline-block text-gray-300">|</span>
               <span className="hidden md:inline-block font-medium text-gray-700">
