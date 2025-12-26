@@ -13,6 +13,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
 
+import { useCompanyInfo } from "@/hooks/use-company-info";
+// ... imports
+
 const formSchema = z.object({
   fullName: z.string().min(2, "Họ tên phải có ít nhất 2 ký tự"),
   email: z.string().email("Email không hợp lệ"),
@@ -25,6 +28,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export default function LienHePage() {
+  const { data: companyInfo } = useCompanyInfo();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
@@ -99,7 +103,7 @@ export default function LienHePage() {
                   Địa chỉ
                 </h3>
                 <p className="text-muted-foreground text-sm">
-                  Số 1B, Ngô Quyền, Hoàn Kiếm, Hà Nội
+                  {companyInfo.address}
                 </p>
               </div>
 
@@ -110,7 +114,9 @@ export default function LienHePage() {
                 <h3 className="font-semibold text-card-foreground mb-2 ">
                   Hotline
                 </h3>
-                <p className="text-primary font-bold text-lg">024 39393539</p>
+                <p className="text-primary font-bold text-lg">
+                  {companyInfo.hotline}
+                </p>
               </div>
 
               <div className="bg-card rounded-2xl p-6 text-center shadow-lg">
@@ -121,7 +127,7 @@ export default function LienHePage() {
                   Email
                 </h3>
                 <p className="text-muted-foreground text-sm">
-                  info@suntravel.vn
+                  {companyInfo.email}
                 </p>
               </div>
 
@@ -133,9 +139,11 @@ export default function LienHePage() {
                   Giờ làm việc
                 </h3>
                 <p className="text-muted-foreground text-sm">
-                  T2-T6: 8:00-18:00
+                  T2-T6: {companyInfo.workingHours?.weekdays}
                 </p>
-                <p className="text-muted-foreground text-sm">T7: 8:00-12:00</p>
+                <p className="text-muted-foreground text-sm">
+                  T7: {companyInfo.workingHours?.saturday}
+                </p>
               </div>
             </div>
           </div>
@@ -147,6 +155,7 @@ export default function LienHePage() {
             <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12">
               {/* Contact Form */}
               <div>
+                {/* ... existing form code ... */}
                 <h2 className="text-3xl font-bold text-foreground  mb-6">
                   Gửi Yêu Cầu Tư Vấn
                 </h2>
@@ -155,6 +164,7 @@ export default function LienHePage() {
                   trong thời gian sớm nhất.
                 </p>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  {/* ... existing form inputs ... */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="block text-sm font-medium text-foreground mb-2">
@@ -297,44 +307,32 @@ export default function LienHePage() {
                     Hotline tư vấn
                   </h3>
                   <div className="space-y-4">
-                    <div className="flex items-center gap-4 bg-card rounded-xl p-4">
-                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
-                        Q
+                    {companyInfo.supportStaff?.map((staff, index) => (
+                      <div
+                        className="flex items-center gap-4 bg-card rounded-xl p-4"
+                        key={index}
+                      >
+                        <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
+                          {staff.name.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="font-semibold text-foreground">
+                            {staff.name}
+                          </p>
+                          <a
+                            href={`tel:${staff.phone.replace(/\./g, "").replace(/\s/g, "")}`}
+                            className="text-primary font-bold hover:underline"
+                          >
+                            {staff.phone}
+                          </a>
+                          {staff.extension && (
+                            <p className="text-muted-foreground text-sm">
+                              Máy lẻ {staff.extension}
+                            </p>
+                          )}
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-semibold text-foreground">
-                          Ms. Quyên
-                        </p>
-                        <a
-                          href="tel:0903287313"
-                          className="text-primary font-bold hover:underline"
-                        >
-                          0903.287.313
-                        </a>
-                        <p className="text-muted-foreground text-sm">
-                          Máy lẻ 17
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4 bg-card rounded-xl p-4">
-                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
-                        H
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">
-                          Ms. Hồng Anh
-                        </p>
-                        <a
-                          href="tel:0974248805"
-                          className="text-primary font-bold hover:underline"
-                        >
-                          0974.248.805
-                        </a>
-                        <p className="text-muted-foreground text-sm">
-                          Máy lẻ 16
-                        </p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
@@ -344,33 +342,37 @@ export default function LienHePage() {
                     Kết nối với chúng tôi
                   </h3>
                   <div className="flex gap-4">
+                    {companyInfo.socialLinks?.facebook && (
+                      <a
+                        href={companyInfo.socialLinks.facebook}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                        title="Facebook"
+                      >
+                        <Facebook className="w-5 h-5" />
+                      </a>
+                    )}
+                    {companyInfo.socialLinks?.zalo && (
+                      <a
+                        href={companyInfo.socialLinks.zalo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                        title="Zalo"
+                      >
+                        <span className="font-bold text-xs">Zalo</span>
+                      </a>
+                    )}
                     <a
-                      href="https://www.facebook.com/suntravel.com.vn"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
-                      title="Facebook"
-                    >
-                      <Facebook className="w-5 h-5" />
-                    </a>
-                    <a
-                      href="https://zalo.me/0974248805"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
-                      title="Zalo"
-                    >
-                      <span className="font-bold text-xs">Zalo</span>
-                    </a>
-                    <a
-                      href="tel:02439393539"
+                      href={`tel:${companyInfo.hotline.replace(/\./g, "").replace(/\s/g, "")}`}
                       className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
                       title="Hotline"
                     >
                       <Phone className="w-5 h-5" />
                     </a>
                     <a
-                      href="mailto:info@suntravel.vn"
+                      href={`mailto:${companyInfo.email}`}
                       className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
                       title="Email"
                     >

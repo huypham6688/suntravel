@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
+import { useCompanyInfo } from "@/hooks/use-company-info";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Họ tên phải có ít nhất 2 ký tự"),
@@ -21,6 +22,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export function ContactSection() {
+  const { data: companyInfo } = useCompanyInfo();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
@@ -86,9 +88,7 @@ export function ContactSection() {
                   <h4 className="font-semibold text-foreground mb-1">
                     Địa chỉ
                   </h4>
-                  <p className="text-muted-foreground">
-                    Số 1B, Ngô Quyền, Hoàn Kiếm, Hà Nội
-                  </p>
+                  <p className="text-muted-foreground">{companyInfo.address}</p>
                 </div>
               </div>
 
@@ -100,13 +100,13 @@ export function ContactSection() {
                   <h4 className="font-semibold text-foreground mb-1">
                     Hotline
                   </h4>
-                  <p className="text-muted-foreground">024 39393539</p>
-                  <p className="text-muted-foreground">
-                    Ms. Quyên: 0903.287.313 (Máy lẻ 17)
-                  </p>
-                  <p className="text-muted-foreground">
-                    Ms. Hồng Anh: 0974.248.805 (Máy lẻ 16)
-                  </p>
+                  <p className="text-muted-foreground">{companyInfo.hotline}</p>
+                  {companyInfo.supportStaff?.map((staff, index) => (
+                    <p key={index} className="text-muted-foreground">
+                      {staff.name}: {staff.phone}{" "}
+                      {staff.extension ? `(Máy lẻ ${staff.extension})` : ""}
+                    </p>
+                  ))}
                 </div>
               </div>
 
@@ -116,7 +116,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                  <p className="text-muted-foreground">info@suntravel.vn</p>
+                  <p className="text-muted-foreground">{companyInfo.email}</p>
                 </div>
               </div>
 
@@ -129,9 +129,11 @@ export function ContactSection() {
                     Giờ làm việc
                   </h4>
                   <p className="text-muted-foreground">
-                    Thứ 2 - Thứ 6: 8:00 - 18:00
+                    Thứ 2 - Thứ 6: {companyInfo.workingHours?.weekdays}
                   </p>
-                  <p className="text-muted-foreground">Thứ 7: 8:00 - 12:00</p>
+                  <p className="text-muted-foreground">
+                    Thứ 7: {companyInfo.workingHours?.saturday}
+                  </p>
                 </div>
               </div>
             </div>

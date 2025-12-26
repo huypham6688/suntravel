@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   MapPin,
@@ -8,8 +10,11 @@ import {
   Instagram,
 } from "lucide-react";
 import Image from "next/image";
+import { useCompanyInfo } from "@/hooks/use-company-info";
 
 export function Footer() {
+  const { data: companyInfo } = useCompanyInfo();
+
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 py-16">
@@ -33,34 +38,37 @@ export function Footer() {
               Uy tín dẫn đường, tận tâm theo bước
             </p>
             <div className="flex gap-4">
+              {companyInfo.socialLinks?.facebook && (
+                <a
+                  href={companyInfo.socialLinks.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                  title="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+              )}
+              {companyInfo.socialLinks?.zalo && (
+                <a
+                  href={companyInfo.socialLinks.zalo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
+                  title="Zalo"
+                >
+                  <span className="font-bold text-xs">Zalo</span>
+                </a>
+              )}
               <a
-                href="https://www.facebook.com/suntravel.com.vn"
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
-                title="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://zalo.me/0974248805"
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
-                title="Zalo"
-              >
-                {/* Fallback to text 'Z' if no icon, or use an image if available. Since it's a footer, text or simple styling is safer if no icon. But let's check if we can use an image or text. Using a bold 'Z' for now as placeholder or Image if available. Previous file had /zalo.svg */}
-                <span className="font-bold text-xs">Zalo</span>
-              </a>
-              <a
-                href="tel:02439393539"
+                href={`tel:${companyInfo.hotline.replace(/\./g, "").replace(/\s/g, "")}`}
                 className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
                 title="Hotline"
               >
                 <Phone className="w-5 h-5" />
               </a>
               <a
-                href="mailto:info@suntravel.vn"
+                href={`mailto:${companyInfo.email}`}
                 className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors hover:text-white"
                 title="Email"
               >
@@ -114,15 +122,15 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-1 shrink-0" />
-                <span>Số 1B, Ngô Quyền, Hoàn Kiếm, Hà Nội</span>
+                <span>{companyInfo.address}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 shrink-0" />
-                <span>024 39393539</span>
+                <span>{companyInfo.hotline}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 shrink-0" />
-                <span>info@suntravel.vn</span>
+                <span>{companyInfo.email}</span>
               </li>
             </ul>
           </div>
@@ -131,20 +139,25 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-6">Hotline tư vấn</h4>
             <div className="space-y-4">
-              <div className="bg-secondary-foreground/10 p-4 rounded-lg">
-                <p className="font-semibold">Ms. Quyên</p>
-                <p className="text-lg font-bold">0903.287.313</p>
-                <p className="text-sm text-secondary-foreground/70">
-                  Máy lẻ 17
-                </p>
-              </div>
-              <div className="bg-secondary-foreground/10 p-4 rounded-lg">
-                <p className="font-semibold">Ms. Hồng Anh</p>
-                <p className=" text-lg font-bold">0974.248.805</p>
-                <p className="text-sm text-secondary-foreground/70">
-                  Máy lẻ 16
-                </p>
-              </div>
+              {companyInfo.supportStaff?.map((staff, index) => (
+                <div
+                  key={index}
+                  className="bg-secondary-foreground/10 p-4 rounded-lg"
+                >
+                  <p className="font-semibold">{staff.name}</p>
+                  <a
+                    href={`tel:${staff.phone.replace(/\./g, "").replace(/\s/g, "")}`}
+                    className="text-lg font-bold hover:text-primary transition-colors block"
+                  >
+                    {staff.phone}
+                  </a>
+                  {staff.extension && (
+                    <p className="text-sm text-secondary-foreground/70">
+                      Máy lẻ {staff.extension}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>

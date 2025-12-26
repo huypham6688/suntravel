@@ -7,6 +7,7 @@ import { Users, Tours, ServiceTourismCollection } from "./collections";
 import { TourismCategoryCollection } from "./collections/TourismCategories";
 import JourneyGallery from "./collections/JourneyGallery";
 import Media from "./collections/Media";
+import { CompanyInfo } from "./globals/CompanyInfo";
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || "http://localhost:3000",
@@ -28,6 +29,8 @@ export default buildConfig({
     JourneyGallery,
     Media,
   ],
+
+  globals: [CompanyInfo],
 
   editor: lexicalEditor({}),
 
