@@ -272,16 +272,14 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
                 : "Đăng nhập"}
           </button>
         </form>
-
         {!isRegisterMode && (
-          <div className="mt-4 text-center">
-            <button
-              onClick={() => setIsRegisterMode(true)}
-              className="text-sm text-blue-600 hover:text-blue-800"
-            >
-              Chưa có tài khoản? Đăng ký ngay
-            </button>
-          </div>
+            <div className="mt-4 text-center">
+              <button
+                  onClick={() => setIsRegisterMode(true)}
+                  className="text-sm text-blue-600 hover:text-blue-800"
+              >
+              </button>
+            </div>
         )}
 
         {isRegisterMode && (
