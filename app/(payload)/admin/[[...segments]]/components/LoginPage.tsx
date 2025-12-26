@@ -28,7 +28,18 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
       const testResponse = await fetch("/api/test-payload");
 
       if (!testResponse.ok) {
-        throw new Error(`API not ready: ${testResponse.status}`);
+        let errorMessage = `API not ready: ${testResponse.status}`;
+        try {
+          const errorData = await testResponse.json();
+          if (errorData.error) {
+            errorMessage += ` - ${errorData.error}`;
+          }
+        } catch (e) {
+          // response might be text/html
+          const text = await testResponse.text();
+          if (text) errorMessage += ` - ${text.substring(0, 50)}...`;
+        }
+        throw new Error(errorMessage);
       }
 
       const testData = await testResponse.json();
@@ -40,7 +51,9 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
       }
     } catch (error) {
       console.error("Error checking users:", error);
-      setDebugInfo(`Lỗi kết nối API: ${error instanceof Error ? error.message : String(error)}`);
+      setDebugInfo(
+        `Lỗi kết nối API: ${error instanceof Error ? error.message : String(error)}`
+      );
       // Nếu API lỗi, cho phép đăng ký
       setIsRegisterMode(true);
     } finally {
@@ -75,7 +88,10 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
         setError(data.error || "Đăng nhập thất bại");
       }
     } catch (err) {
-      setError("Có lỗi xảy ra khi đăng nhập: " + (err instanceof Error ? err.message : String(err)));
+      setError(
+        "Có lỗi xảy ra khi đăng nhập: " +
+          (err instanceof Error ? err.message : String(err))
+      );
       console.error("Login error:", err);
     } finally {
       setLoading(false);
@@ -126,7 +142,10 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
         setError(data.error || "Đăng ký thất bại");
       }
     } catch (err) {
-      setError("Có lỗi xảy ra khi đăng ký: " + (err instanceof Error ? err.message : String(err)));
+      setError(
+        "Có lỗi xảy ra khi đăng ký: " +
+          (err instanceof Error ? err.message : String(err))
+      );
       console.error("Register error:", err);
     } finally {
       setLoading(false);
@@ -169,10 +188,16 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
           </div>
         )}
 
-        <form onSubmit={isRegisterMode ? handleRegister : handleLogin} className="space-y-4">
+        <form
+          onSubmit={isRegisterMode ? handleRegister : handleLogin}
+          className="space-y-4"
+        >
           {isRegisterMode && (
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
                 Họ tên
               </label>
               <input
@@ -188,7 +213,10 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
           )}
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Email
             </label>
             <input
@@ -203,7 +231,10 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Mật khẩu
             </label>
             <input
@@ -217,9 +248,7 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
               placeholder="••••••••"
             />
             {isRegisterMode && (
-              <p className="text-xs text-gray-500 mt-1">
-                Tối thiểu 6 ký tự
-              </p>
+              <p className="text-xs text-gray-500 mt-1">Tối thiểu 6 ký tự</p>
             )}
           </div>
 
@@ -235,9 +264,12 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
             className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading
-              ? (isRegisterMode ? "Đang tạo tài khoản..." : "Đang đăng nhập...")
-              : (isRegisterMode ? "Tạo tài khoản Admin" : "Đăng nhập")
-            }
+              ? isRegisterMode
+                ? "Đang tạo tài khoản..."
+                : "Đang đăng nhập..."
+              : isRegisterMode
+                ? "Tạo tài khoản Admin"
+                : "Đăng nhập"}
           </button>
         </form>
 

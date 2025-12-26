@@ -5,6 +5,8 @@ import path from "path";
 import sharp from "sharp";
 import { Users, Tours, ServiceTourismCollection } from "./collections";
 import { TourismCategoryCollection } from "./collections/TourismCategories";
+import JourneyGallery from "./collections/JourneyGallery";
+import Media from "./collections/Media";
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || "http://localhost:3000",
@@ -14,11 +16,18 @@ export default buildConfig({
   },
 
   routes: {
-    api: '/api',
-    admin: '/admin',
+    api: "/api",
+    admin: "/admin",
   },
 
-  collections: [Users, Tours, ServiceTourismCollection, TourismCategoryCollection],
+  collections: [
+    Users,
+    Tours,
+    ServiceTourismCollection,
+    TourismCategoryCollection,
+    JourneyGallery,
+    Media,
+  ],
 
   editor: lexicalEditor({}),
 
