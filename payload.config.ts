@@ -2,6 +2,7 @@ import { buildConfig } from "payload";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import path from "path";
+import Videos from './collections/Videos'
 import sharp from "sharp";
 import { Users, Tours, ServiceTourismCollection } from "./collections";
 import { TourismCategoryCollection } from "./collections/TourismCategories";
@@ -28,6 +29,7 @@ export default buildConfig({
     TourismCategoryCollection,
     JourneyGallery,
     Media,
+    Videos,
   ],
 
   globals: [CompanyInfo],

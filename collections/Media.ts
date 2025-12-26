@@ -7,76 +7,48 @@ const Media: CollectionConfig = {
     singular: "Media",
     plural: "Media",
   },
+  admin: {
+    group: "Assets",
+  },
   access: {
     read: () => true,
-    create: () => true,
-    update: () => true,
-    delete: () => true,
   },
   upload: {
     staticDir: "media",
-    // We don't want local resized images since we use Cloudinary
+    // Không cần resize local vì dùng Cloudinary
     imageSizes: [],
-    // Use Cloudinary URL for admin thumbnail if available
+    // Sử dụng Cloudinary URL cho admin thumbnail
     adminThumbnail: ({ doc }) => (doc as any).cloudinaryUrl || null,
-    mimeTypes: ["image/*"],
+    // Cho phép cả ảnh và video
+    mimeTypes: [
+      "image/*",
+      "video/mp4",
+      "video/mpeg",
+      "video/quicktime", // .mov
+      "video/x-msvideo", // .avi
+      "video/x-matroska", // .mkv
+      "video/webm",
+    ],
   },
   fields: [
     {
       name: "alt",
       type: "text",
-      required: true,
       label: "Alt Text",
+      admin: {
+        description: "Mô tả cho ảnh/video (SEO)",
+      },
     },
     {
       name: "cloudinaryUrl",
       type: "text",
-      required: true,
       label: "Cloudinary URL",
       admin: {
         readOnly: true,
-      },
-    },
-    {
-      name: "cloudinaryId",
-      type: "text",
-      label: "Cloudinary ID",
-      admin: {
-        readOnly: true,
-      },
-    },
-    {
-      name: "width",
-      type: "number",
-      admin: {
-        readOnly: true,
-      },
-    },
-    {
-      name: "height",
-      type: "number",
-      admin: {
-        readOnly: true,
-      },
-    },
-    {
-      name: "mimeType",
-      type: "text",
-      admin: {
-        readOnly: true,
-      },
-    },
-    {
-      name: "filesize",
-      type: "number",
-      admin: {
-        readOnly: true,
+        description: "URL từ Cloudinary (auto-generated)",
       },
     },
   ],
-  admin: {
-    useAsTitle: "alt",
-  },
 };
 
 export default Media;
