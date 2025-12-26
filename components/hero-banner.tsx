@@ -47,7 +47,10 @@ interface HeroBannerProps {
 
 export function HeroBanner({ items = banners }: HeroBannerProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
+  const [dragX, setDragX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % items.length);
@@ -59,8 +62,46 @@ export function HeroBanner({ items = banners }: HeroBannerProps) {
   const prevSlide = () =>
     setCurrentSlide((prev) => (prev - 1 + items.length) % items.length);
 
+  const minSwipeDistance = 80;
+
+const onTouchStart = (e: React.TouchEvent) => {
+  setIsDragging(true);
+  setTouchStartX(e.targetTouches[0].clientX);
+};
+
+const onTouchMove = (e: React.TouchEvent) => {
+  if (touchStartX === null) return;
+
+  const currentX = e.targetTouches[0].clientX;
+  const delta = currentX - touchStartX;
+
+  setDragX(delta);
+};
+
+const onTouchEnd = () => {
+  if (!isDragging) return;
+
+  setIsDragging(false);
+
+  if (dragX < -minSwipeDistance) {
+    nextSlide();
+  } else if (dragX > minSwipeDistance) {
+    prevSlide();
+  }
+
+
+  setDragX(0);
+  setTouchStartX(null);
+};
+
+
   return (
-    <section className="relative h-[500px] md:h-[600px] overflow-hidden">
+    <section
+      className="relative h-[500px] md:h-[600px] overflow-hidden touch-pan-y"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       {items.map((banner, index) => (
         <div
           key={banner.id}
@@ -95,13 +136,19 @@ export function HeroBanner({ items = banners }: HeroBannerProps) {
       {/* Navigation arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 rounded-full flex items-center justify-center backdrop-blur-sm transition-colors"
+        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2
+             w-12 h-12 bg-background/20 hover:bg-background/40
+             rounded-full items-center justify-center
+             backdrop-blur-sm transition-colors"
       >
         <ChevronLeft className="w-6 h-6 text-background" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 rounded-full flex items-center justify-center backdrop-blur-sm transition-colors"
+        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2
+             w-12 h-12 bg-background/20 hover:bg-background/40
+             rounded-full items-center justify-center
+             backdrop-blur-sm transition-colors"
       >
         <ChevronRight className="w-6 h-6 text-background" />
       </button>
