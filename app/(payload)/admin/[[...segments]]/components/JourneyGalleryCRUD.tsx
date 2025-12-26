@@ -284,7 +284,7 @@ export default function JourneyGalleryCRUD({ onStatsUpdate }: Props) {
         <h2 className="text-2xl font-bold">Quản lý Journey Gallery</h2>
         <button
           onClick={handleCreate}
-          className="flex items-center gap-2 rounded-lg bg-orange-600 px-4 py-2 text-white hover:bg-orange-700"
+          className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
         >
           <Plus className="h-5 w-5" />
           Thêm mới

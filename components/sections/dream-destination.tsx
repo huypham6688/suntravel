@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { journeyImages } from "./journey-diary"; // Import shared data
+
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const ITEMS_PER_PAGE = 7; // Customize based on grid slots
@@ -16,23 +16,55 @@ export function DreamDestination() {
     src: string;
     alt: string;
   } | null>(null);
+  const [galleryItems, setGalleryItems] = useState<any[]>([]);
 
-  // Flatten all images from journeyImages (main + gallery)
-  const allDestinations = useMemo(() => {
-    return journeyImages.flatMap((tour) => {
-      // Main image
-      const mainImage = {
-        src: tour.src,
-        alt: tour.tourName || tour.alt, // Prefer simpler name if available
-      };
-      // Gallery images
-      const galleryImages = tour.gallery.map((imgSrc) => ({
-        src: imgSrc,
-        alt: tour.tourName || tour.alt,
-      }));
-      return [mainImage, ...galleryImages];
-    });
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("/api/journey-gallery?limit=50");
+        const data = await res.json();
+        if (data.success) {
+          setGalleryItems(data.docs);
+        }
+      } catch (error) {
+        console.error("Error fetching dream destinations:", error);
+      }
+    };
+    fetchData();
   }, []);
+
+  // Flatten all images from API data (main + gallery)
+  const allDestinations = useMemo(() => {
+    return galleryItems.flatMap((tour) => {
+      const items: { src: string; alt: string }[] = [];
+
+      // Main image
+      if (tour.featuredImage) {
+        const src = tour.featuredImage.cloudinaryUrl || tour.featuredImage.url;
+        if (src) {
+          items.push({
+            src,
+            alt: tour.tourName || tour.alt,
+          });
+        }
+      }
+
+      // Gallery images
+      if (tour.gallery && Array.isArray(tour.gallery)) {
+        tour.gallery.forEach((g: any) => {
+          const src = g.image?.cloudinaryUrl || g.image?.url;
+          if (src) {
+            items.push({
+              src,
+              alt: tour.tourName || tour.alt,
+            });
+          }
+        });
+      }
+
+      return items;
+    });
+  }, [galleryItems]);
 
   const totalPages = Math.ceil(allDestinations.length / ITEMS_PER_PAGE);
 
@@ -49,6 +81,10 @@ export function DreamDestination() {
   const handlePrevPage = () => {
     setCurrentPage((prev) => Math.max(prev - 1, 0));
   };
+
+  if (allDestinations.length === 0) {
+    return null; // Or a loading/empty state
+  }
 
   return (
     <section className="py-24 bg-white overflow-hidden">
