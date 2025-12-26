@@ -6,16 +6,13 @@ import ToursManagement from "./ToursManagement";
 import ServiceTourismManager from "./ServiceTourismManager";
 import CategoryManager from "./ServiceTourismManager/CategoriesManager";
 import JourneyGalleryCRUD from "./JourneyGalleryCRUD";
+import VideosCRUD from "./VideosCRUD";
+
 import CompanyInfoManager from "./CompanyInfoManager";
 import Image from "next/image";
 
-type Tab =
-  | "dashboard"
-  | "tours"
-  | "tourism"
-  | "categories"
-  | "gallery"
-  | "company-info";
+type Tab = "dashboard" | "tours" | "tourism" | "categories" | "gallery" | "company-info" | "videos";
+
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
@@ -135,6 +132,16 @@ export default function AdminDashboard() {
               Nhật ký hành trình
             </button>
             <button
+                onClick={() => setActiveTab("videos")}
+                className={`px-6 py-3 text-sm font-medium whitespace-nowrap ${
+                    activeTab === "videos"
+                        ? "border-b-2 border-blue-500 text-blue-600"
+                        : "text-gray-500 hover:text-gray-700"
+                }`}
+            >
+              Videos
+            </button>
+            <button
               onClick={() => setActiveTab("company-info")}
               className={`px-6 py-3 text-sm font-medium whitespace-nowrap ${
                 activeTab === "company-info"
@@ -144,6 +151,7 @@ export default function AdminDashboard() {
             >
               Thông tin công ty
             </button>
+
           </nav>
         </div>
 
@@ -167,6 +175,7 @@ export default function AdminDashboard() {
           {activeTab === "tourism" && <ServiceTourismManager />}
           {activeTab === "categories" && <CategoryManager />}
           {activeTab === "gallery" && <JourneyGalleryCRUD />}
+          {activeTab === "videos" && <VideosCRUD />}
           {activeTab === "company-info" && <CompanyInfoManager />}
         </div>
       </div>
