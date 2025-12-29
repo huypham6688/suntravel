@@ -48,7 +48,7 @@ export default function VeChungToiPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center transition-transform hover:scale-105 duration-700"
             style={{
@@ -59,11 +59,11 @@ export default function VeChungToiPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30" />
           <div className="relative container mx-auto px-4 z-10 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white  mb-6 drop-shadow-md">
+            <h1 className="text-4xl md:text-5xl font-bold text-white  mb-6 drop-shadow-md">
               Về Suntravel
             </h1>
             <div className="h-1 w-24 bg-secondary mx-auto mb-6 rounded-full" />
-            <p className="text-xl md:text-2xl text-white/95 max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-xl  text-white/95 max-w-4xl mx-auto font-light leading-relaxed">
               Hơn{" "}
               <span className="font-bold text-secondary-foreground">
                 20 năm

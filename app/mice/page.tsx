@@ -48,7 +48,7 @@ export default function MiceOverviewPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-background capitalize mb-4">
               Du Lịch MICE 
             </h1>
-            <p className="text-xl text-background/90 max-w-2xl">
+            <p className="text-xl text-background/90 max-w-5xl">
               Giải pháp tổ chức tour công tác, hội nghị, hội thảo và team building trọn gói dành cho doanh nghiệp.
             </p>
           </div>

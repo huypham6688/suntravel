@@ -142,9 +142,8 @@ export default function DuLichNuocNgoaiPage() {
               <h1 className="text-4xl md:text-5xl capitalize font-bold text-background mb-4">
                 Du Lịch Nước Ngoài
               </h1>
-              <p className="text-xl text-background/90 max-w-2xl">
-                Khám phá thế giới rộng lớn với những hành trình đáng nhớ cùng
-                Suntravel
+              <p className="text-xl text-background/90 max-w-3xl">
+                Khám phá thế giới rộng lớn với những hành trình đáng nhớ cùng Suntravel
               </p>
               {selectedFilter !== "Tất cả" && (
                   <p className="text-lg text-background mt-2">

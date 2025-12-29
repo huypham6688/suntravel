@@ -73,7 +73,7 @@ export default function LienHePage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative h-[300px] md:h-[350px]">
+        <section className="relative h-[400px]">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
