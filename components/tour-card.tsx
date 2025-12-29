@@ -77,12 +77,6 @@ export function TourCard({
               <Clock className="w-4 h-4" />
               <span>{duration}</span>
             </div>
-            {maxPeople && (
-                <div className="flex items-center gap-1">
-                  <Users className="w-4 h-4" />
-                  <span>Tối đa {maxPeople} người</span>
-                </div>
-            )}
           </div>
 
           <div className="flex items-center gap-2 mb-4">

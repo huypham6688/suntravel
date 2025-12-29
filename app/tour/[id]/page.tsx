@@ -181,10 +181,6 @@ export default async function TourDetailPage({
                     <span>{tour.duration}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="w-5 h-5 text-primary" />
-                    <span>Tối đa {tour.maxPeople} người</span>
-                  </div>
-                  <div className="flex items-center gap-2">
                     <Star className="w-5 h-5 fill-primary text-primary" />
                     <span className="font-semibold text-foreground">
                       {tour.rating}

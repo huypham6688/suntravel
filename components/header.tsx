@@ -9,143 +9,8 @@ import { useCompanyInfo } from "@/hooks/use-company-info";
 
 const navItems = [
   { name: "Trang chủ", href: "/" },
-  {
-    name: "Du lịch trong nước",
-    href: "/du-lich-trong-nuoc",
-    megaMenu: [
-      {
-        title: "DU LỊCH MIỀN BẮC",
-        items: [
-          { name: "Du lịch Cát Bà", href: "/du-lich-trong-nuoc?region=Cát Bà" },
-          {
-            name: "Du lịch Hạ Long",
-            href: "/du-lich-trong-nuoc?region=Hạ Long",
-          },
-          {
-            name: "Du lịch Hải Phòng",
-            href: "/du-lich-trong-nuoc?region=Hải Phòng",
-          },
-          { name: "Du lịch Ba Vì", href: "/du-lich-trong-nuoc?region=Ba Vì" },
-          {
-            name: "Du lịch Cao Bằng",
-            href: "/du-lich-trong-nuoc?region=Cao Bằng",
-          },
-          { name: "Du lịch Cô Tô", href: "/du-lich-trong-nuoc?region=Cô Tô" },
-          {
-            name: "Du lịch Hà Giang",
-            href: "/du-lich-trong-nuoc?region=Hà Giang",
-          },
-          { name: "Du lịch Hà Nội", href: "/du-lich-trong-nuoc?region=Hà Nội" },
-          {
-            name: "Du lịch Hòa Bình",
-            href: "/du-lich-trong-nuoc?region=Hòa Bình",
-          },
-          {
-            name: "Du lịch Ninh Bình",
-            href: "/du-lich-trong-nuoc?region=Ninh Bình",
-          },
-          { name: "Du lịch Sapa", href: "/du-lich-trong-nuoc?region=Sapa" },
-          { name: "Du lịch Sơn La", href: "/du-lich-trong-nuoc?region=Sơn La" },
-          {
-            name: "Du lịch Yên Bái",
-            href: "/du-lich-trong-nuoc?region=Yên Bái",
-          },
-          {
-            name: "Du lịch Điện Biên",
-            href: "/du-lich-trong-nuoc?region=Điện Biên",
-          },
-          {
-            name: "Du lịch Phú Thọ",
-            href: "/du-lich-trong-nuoc?region=Phú Thọ",
-          },
-        ],
-      },
-      {
-        title: "DU LỊCH MIỀN TRUNG",
-        items: [
-          {
-            name: "Du lịch Nha Trang",
-            href: "/du-lich-trong-nuoc?region=Nha Trang",
-          },
-          {
-            name: "Du lịch Quy Nhơn",
-            href: "/du-lich-trong-nuoc?region=Quy Nhơn",
-          },
-          {
-            name: "Du lịch Đà Nẵng",
-            href: "/du-lich-trong-nuoc?region=Đà Nẵng",
-          },
-          { name: "Du lịch Đà Lạt", href: "/du-lich-trong-nuoc?region=Đà Lạt" },
-          { name: "Du lịch Huế", href: "/du-lich-trong-nuoc?region=Huế" },
-          { name: "Du lịch Cửa Lò", href: "/du-lich-trong-nuoc?region=Cửa Lò" },
-          {
-            name: "Du lịch Quảng Bình",
-            href: "/du-lich-trong-nuoc?region=Quảng Bình",
-          },
-          {
-            name: "Du lịch Sầm Sơn",
-            href: "/du-lich-trong-nuoc?region=Sầm Sơn",
-          },
-          {
-            name: "Du lịch Tây Nguyên",
-            href: "/du-lich-trong-nuoc?region=Tây Nguyên",
-          },
-        ],
-      },
-      {
-        title: "DU LỊCH MIỀN NAM",
-        items: [
-          {
-            name: "Du lịch Phú Quốc",
-            href: "/du-lich-trong-nuoc?region=Phú Quốc",
-          },
-          {
-            name: "Du lịch Cần Thơ",
-            href: "/du-lich-trong-nuoc?region=Cần Thơ",
-          },
-          {
-            name: "Du lịch Côn Đảo",
-            href: "/du-lich-trong-nuoc?region=Côn Đảo",
-          },
-          {
-            name: "Du lịch TP. Hồ Chí Minh",
-            href: "/du-lich-trong-nuoc?region=TP. Hồ Chí Minh",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Du lịch nước ngoài",
-    href: "/du-lich-nuoc-ngoai",
-    megaMenu: [
-      {
-        title: "CHÂU Á",
-        items: [
-          { name: "Đông Nam Á", href: "/du-lich-nuoc-ngoai?region=Đông Nam Á" },
-          { name: "Trung Quốc", href: "/du-lich-nuoc-ngoai?region=Trung Quốc" },
-          { name: "Đông Bắc Á", href: "/du-lich-nuoc-ngoai?region=Đông Bắc Á" },
-          { name: "Trung Đông", href: "/du-lich-nuoc-ngoai?region=Trung Đông" },
-        ],
-      },
-      {
-        title: "CHÂU ÂU",
-        items: [
-          {
-            name: "Du lịch Châu Âu",
-            href: "/du-lich-nuoc-ngoai?region=Châu Âu",
-          },
-        ],
-      },
-      {
-        title: "CHÂU ÚC - MỸ",
-        items: [
-          { name: "Châu Úc", href: "/du-lich-nuoc-ngoai?region=Châu Úc" },
-          { name: "Châu Mỹ", href: "/du-lich-nuoc-ngoai?region=Châu Mỹ" },
-        ],
-      },
-    ],
-  },
+  { name: "Du lịch trong nước", href: "/du-lich-trong-nuoc" },
+  { name: "Du lịch nước ngoài", href: "/du-lich-nuoc-ngoai" },
   {
     name: "MICE",
     href: "/mice",
@@ -252,7 +117,7 @@ export function Header() {
                 key={item.name}
                 className="relative group"
                 onMouseEnter={() =>
-                  item.submenu || item.megaMenu
+                  item.submenu
                     ? handleMouseEnter(item.name)
                     : handleMouseLeave()
                 }
@@ -283,38 +148,6 @@ export function Header() {
                         {subitem.name}
                       </Link>
                     ))}
-                  </div>
-                )}
-
-                {/* Mega Menu */}
-                {item.megaMenu && openSubmenu === item.name && (
-                  <div className="absolute top-full -left-20 lg:-left-32 xl:-left-40 mt-2 w-[900px] bg-white shadow-lg rounded-md overflow-hidden transition-all duration-200 border border-border p-6 grid grid-cols-3 gap-8 before:absolute before:-top-3 before:left-0 before:w-full before:h-3 before:content-['']">
-                    {item.megaMenu.map((column, index) => (
-                      <div key={index} className="flex flex-col gap-4">
-                        <h3 className="font-bold text-sm  text-blue-700 uppercase border-b-2 border-primary/20 pb-2 mb-2">
-                          {column.title}
-                        </h3>
-                        <div className="flex flex-col gap-2">
-                          {column.items.map((subitem) => (
-                            <Link
-                              key={subitem.name}
-                              href={subitem.href}
-                              className="text-gray-600 hover:text-primary transition-colors text-sm"
-                            >
-                              {subitem.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                    <div className="col-span-3 text-center mt-4 border-t pt-4">
-                      <Link
-                        href={item.href || "#"}
-                        className="text-primary hover:underline font-medium"
-                      >
-                        Xem tất cả
-                      </Link>
-                    </div>
                   </div>
                 )}
               </div>
@@ -360,7 +193,7 @@ export function Header() {
                       </span>
                     )}
 
-                    {(item.submenu || item.megaMenu) && (
+                    {item.submenu && (
                       <button
                         onClick={() =>
                           setOpenSubmenu(
@@ -390,31 +223,6 @@ export function Header() {
                         >
                           {subitem.name}
                         </Link>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Mobile Mega Menu handling */}
-                  {item.megaMenu && openSubmenu === item.name && (
-                    <div className="pl-4 flex flex-col gap-4 mt-1 border-l-2 border-primary/20 animate-in slide-in-from-top-2 duration-200">
-                      {item.megaMenu.map((section) => (
-                        <div key={section.title}>
-                          <p className="text-xs font-bold text-primary uppercase mb-2 mt-2">
-                            {section.title}
-                          </p>
-                          <div className="flex flex-col gap-1">
-                            {section.items.map((subitem) => (
-                              <Link
-                                key={subitem.name}
-                                href={subitem.href}
-                                className="text-sm text-muted-foreground hover:text-primary transition-colors py-1.5 block"
-                                onClick={() => setMobileMenuOpen(false)}
-                              >
-                                {subitem.name}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
                       ))}
                     </div>
                   )}
