@@ -17,27 +17,9 @@ const Media: CollectionConfig = {
   access: {
     read: () => true,
   },
-<<<<<<< Updated upstream
-  upload: {
-    staticDir: "media",
-    // Không cần resize local vì dùng Cloudinary
-    imageSizes: [],
-    // Sử dụng Cloudinary URL cho admin thumbnail
-    adminThumbnail: ({ doc }) => (doc as any).cloudinaryUrl || null,
-    // Cho phép cả ảnh và video
-    mimeTypes: [
-      "image/*",
-      "video/mp4",
-      "video/mpeg",
-      "video/quicktime", // .mov
-      "video/x-msvideo", // .avi
-      "video/x-matroska", // .mkv
-      "video/webm",
-    ],
-  },
-=======
   // Only enable upload features in local/development
   // On Vercel, we use Cloudinary for storage, so we don't need local upload
+  // This prevents Payload from trying to create the 'media' directory
   ...(isVercel
     ? {}
     : {
@@ -59,7 +41,6 @@ const Media: CollectionConfig = {
           ],
         },
       }),
->>>>>>> Stashed changes
   fields: [
     {
       name: "alt",
