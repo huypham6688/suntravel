@@ -8,6 +8,7 @@ import { Users, Tours, ServiceTourismCollection } from "./collections";
 import { TourismCategoryCollection } from "./collections/TourismCategories";
 import JourneyGallery from "./collections/JourneyGallery";
 import Media from "./collections/Media";
+import { HeroBanners } from "./collections/HeroBanners";
 import { CompanyInfo } from "./globals/CompanyInfo";
 
 export default buildConfig({
@@ -30,6 +31,7 @@ export default buildConfig({
     JourneyGallery,
     Media,
     Videos,
+    HeroBanners,
   ],
 
   globals: [CompanyInfo],
