@@ -2,6 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { Plus, Edit2, Trash2, ImageIcon, Eye, EyeOff } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 interface MediaType {
     id: string;
@@ -39,6 +50,8 @@ export default function HeroBannersManager() {
     });
     const [imagePreview, setImagePreview] = useState("");
     const [uploadProgress, setUploadProgress] = useState(0);
+    const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+    const [bannerToDelete, setBannerToDelete] = useState<string | null>(null);
 
     useEffect(() => {
         fetchBanners();
@@ -68,7 +81,11 @@ export default function HeroBannersManager() {
         } catch (error) {
             console.error("Error fetching banners:", error);
             if (banners.length > 0) {
-                alert("Lỗi khi tải dữ liệu banners");
+                toast({
+                    variant: "destructive",
+                    title: "Lỗi khi tải banner",
+                    description: "Vui lòng thử lại sau.",
+                });
             }
         } finally {
             setIsLoading(false);
@@ -124,12 +141,20 @@ export default function HeroBannersManager() {
         e.preventDefault();
 
         if (!formData.title || !formData.subtitle || !formData.description) {
-            alert("Vui lòng điền đầy đủ thông tin bắt buộc!");
+            toast({
+                variant: "destructive",
+                title: "Thiếu thông tin",
+                description: "Vui lòng điền đầy đủ tiêu đề, tiêu đề phụ và mô tả.",
+            });
             return;
         }
 
         if (!formData.image && !editingBanner) {
-            alert("Vui lòng chọn hình ảnh!");
+            toast({
+                variant: "destructive",
+                title: "Thiếu hình ảnh",
+                description: "Vui lòng chọn hình ảnh cho banner.",
+            });
             return;
         }
 
@@ -188,41 +213,25 @@ export default function HeroBannersManager() {
             }
 
             setUploadProgress(100);
-            alert(editingBanner ? "Đã cập nhật banner!" : "Đã thêm banner mới!");
+            toast({
+                title: editingBanner ? "Cập nhật banner thành công" : "Thêm banner mới thành công",
+            });
             closeModal();
             fetchBanners();
         } catch (error) {
             console.error("Error saving banner:", error);
-            alert(
-                `Lỗi khi lưu banner: ${
-                    error instanceof Error ? error.message : "Unknown error"
-                }`
-            );
+            toast({
+                variant: "destructive",
+                title: "Lỗi khi lưu banner",
+                description:
+                    error instanceof Error ? error.message : "Đã xảy ra lỗi không xác định.",
+            });
         } finally {
             setIsLoading(false);
             setUploadProgress(0);
         }
     };
 
-    const handleDelete = async (id: string) => {
-        if (!confirm("Bạn có chắc muốn xóa banner này?")) return;
-
-        setIsLoading(true);
-        try {
-            const res = await fetch(`/api/hero-banners/${id}`, {
-                method: "DELETE",
-            });
-
-            if (!res.ok) throw new Error("Failed to delete");
-            alert("Đã xóa banner!");
-            fetchBanners();
-        } catch (error) {
-            console.error("Error deleting banner:", error);
-            alert("Lỗi khi xóa banner");
-        } finally {
-            setIsLoading(false);
-        }
-    };
 
     const handleEdit = (banner: BannerType) => {
         setEditingBanner(banner);
@@ -254,12 +263,20 @@ export default function HeroBannersManager() {
         const file = e.target.files?.[0];
         if (file) {
             if (file.size > 5 * 1024 * 1024) {
-                alert("Kích thước file không được vượt quá 5MB!");
+                toast({
+                    variant: "destructive",
+                    title: "File quá lớn",
+                    description: "Kích thước file không được vượt quá 5MB.",
+                });
                 return;
             }
 
             if (!file.type.startsWith("image/")) {
-                alert("Vui lòng chọn file hình ảnh!");
+                toast({
+                    variant: "destructive",
+                    title: "Sai định dạng",
+                    description: "Vui lòng chọn file hình ảnh hợp lệ.",
+                });
                 return;
             }
 
@@ -277,10 +294,54 @@ export default function HeroBannersManager() {
             });
 
             if (!res.ok) throw new Error("Failed to toggle");
+            toast({
+                title: !banner.isActive ? "Đã bật banner" : "Đã tắt banner",
+            });
             fetchBanners();
         } catch (error) {
             console.error("Error toggling banner:", error);
-            alert("Lỗi khi cập nhật trạng thái");
+            toast({
+                variant: "destructive",
+                title: "Lỗi khi cập nhật trạng thái",
+                description: "Vui lòng thử lại sau.",
+            });
+        }
+    };
+
+    const handleDeleteClick = (id: string) => {
+        setBannerToDelete(id);
+        setDeleteDialogOpen(true);
+    };
+
+    const handleDeleteConfirm = async () => {
+        if (!bannerToDelete) return;
+
+        setIsLoading(true);
+        try {
+            const res = await fetch(`/api/hero-banners/${bannerToDelete}`, {
+                method: "DELETE",
+            });
+
+            if (!res.ok) throw new Error("Failed to delete");
+
+            toast({
+                title: "Xóa banner thành công",
+                description: "Banner đã được xóa khỏi hệ thống.",
+            });
+
+            setDeleteDialogOpen(false);
+            setBannerToDelete(null);
+            fetchBanners();
+        } catch (error) {
+            console.error("Error deleting banner:", error);
+            toast({
+                variant: "destructive",
+                title: "Lỗi khi xóa banner",
+                description:
+                    error instanceof Error ? error.message : "Đã xảy ra lỗi không xác định.",
+            });
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -416,7 +477,7 @@ export default function HeroBannersManager() {
                                         Sửa
                                     </button>
                                     <button
-                                        onClick={() => handleDelete(banner.id)}
+                                        onClick={() => handleDeleteClick(banner.id)}
                                         className="flex items-center gap-1 px-3 py-1.5 bg-red-100 text-red-700 rounded-lg text-sm font-medium hover:bg-red-200 transition-colors ml-auto"
                                     >
                                         <Trash2 size={14} />
@@ -618,6 +679,30 @@ export default function HeroBannersManager() {
                     </div>
                 </div>
             )}
+
+            {/* Delete Confirmation Dialog */}
+            <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                        <AlertDialogTitle>Xác nhận xóa banner</AlertDialogTitle>
+                        <AlertDialogDescription>
+                            Bạn có chắc chắn muốn xóa banner này? Hành động này không thể hoàn tác.
+                        </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                        <AlertDialogCancel onClick={() => setBannerToDelete(null)}>
+                            Hủy
+                        </AlertDialogCancel>
+                        <AlertDialogAction
+                            onClick={handleDeleteConfirm}
+                            className="bg-red-600 hover:bg-red-700"
+                            disabled={isLoading}
+                        >
+                            {isLoading ? "Đang xóa..." : "Xóa"}
+                        </AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
         </div>
     );
 }
