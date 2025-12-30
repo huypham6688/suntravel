@@ -8,6 +8,7 @@ import CategoryManager from "./ServiceTourismManager/CategoriesManager";
 import JourneyGalleryCRUD from "./JourneyGalleryCRUD";
 import VideosCRUD from "./VideosCRUD";
 import CompanyInfoManager from "./CompanyInfoManager";
+import HeroBannersManager from './HeroBannersManager';
 import Image from "next/image";
 import {
   LayoutDashboard,
@@ -23,17 +24,21 @@ import {
   BookOpen,
   LogOut,
   ChevronRight,
-  MonitorPlay,
+  MonitorPlay, Layout,
 } from "lucide-react";
 
 type Tab =
-  | "dashboard"
-  | "tours"
-  | "tourism"
-  | "categories"
-  | "gallery"
-  | "company-info"
-  | "videos";
+    | "dashboard"
+    | "tours"
+    | "tourism"
+    | "categories"
+    | "gallery"
+    | "company-info"
+    | "videos"
+    | "hero-banners";
+
+
+
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
@@ -133,6 +138,13 @@ export default function AdminDashboard() {
       icon: Building2,
       color: "text-gray-600",
       bgColor: "bg-gray-50",
+    },
+    {
+      id: "hero-banners",
+      label: "Hero Banners",
+      icon: Layout,
+      color: "text-indigo-600",
+      bgColor: "bg-indigo-50",
     },
   ];
 
@@ -443,6 +455,7 @@ export default function AdminDashboard() {
             {activeTab === "gallery" && <JourneyGalleryCRUD />}
             {activeTab === "videos" && <VideosCRUD />}
             {activeTab === "company-info" && <CompanyInfoManager />}
+            {activeTab === "hero-banners" && <HeroBannersManager />}
           </main>
         </div>
       </div>
