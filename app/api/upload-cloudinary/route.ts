@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "../../../payload.config";
-import { promises as fs } from "fs";
-import path from "path";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -65,6 +63,11 @@ export async function POST(req: NextRequest) {
     }
 
     // Save to Payload Media collection
+    // CRITICAL: We don't pass the file to payload.create() because:
+    // 1. File is already uploaded to Cloudinary
+    // 2. On Vercel, filesystem is read-only and can't create directories
+    // 3. Passing file would cause Payload to try creating 'media' directory
+    // 4. We only need to store metadata (cloudinaryUrl) in the database
     const config = await configPromise;
     const payload = await getPayloadHMR({ config });
     
@@ -77,26 +80,9 @@ export async function POST(req: NextRequest) {
         width: uploadResult.width,
         height: uploadResult.height,
       },
-      file: {
-        data: buffer,
-        name: file.name,
-        mimetype: file.type,
-        size: file.size,
-      },
+      // DO NOT pass file here - this causes Payload to create 'media' directory on Vercel
+      // File is already stored in Cloudinary, we only need the URL in database
     });
-
-    // Cleanup: Delete the local file to save space (storage is handled by Cloudinary)
-    // We only keep the DB record for relations
-    // Note: On Vercel serverless, this might not be necessary as files are ephemeral
-    if (media.filename) {
-      try {
-        const filePath = path.join(process.cwd(), "media", media.filename);
-        await fs.unlink(filePath);
-      } catch (err) {
-        // Ignore errors on Vercel as filesystem is read-only
-        console.warn("Failed to delete local file (this is normal on Vercel):", err);
-      }
-    }
 
     return NextResponse.json({
       success: true,
