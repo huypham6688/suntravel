@@ -7,27 +7,19 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useCompanyInfo } from "@/hooks/use-company-info";
 
-const navItems = [
+type NavItem = {
+  name: string;
+  href: string;
+  submenu?: { name: string; href: string }[];
+};
+
+const navItems: NavItem[] = [
   { name: "Trang chủ", href: "/" },
   { name: "Du lịch trong nước", href: "/du-lich-trong-nuoc" },
   { name: "Du lịch nước ngoài", href: "/du-lich-nuoc-ngoai" },
   {
     name: "MICE",
     href: "/mice",
-    submenu: [
-      {
-        name: "Công Tác Doanh Nghiệp",
-        href: "/mice?category=Công tác doanh nghiệp#journey-diary",
-      },
-      {
-        name: "Hội Nghị, Hội Thảo",
-        href: "/mice?category=Hội nghị, hội thảo#journey-diary",
-      },
-      {
-        name: "Team Building",
-        href: "/mice?category=Team Building#journey-diary",
-      },
-    ],
   },
   { name: "Dịch vụ du lịch", href: "/dich-vu" },
   { name: "Thông tin du lịch", href: "/cam-nang" },
