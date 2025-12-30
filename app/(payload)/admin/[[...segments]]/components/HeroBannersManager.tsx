@@ -80,29 +80,44 @@ export default function HeroBannersManager() {
         imageFormData.append("file", file);
         imageFormData.append("alt", file.name.replace(/\.[^/.]+$/, ""));
 
-        const uploadRes = await fetch("/api/upload-cloudinary", {
-            method: "POST",
-            body: imageFormData,
-        });
+        try {
+            const uploadRes = await fetch("/api/upload-cloudinary", {
+                method: "POST",
+                body: imageFormData,
+            });
 
-        if (!uploadRes.ok) {
-            const error = await uploadRes.text();
-            console.error("Upload error:", error);
-            throw new Error(`Failed to upload image: ${uploadRes.status}`);
+            if (!uploadRes.ok) {
+                let errorMessage = `Failed to upload image: ${uploadRes.status}`;
+                try {
+                    const errorData = await uploadRes.json();
+                    errorMessage = errorData.error || errorMessage;
+                    if (errorData.details) {
+                        console.error("Upload error details:", errorData.details);
+                    }
+                } catch {
+                    const errorText = await uploadRes.text();
+                    console.error("Upload error response:", errorText);
+                    errorMessage = errorText || errorMessage;
+                }
+                throw new Error(errorMessage);
+            }
+
+            const contentType = uploadRes.headers.get("content-type");
+            if (!contentType || !contentType.includes("application/json")) {
+                throw new Error("Invalid upload response format");
+            }
+
+            const uploadData = await uploadRes.json();
+
+            if (!uploadData.success || !uploadData.doc || !uploadData.doc.id) {
+                throw new Error(uploadData.error || "Invalid upload response structure");
+            }
+
+            return uploadData.doc.id;
+        } catch (error) {
+            console.error("Upload image error:", error);
+            throw error;
         }
-
-        const contentType = uploadRes.headers.get("content-type");
-        if (!contentType || !contentType.includes("application/json")) {
-            throw new Error("Invalid upload response format");
-        }
-
-        const uploadData = await uploadRes.json();
-
-        if (!uploadData.success || !uploadData.doc || !uploadData.doc.id) {
-            throw new Error(uploadData.error || "Invalid upload response structure");
-        }
-
-        return uploadData.doc.id;
     };
 
     const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
