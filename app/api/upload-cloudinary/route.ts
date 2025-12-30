@@ -28,11 +28,27 @@ export async function POST(req: NextRequest) {
     const alt = formData.get("alt") as string;
 
     if (!file) {
+      console.error("No file in FormData. FormData keys:", Array.from(formData.keys()));
       return NextResponse.json(
         { success: false, error: "No file provided" },
         { status: 400 }
       );
     }
+
+    // Validate file object
+    if (!(file instanceof File)) {
+      console.error("File is not a File instance:", typeof file, file);
+      return NextResponse.json(
+        { success: false, error: "Invalid file object" },
+        { status: 400 }
+      );
+    }
+
+    console.log("Uploading file:", {
+      name: file.name,
+      size: file.size,
+      type: file.type,
+    });
 
     // Convert file to buffer
     const bytes = await file.arrayBuffer();
