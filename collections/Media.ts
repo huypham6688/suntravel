@@ -14,7 +14,10 @@ const Media: CollectionConfig = {
     read: () => true,
   },
   upload: {
-    staticDir: "media",
+    // Only use staticDir in development/local environments
+    // On Vercel (serverless), filesystem is read-only, so we skip staticDir
+    // Files are stored in Cloudinary, not locally
+    staticDir: process.env.VERCEL ? undefined : "media",
     // Không cần resize local vì dùng Cloudinary
     imageSizes: [],
     // Sử dụng Cloudinary URL cho admin thumbnail
