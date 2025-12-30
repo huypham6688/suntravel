@@ -293,7 +293,7 @@ export default async function TourDetailPage({
 
             {/* Sidebar - Booking Card */}
             <div className="lg:col-span-1">
-              <div className="bg-card rounded-2xl p-6 shadow-lg sticky top-24">
+              <div className="bg-card rounded-2xl p-6 shadow-lg sticky top-[150px]">
                 <div className="mb-6">
                   <div className="flex items-baseline gap-2 mb-2">
                     {tour.originalPrice && (
