@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "../../../payload.config";
 
 export async function GET(req: NextRequest) {
   try {
     const config = await configPromise;
-    const payload = await getPayloadHMR({ config });
+    const payload = await getPayload({ config });
     const { searchParams } = new URL(req.url);
 
     const sort = searchParams.get("sort") || "order";
@@ -65,7 +65,7 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const config = await configPromise;
-    const payload = await getPayloadHMR({ config });
+    const payload = await getPayload({ config });
     const body = await req.json();
 
     const banner = await payload.create({
@@ -82,10 +82,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        error: error instanceof Error ? error.message : "Failed to create hero banner",
+        error:
+          error instanceof Error
+            ? error.message
+            : "Failed to create hero banner",
       },
       { status: 400 }
     );
   }
 }
-

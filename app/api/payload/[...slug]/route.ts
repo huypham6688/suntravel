@@ -1,7 +1,7 @@
 // src/app/api/payload/[...slug]/route.ts
 
 import { NextRequest, NextResponse } from "next/server";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 
 // Import relative - điều chỉnh số ../ sao cho đúng vị trí payload.config.ts ở root
 import configPromise from "../../../../payload.config";
@@ -15,7 +15,7 @@ async function handler(req: NextRequest) {
     const config = await configPromise;
 
     // Khởi tạo Payload instance
-    const payload = await getPayloadHMR({ config });
+    const payload = await getPayload({ config });
 
     // Lấy serverURL từ config (bây giờ hợp lệ, không còn lỗi TS2339)
     const baseURL = config.serverURL || new URL(req.url).origin;
@@ -32,7 +32,7 @@ async function handler(req: NextRequest) {
     // Xử lý body (hỗ trợ streaming lớn, không đọc hết vào memory)
     let body: BodyInit | null = null;
     if (req.body) {
-      body = await req.blob();  // blob giữ streaming tốt nhất
+      body = await req.blob(); // blob giữ streaming tốt nhất
     }
 
     // Proxy fetch đến internal Payload
@@ -62,4 +62,10 @@ async function handler(req: NextRequest) {
   }
 }
 
-export { handler as GET, handler as POST, handler as PUT, handler as PATCH, handler as DELETE };
+export {
+  handler as GET,
+  handler as POST,
+  handler as PUT,
+  handler as PATCH,
+  handler as DELETE,
+};

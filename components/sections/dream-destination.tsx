@@ -37,7 +37,7 @@ export function DreamDestination({ initialData = [] }: DreamDestinationProps) {
       }
     };
     fetchData();
-  }, [initialData]);
+  }, []);
 
   // Flatten all images from API data (main + gallery)
   const allDestinations = useMemo(() => {

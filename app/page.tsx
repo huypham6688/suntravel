@@ -1,60 +1,63 @@
+import { Suspense } from "react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingChat } from "@/components/floating-chat";
-import { HeroBanner, BannerItem } from "@/components/hero-banner";
 import { SearchBar } from "@/components/search-bar";
-import { NewTours } from "@/components/sections/new-tours";
-import { TravelGuides } from "@/components/sections/travel-guides";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { Testimonials } from "@/components/sections/testimonials";
 import { ContactSection } from "@/components/sections/contact-section";
 import Partners from "@/components/partners";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import configPromise from "../payload.config";
 
-async function getInitialData() {
-  const payload = await getPayloadHMR({ config: configPromise });
+import { HeroBannerWrapper } from "@/components/hero-banner-wrapper";
+import { NewToursWrapper } from "@/components/sections/new-tours-wrapper";
+import { TravelGuidesWrapper } from "@/components/sections/travel-guides-wrapper";
 
-  const [heroBanners, tours, tourism] = await Promise.all([
-    payload.find({
-      collection: "hero-banners",
-      sort: "order",
-      limit: 100,
-      depth: 2,
-    }),
-    payload.find({
-      collection: "tours",
-      sort: "-createdAt",
-      limit: 6,
-    }),
-    payload.find({
-      collection: "service_tourism",
-      sort: "-createdAt",
-      limit: 3,
-      depth: 1,
-    }),
-  ]);
+// Loading Skeletons
+function HeroSkeleton() {
+  return (
+    <div className="relative h-[500px] md:h-[600px] bg-gray-200 animate-pulse flex items-center justify-center">
+      <div className="w-12 h-12 border-4 border-gray-300 border-t-primary rounded-full animate-spin"></div>
+    </div>
+  );
+}
 
-  return {
-    banners: heroBanners.docs as unknown as BannerItem[],
-    tours: tours.docs as any,
-    tourism: tourism.docs,
-  };
+function SectionSkeleton() {
+  return (
+    <div className="py-20 container mx-auto px-4">
+      <div className="h-10 w-1/3 bg-gray-200 rounded mb-8 animate-pulse"></div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[1, 2, 3].map((i) => (
+          <div
+            key={i}
+            className="h-80 bg-gray-200 rounded-2xl animate-pulse"
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export const dynamic = "force-dynamic";
 
-export default async function HomePage() {
-  const data = await getInitialData();
-
+export default function HomePage() {
   return (
     <>
       <Header />
       <main>
-        <HeroBanner items={data.banners} />
+        <Suspense fallback={<HeroSkeleton />}>
+          <HeroBannerWrapper />
+        </Suspense>
+
         <SearchBar />
-        <NewTours initialTours={data.tours} />
-        <TravelGuides initialGuides={data.tourism as any} />
+
+        <Suspense fallback={<SectionSkeleton />}>
+          <NewToursWrapper />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          <TravelGuidesWrapper />
+        </Suspense>
+
         <WhyChooseUs />
         <Testimonials />
         <Partners />

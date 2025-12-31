@@ -1,10 +1,10 @@
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "@/payload.config";
 import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const payload = await getPayloadHMR({ config: configPromise });
+    const payload = await getPayload({ config: configPromise });
     const companyInfo = await payload.findGlobal({
       slug: "company-info",
     });
@@ -22,7 +22,7 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const payload = await getPayloadHMR({ config: configPromise });
+    const payload = await getPayload({ config: configPromise });
 
     // In a real app, you should check for authentication/authorization here.
     // Since this is called from the admin dashboard which is likely behind its own auth check (or client-side auth check),

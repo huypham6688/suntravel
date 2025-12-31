@@ -1,16 +1,16 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { getPayloadHMR } from '@payloadcms/next/utilities';
-import configPromise from '../../../../payload.config';
+import { NextRequest, NextResponse } from "next/server";
+import { getPayload } from "payload";
+import configPromise from "../../../../payload.config";
 
 export async function POST(request: NextRequest) {
   try {
     const config = await configPromise;
-    const payload = await getPayloadHMR({ config });
+    const payload = await getPayload({ config });
     const body = await request.json();
 
     // Kiểm tra số lượng users
     const existingUsers = await payload.find({
-      collection: 'users',
+      collection: "users",
       limit: 1,
     });
 
@@ -18,12 +18,12 @@ export async function POST(request: NextRequest) {
 
     // Tạo user mới
     const user = await payload.create({
-      collection: 'users',
+      collection: "users",
       data: {
         email: body.email,
         password: body.password,
         name: body.name,
-        role: isFirstUser ? 'admin' : 'user',
+        role: isFirstUser ? "admin" : "user",
       },
     });
 
@@ -34,13 +34,16 @@ export async function POST(request: NextRequest) {
         email: user.email,
         name: user.name,
         role: user.role,
-      }
+      },
     });
   } catch (error) {
-    console.error('Register error:', error);
-    return NextResponse.json({
-      success: false,
-      error: error instanceof Error ? error.message : 'Registration failed'
-    }, { status: 400 });
+    console.error("Register error:", error);
+    return NextResponse.json(
+      {
+        success: false,
+        error: error instanceof Error ? error.message : "Registration failed",
+      },
+      { status: 400 }
+    );
   }
 }
