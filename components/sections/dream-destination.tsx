@@ -10,15 +10,21 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const ITEMS_PER_PAGE = 7; // Customize based on grid slots
 
-export function DreamDestination() {
+interface DreamDestinationProps {
+  initialData?: any[];
+}
+
+export function DreamDestination({ initialData = [] }: DreamDestinationProps) {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     alt: string;
   } | null>(null);
-  const [galleryItems, setGalleryItems] = useState<any[]>([]);
+  const [galleryItems, setGalleryItems] = useState<any[]>(initialData);
 
   useEffect(() => {
+    if (initialData.length > 0) return;
+
     const fetchData = async () => {
       try {
         const res = await fetch("/api/journey-gallery?limit=50");
@@ -31,7 +37,7 @@ export function DreamDestination() {
       }
     };
     fetchData();
-  }, []);
+  }, [initialData]);
 
   // Flatten all images from API data (main + gallery)
   const allDestinations = useMemo(() => {
