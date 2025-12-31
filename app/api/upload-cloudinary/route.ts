@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "../../../payload.config";
 
 cloudinary.config({
@@ -15,7 +15,11 @@ export const maxDuration = 30;
 export async function POST(req: NextRequest) {
   try {
     // Validate Cloudinary config
-    if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !process.env.CLOUDINARY_API_SECRET) {
+    if (
+      !process.env.CLOUDINARY_CLOUD_NAME ||
+      !process.env.CLOUDINARY_API_KEY ||
+      !process.env.CLOUDINARY_API_SECRET
+    ) {
       console.error("Missing Cloudinary environment variables");
       return NextResponse.json(
         { success: false, error: "Cloudinary configuration is missing" },
@@ -28,7 +32,10 @@ export async function POST(req: NextRequest) {
     const alt = formData.get("alt") as string;
 
     if (!file) {
-      console.error("No file in FormData. FormData keys:", Array.from(formData.keys()));
+      console.error(
+        "No file in FormData. FormData keys:",
+        Array.from(formData.keys())
+      );
       return NextResponse.json(
         { success: false, error: "No file provided" },
         { status: 400 }
@@ -85,8 +92,8 @@ export async function POST(req: NextRequest) {
     // 3. Passing file would cause Payload to try creating 'media' directory
     // 4. We only need to store metadata (cloudinaryUrl) in the database
     const config = await configPromise;
-    const payload = await getPayloadHMR({ config });
-    
+    const payload = await getPayload({ config });
+
     const media = await payload.create({
       collection: "media",
       data: {
@@ -116,10 +123,11 @@ export async function POST(req: NextRequest) {
       name: error.name,
     });
     return NextResponse.json(
-      { 
-        success: false, 
+      {
+        success: false,
         error: error.message || "Upload failed",
-        details: process.env.NODE_ENV === "development" ? error.stack : undefined,
+        details:
+          process.env.NODE_ENV === "development" ? error.stack : undefined,
       },
       { status: 500 }
     );

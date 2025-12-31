@@ -38,7 +38,7 @@ export async function PUT(
 ) {
   try {
     const config = await configPromise;
-    const payload = await getPayloadHMR({ config });
+    const payload = await getPayload({ config });
     const { id } = await params;
     const body = await request.json();
 

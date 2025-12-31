@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "../../../../payload.config";
 
 export async function GET(
@@ -8,7 +8,7 @@ export async function GET(
 ) {
   try {
     const config = await configPromise;
-    const payload = await getPayloadHMR({ config });
+    const payload = await getPayload({ config });
     const { id } = await params;
 
     const banner = await payload.findByID({
@@ -21,7 +21,10 @@ export async function GET(
     let imageUrl = "";
     if (banner.image) {
       if (typeof banner.image === "object") {
-        imageUrl = (banner.image as any).cloudinaryUrl || (banner.image as any).url || "";
+        imageUrl =
+          (banner.image as any).cloudinaryUrl ||
+          (banner.image as any).url ||
+          "";
       } else {
         imageUrl = banner.image;
       }
@@ -33,7 +36,10 @@ export async function GET(
         ...banner,
         image: banner.image
           ? {
-              id: typeof banner.image === "object" ? (banner.image as any).id : banner.image,
+              id:
+                typeof banner.image === "object"
+                  ? (banner.image as any).id
+                  : banner.image,
               url: imageUrl,
               cloudinaryUrl: imageUrl,
             }
@@ -58,7 +64,7 @@ export async function PATCH(
 ) {
   try {
     const config = await configPromise;
-    const payload = await getPayloadHMR({ config });
+    const payload = await getPayload({ config });
     const { id } = await params;
     const body = await req.json();
 
@@ -77,7 +83,10 @@ export async function PATCH(
     return NextResponse.json(
       {
         success: false,
-        error: error instanceof Error ? error.message : "Failed to update hero banner",
+        error:
+          error instanceof Error
+            ? error.message
+            : "Failed to update hero banner",
       },
       { status: 400 }
     );
@@ -90,7 +99,7 @@ export async function DELETE(
 ) {
   try {
     const config = await configPromise;
-    const payload = await getPayloadHMR({ config });
+    const payload = await getPayload({ config });
     const { id } = await params;
 
     await payload.delete({
@@ -107,10 +116,12 @@ export async function DELETE(
     return NextResponse.json(
       {
         success: false,
-        error: error instanceof Error ? error.message : "Failed to delete hero banner",
+        error:
+          error instanceof Error
+            ? error.message
+            : "Failed to delete hero banner",
       },
       { status: 400 }
     );
   }
 }
-

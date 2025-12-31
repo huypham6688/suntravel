@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "../../../payload.config";
 import { Header } from "@/components/header";
 import { FloatingChat } from "@/components/floating-chat";
@@ -54,7 +54,7 @@ interface Tour {
 async function getTour(id: string): Promise<Tour | null> {
   try {
     const config = await configPromise;
-    const payload = await getPayloadHMR({ config });
+    const payload = await getPayload({ config });
 
     const result = await payload.findByID({
       collection: "tours",
