@@ -8,7 +8,8 @@ import CategoryManager from "./ServiceTourismManager/CategoriesManager";
 import JourneyGalleryCRUD from "./JourneyGalleryCRUD";
 import VideosCRUD from "./VideosCRUD";
 import CompanyInfoManager from "./CompanyInfoManager";
-import HeroBannersManager from './HeroBannersManager';
+import HeroBannersManager from "./HeroBannersManager";
+import CountriesManager from "./CountriesManager";
 import Image from "next/image";
 import {
   LayoutDashboard,
@@ -24,21 +25,21 @@ import {
   BookOpen,
   LogOut,
   ChevronRight,
-  MonitorPlay, Layout,
+  MonitorPlay,
+  Layout,
+  Globe,
 } from "lucide-react";
 
 type Tab =
-    | "dashboard"
-    | "tours"
-    | "tourism"
-    | "categories"
-    | "gallery"
-    | "company-info"
-    | "videos"
-    | "hero-banners";
-
-
-
+  | "dashboard"
+  | "tours"
+  | "tourism"
+  | "categories"
+  | "gallery"
+  | "company-info"
+  | "videos"
+  | "hero-banners"
+  | "countries";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
@@ -145,6 +146,13 @@ export default function AdminDashboard() {
       icon: Layout,
       color: "text-indigo-600",
       bgColor: "bg-indigo-50",
+    },
+    {
+      id: "countries",
+      label: "Visa (Quốc gia)",
+      icon: Globe, // Using Globe from lucide-react (ensure import)
+      color: "text-cyan-600",
+      bgColor: "bg-cyan-50",
     },
   ];
 
@@ -456,6 +464,7 @@ export default function AdminDashboard() {
             {activeTab === "videos" && <VideosCRUD />}
             {activeTab === "company-info" && <CompanyInfoManager />}
             {activeTab === "hero-banners" && <HeroBannersManager />}
+            {activeTab === "countries" && <CountriesManager />}
           </main>
         </div>
       </div>

@@ -1,3 +1,4 @@
-export { Users } from './Users';
-export { Tours } from './Tours';
-export { ServiceTourismCollection } from './ServiceTourism';
+export { Users } from "./Users";
+export { Tours } from "./Tours";
+export { ServiceTourismCollection } from "./ServiceTourism";
+export { Countries } from "./Countries";

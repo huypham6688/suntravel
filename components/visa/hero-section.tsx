@@ -7,7 +7,7 @@ interface HeroSectionProps {
 export function HeroSection({
   title = "Dịch Vụ Visa Trọn Gói",
   subtitle = "Visa đi nước ngoài - Dễ dàng, Nhanh chóng, Tỷ lệ đậu cao",
-  backgroundImage = "/visa/du-lich-anh.jpg",
+  backgroundImage = "/visa/banner.png",
 }: HeroSectionProps) {
   return (
     <section className="relative h-75 md:h-100">

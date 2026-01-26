@@ -25,14 +25,23 @@ export default function AdminPage() {
       }
 
       // Verify token với Payload API
-      const response = await fetch("/api/payload/api/users/me", {
+      const response = await fetch("/api/auth/me", {
         headers: {
           Authorization: `JWT ${token}`,
         },
       });
 
       if (response.ok) {
-        setIsAuthenticated(true);
+        const data = await response.json();
+        // Check role admin
+        if (data.user && data.user.role === "admin") {
+          setIsAuthenticated(true);
+        } else {
+          // Valid token but not admin
+          localStorage.removeItem("payload-token");
+          setIsAuthenticated(false);
+          alert("Bạn không có quyền truy cập trang quản trị.");
+        }
       } else {
         localStorage.removeItem("payload-token");
         setIsAuthenticated(false);

@@ -2,9 +2,14 @@ import { buildConfig } from "payload";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import path from "path";
-import Videos from './collections/Videos'
+import Videos from "./collections/Videos";
 import sharp from "sharp";
-import { Users, Tours, ServiceTourismCollection } from "./collections";
+import {
+  Users,
+  Tours,
+  ServiceTourismCollection,
+  Countries,
+} from "./collections";
 import { TourismCategoryCollection } from "./collections/TourismCategories";
 import JourneyGallery from "./collections/JourneyGallery";
 import Media from "./collections/Media";
@@ -27,6 +32,7 @@ export default buildConfig({
     Users,
     Tours,
     ServiceTourismCollection,
+    Countries,
     TourismCategoryCollection,
     JourneyGallery,
     Media,

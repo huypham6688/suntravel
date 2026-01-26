@@ -14,7 +14,6 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
   const [loading, setLoading] = useState(false);
   const [isRegisterMode, setIsRegisterMode] = useState(false);
   const [checkingUsers, setCheckingUsers] = useState(true);
-  const [debugInfo, setDebugInfo] = useState("");
 
   useEffect(() => {
     checkIfUsersExist();
@@ -22,38 +21,21 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
 
   const checkIfUsersExist = async () => {
     try {
-      setDebugInfo("Đang kiểm tra Payload API...");
-
       // Thử API test trước
       const testResponse = await fetch("/api/test-payload");
 
       if (!testResponse.ok) {
-        let errorMessage = `API not ready: ${testResponse.status}`;
-        try {
-          const errorData = await testResponse.json();
-          if (errorData.error) {
-            errorMessage += ` - ${errorData.error}`;
-          }
-        } catch (e) {
-          // response might be text/html
-          const text = await testResponse.text();
-          if (text) errorMessage += ` - ${text.substring(0, 50)}...`;
-        }
-        throw new Error(errorMessage);
+        throw new Error(`API not ready: ${testResponse.status}`);
       }
 
       const testData = await testResponse.json();
       console.log("Test API result:", testData);
-      setDebugInfo(`API OK - Found ${testData.totalUsers} users`);
 
       if (testData.totalUsers === 0) {
         setIsRegisterMode(true);
       }
     } catch (error) {
       console.error("Error checking users:", error);
-      setDebugInfo(
-        `Lỗi kết nối API: ${error instanceof Error ? error.message : String(error)}`
-      );
       // Nếu API lỗi, cho phép đăng ký
       setIsRegisterMode(true);
     } finally {
@@ -90,7 +72,7 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
     } catch (err) {
       setError(
         "Có lỗi xảy ra khi đăng nhập: " +
-          (err instanceof Error ? err.message : String(err))
+          (err instanceof Error ? err.message : String(err)),
       );
       console.error("Login error:", err);
     } finally {
@@ -144,7 +126,7 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
     } catch (err) {
       setError(
         "Có lỗi xảy ra khi đăng ký: " +
-          (err instanceof Error ? err.message : String(err))
+          (err instanceof Error ? err.message : String(err)),
       );
       console.error("Register error:", err);
     } finally {
@@ -158,11 +140,6 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
         <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
           <div className="text-center">
             <div className="text-lg mb-2">Đang kiểm tra hệ thống...</div>
-            {debugInfo && (
-              <div className="text-sm text-gray-600 mt-4 p-3 bg-gray-100 rounded">
-                {debugInfo}
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -179,12 +156,6 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
         {isRegisterMode && (
           <div className="mb-4 bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded">
             ℹ️ Chưa có tài khoản nào. Hãy tạo tài khoản admin đầu tiên.
-          </div>
-        )}
-
-        {debugInfo && (
-          <div className="mb-4 bg-gray-50 border border-gray-200 text-gray-600 px-4 py-2 rounded text-xs">
-            Debug: {debugInfo}
           </div>
         )}
 
@@ -273,14 +244,11 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
           </button>
         </form>
 
-        {!isRegisterMode && (
+        {!isRegisterMode && !checkingUsers && (
           <div className="mt-4 text-center">
-            <button
-              onClick={() => setIsRegisterMode(true)}
-              className="text-sm text-blue-600 hover:text-blue-800"
-            >
-              Chưa có tài khoản? Đăng ký ngay
-            </button>
+            {/* Logic: If we found users (API returned totalUsers > 0), button is hidden. 
+                If totalUsers === 0, isRegisterMode is likely already true. 
+                This handles edge cases where we might want to manually toggle. */}
           </div>
         )}
 

@@ -14,16 +14,25 @@ export async function POST(request: NextRequest) {
       limit: 1,
     });
 
-    const isFirstUser = existingUsers.totalDocs === 0;
+    // Chỉ cho phép đăng ký nếu chưa có user nào (Setup mode)
+    if (existingUsers.totalDocs > 0) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Registration is disabled. Please contact an administrator.",
+        },
+        { status: 403 },
+      );
+    }
 
-    // Tạo user mới
+    // Tạo user mới (luôn là admin vì là user đầu tiên)
     const user = await payload.create({
       collection: "users",
       data: {
         email: body.email,
         password: body.password,
         name: body.name,
-        role: isFirstUser ? "admin" : "user",
+        role: "admin",
       },
     });
 
@@ -43,7 +52,7 @@ export async function POST(request: NextRequest) {
         success: false,
         error: error instanceof Error ? error.message : "Registration failed",
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 }

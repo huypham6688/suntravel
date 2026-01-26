@@ -13,18 +13,21 @@ const hotVisas = [
     image: "/visa/du-lich-trung-quoc.jpg", // Ensure these images exist or use placeholders
     price: "Liên hệ",
     desc: "Visa du lịch, thương mại. Tỷ lệ đậu cao.",
+    href: "/visa/trung-quoc",
   },
   {
     country: "Nhật Bản",
     image: "/visa/du-lich-japan.jpg",
     price: "Liên hệ",
     desc: "Thủ tục đơn giản, không cần phỏng vấn.",
+    href: "/visa/nhat-ban",
   },
   {
     country: "Châu Âu (Schengen)",
     image: "/visa/du-lich-chau-au.jpg",
     price: "Liên hệ",
     desc: "Visa đi 26 nước Châu Âu. Hỗ trợ trọn gói.",
+    href: "/visa/chau-au",
   },
 ];
 
@@ -65,7 +68,7 @@ export function HotVisasSection() {
                   className="border-primary text-primary hover:bg-primary hover:text-white"
                   asChild
                 >
-                  <Link href="/lien-he">Chi tiết</Link>
+                  <Link href={visa.href}>Chi tiết</Link>
                 </Button>
               </div>
             </div>

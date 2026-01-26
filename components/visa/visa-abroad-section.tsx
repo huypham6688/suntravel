@@ -1,17 +1,24 @@
-"use client";
-
-import { Globe, Map } from "lucide-react";
-
-// You might want to move this data to a shared location if reused,
-// or keep it here if specific to this section.
 import Link from "next/link";
-import { visaCountries } from "./visa-data";
+import configPromise from "@/payload.config";
+import { getPayload } from "payload";
 
-export function VisaAbroadSection() {
-  // Split countries for two rows
-  const half = Math.ceil(visaCountries.length / 2);
-  const row1 = visaCountries.slice(0, half);
-  const row2 = visaCountries.slice(half);
+export async function VisaAbroadSection() {
+  const payload = await getPayload({
+    config: configPromise,
+  });
+
+  const { docs: countries } = await payload.find({
+    collection: "countries",
+    limit: 100,
+  });
+
+  // If no countries are found, we can return null or render an empty state,
+  // or use fallback data. For now, we'll try to use the fetched data.
+  // We need to split them for the marquee.
+
+  const half = Math.ceil(countries.length / 2);
+  const row1 = countries.slice(0, half);
+  const row2 = countries.slice(half);
 
   return (
     <section className="py-16 bg-blue-50/50 relative overflow-hidden">
@@ -28,7 +35,7 @@ export function VisaAbroadSection() {
           {[...row1, ...row1].map((country, idx) => (
             <Link
               key={`row1-${idx}`}
-              href={`/visa/${country.slug}`}
+              href={`/visa/${country.slug}`} // Assuming slug exists in your Country collection
               className="group relative h-32 w-48 shrink-0 cursor-pointer block"
             >
               <div className="absolute inset-0 bg-white rounded-xl border border-blue-100 hover:border-primary flex flex-col items-center justify-center p-4 shadow-sm hover:shadow-md transition-all duration-300">
@@ -54,7 +61,7 @@ export function VisaAbroadSection() {
           {[...row2, ...row2].map((country, idx) => (
             <Link
               key={`row2-${idx}`}
-              href={`/visa/${country.slug}`}
+              href={`/visa/${country.slug}`} // Assuming slug exists
               className="group relative h-32 w-48 shrink-0 cursor-pointer block"
             >
               <div className="absolute inset-0 bg-white rounded-xl border border-blue-100 hover:border-primary flex flex-col items-center justify-center p-4 shadow-sm hover:shadow-md transition-all duration-300">
