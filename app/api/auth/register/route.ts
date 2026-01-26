@@ -25,6 +25,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const registrationSecret = process.env.REGISTRATION_SECRET;
+    if (!registrationSecret || body.registrationSecret !== registrationSecret) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Invalid registration secret",
+        },
+        { status: 403 },
+      );
+    }
+
     // Tạo user mới (luôn là admin vì là user đầu tiên)
     const user = await payload.create({
       collection: "users",

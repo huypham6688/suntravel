@@ -10,6 +10,7 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [registrationSecret, setRegistrationSecret] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [isRegisterMode, setIsRegisterMode] = useState(false);
@@ -95,6 +96,7 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
           email,
           password,
           name,
+          registrationSecret,
         }),
       });
 
@@ -179,6 +181,26 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Nguyễn Văn A"
+              />
+            </div>
+          )}
+
+          {isRegisterMode && (
+            <div>
+              <label
+                htmlFor="registrationSecret"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Mã bí mật (Registration Secret)
+              </label>
+              <input
+                id="registrationSecret"
+                type="password"
+                value={registrationSecret}
+                onChange={(e) => setRegistrationSecret(e.target.value)}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Nhập mã bí mật từ quản trị viên"
               />
             </div>
           )}
