@@ -40,6 +40,31 @@ const services = [
     ],
   },
   {
+    icon: FileText,
+    title: "Làm visa",
+    description:
+      "Dịch vụ làm visa du lịch, công tác cho tất cả các quốc gia. Tư vấn hồ sơ miễn phí, tỷ lệ đậu cao.",
+    features: [
+      "Tư vấn miễn phí",
+      "Tỷ lệ đậu cao",
+      "Xử lý nhanh",
+      "Hỗ trợ toàn diện",
+    ],
+    detailHref: "/visa",
+  },
+  {
+    icon: Users,
+    title: "Tour theo yêu cầu",
+    description:
+      "Thiết kế tour riêng theo yêu cầu của khách hàng. Lịch trình linh hoạt, trải nghiệm độc đáo, phù hợp mọi ngân sách.",
+    features: [
+      "Lịch trình tùy chỉnh",
+      "Hướng dẫn riêng",
+      "Linh hoạt thời gian",
+      "Trải nghiệm độc đáo",
+    ],
+  },
+  {
     icon: Car,
     title: "Thuê xe du lịch",
     description:
@@ -63,18 +88,7 @@ const services = [
       "Nhiều điểm đến",
     ],
   },
-  {
-    icon: FileText,
-    title: "Làm visa",
-    description:
-      "Dịch vụ làm visa du lịch, công tác cho tất cả các quốc gia. Tư vấn hồ sơ miễn phí, tỷ lệ đậu cao.",
-    features: [
-      "Tư vấn miễn phí",
-      "Tỷ lệ đậu cao",
-      "Xử lý nhanh",
-      "Hỗ trợ toàn diện",
-    ],
-  },
+
   {
     icon: Camera,
     title: "Chụp ảnh du lịch",
@@ -93,18 +107,6 @@ const services = [
     description:
       "Gói bảo hiểm du lịch toàn diện, bảo vệ bạn trong suốt hành trình với mức phí hợp lý và quyền lợi tối đa.",
     features: ["Chi phí y tế", "Mất hành lý", "Hủy/hoãn chuyến", "Hỗ trợ 24/7"],
-  },
-  {
-    icon: Users,
-    title: "Tour theo yêu cầu",
-    description:
-      "Thiết kế tour riêng theo yêu cầu của khách hàng. Lịch trình linh hoạt, trải nghiệm độc đáo, phù hợp mọi ngân sách.",
-    features: [
-      "Lịch trình tùy chỉnh",
-      "Hướng dẫn riêng",
-      "Linh hoạt thời gian",
-      "Trải nghiệm độc đáo",
-    ],
   },
 ];
 
@@ -161,13 +163,26 @@ export default function DichVuPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                  >
-                    <Link href="/lien-he">Liên hệ tư vấn</Link>
-                  </Button>
+
+                  <div className="flex gap-3">
+                    {/* @ts-ignore */}
+                    {service.detailHref && (
+                      <Button
+                        asChild
+                        variant="outline"
+                        className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                      >
+                        {/* @ts-ignore */}
+                        <Link href={service.detailHref}>Chi tiết</Link>
+                      </Button>
+                    )}
+                    <Button
+                      asChild
+                      className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
+                    >
+                      <Link href="/lien-he">Liên hệ tư vấn</Link>
+                    </Button>
+                  </div>
                 </div>
               ))}
             </div>

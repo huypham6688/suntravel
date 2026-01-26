@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
 import { Phone, MapPin, Menu, X, Globe, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,6 +29,7 @@ const navItems: NavItem[] = [
 ];
 
 export function Header() {
+  const pathname = usePathname();
   const { data: companyInfo } = useCompanyInfo();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<"vi" | "en">("vi");
@@ -118,12 +120,23 @@ export function Header() {
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 uppercase text-xs xl:text-base"
+                    className={`transition-colors font-medium flex items-center gap-1 uppercase text-xs xl:text-base px-2 py-1.5 rounded-md whitespace-nowrap ${
+                      (item.href === "/" && pathname === "/") ||
+                      (item.href !== "/" && pathname.startsWith(item.href))
+                        ? "bg-primary text-primary-foreground"
+                        : "text-foreground hover:text-primary"
+                    }`}
                   >
                     {item.name}
                   </Link>
                 ) : (
-                  <button className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 bg-transparent border-none cursor-pointer uppercase text-sm">
+                  <button
+                    className={`transition-colors font-medium flex items-center gap-1 bg-transparent border-none cursor-pointer uppercase text-sm px-2 py-1.5 rounded-md whitespace-nowrap ${
+                      pathname.startsWith(item.name.toLowerCase()) // Adjust this logic if needed for non-link items like MICE if they had a path
+                        ? "bg-primary text-primary-foreground"
+                        : "text-foreground hover:text-primary"
+                    }`}
+                  >
                     {item.name}
                   </button>
                 )}
@@ -189,7 +202,7 @@ export function Header() {
                       <button
                         onClick={() =>
                           setOpenSubmenu(
-                            openSubmenu === item.name ? null : item.name
+                            openSubmenu === item.name ? null : item.name,
                           )
                         }
                         className="p-1 text-muted-foreground hover:text-foreground transition-colors"
