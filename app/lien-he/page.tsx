@@ -325,11 +325,6 @@ export default function LienHePage() {
                           >
                             {staff.phone}
                           </a>
-                          {staff.extension && (
-                            <p className="text-muted-foreground text-sm">
-                              Máy lẻ {staff.extension}
-                            </p>
-                          )}
                         </div>
                       </div>
                     ))}

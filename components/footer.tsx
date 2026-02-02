@@ -151,11 +151,6 @@ export function Footer() {
                   >
                     {staff.phone}
                   </a>
-                  {staff.extension && (
-                    <p className="text-sm text-secondary-foreground/70">
-                      Máy lẻ {staff.extension}
-                    </p>
-                  )}
                 </div>
               ))}
             </div>

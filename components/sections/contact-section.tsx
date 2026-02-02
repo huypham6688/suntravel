@@ -104,7 +104,6 @@ export function ContactSection() {
                   {companyInfo.supportStaff?.map((staff, index) => (
                     <p key={index} className="text-muted-foreground">
                       {staff.name}: {staff.phone}{" "}
-                      {staff.extension ? `(Máy lẻ ${staff.extension})` : ""}
                     </p>
                   ))}
                 </div>
