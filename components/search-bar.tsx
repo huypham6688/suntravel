@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, MapPin, Calendar, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 // List of international destinations/keywords
@@ -133,7 +131,7 @@ const domesticKeywords = [
 ];
 
 export function SearchBar() {
-  const [destination, setDestination] = useState("");
+  const [query, setQuery] = useState("");
   const router = useRouter();
 
   const isInternational = (searchText: string): boolean => {
@@ -141,12 +139,12 @@ export function SearchBar() {
 
     // Check if it matches any international keyword
     const hasInternationalKeyword = internationalKeywords.some((keyword) =>
-      lowerText.includes(keyword.toLowerCase())
+      lowerText.includes(keyword.toLowerCase()),
     );
 
     // Check if it matches any domestic keyword
     const hasDomesticKeyword = domesticKeywords.some((keyword) =>
-      lowerText.includes(keyword.toLowerCase())
+      lowerText.includes(keyword.toLowerCase()),
     );
 
     // If has international keyword and no domestic keyword, it's international
@@ -159,18 +157,18 @@ export function SearchBar() {
   };
 
   const handleSearch = () => {
-    if (destination.trim()) {
-      const searchTerm = destination.trim();
+    if (query.trim()) {
+      const searchTerm = query.trim();
       const isIntl = isInternational(searchTerm);
 
       // Route to appropriate page
       if (isIntl) {
         router.push(
-          `/du-lich-nuoc-ngoai?search=${encodeURIComponent(searchTerm)}`
+          `/du-lich-nuoc-ngoai?search=${encodeURIComponent(searchTerm)}`,
         );
       } else {
         router.push(
-          `/du-lich-trong-nuoc?search=${encodeURIComponent(searchTerm)}`
+          `/du-lich-trong-nuoc?search=${encodeURIComponent(searchTerm)}`,
         );
       }
     } else {
@@ -179,49 +177,39 @@ export function SearchBar() {
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       handleSearch();
     }
   };
 
   return (
-    <section className="relative -mt-16 z-10 container mx-auto px-4">
-      <div className="bg-card rounded-2xl shadow-2xl p-6 md:p-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div className="relative">
-            <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-            <Input
-              placeholder="Bạn muốn đi đâu?"
-              className="pl-10 h-12"
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
-              onKeyPress={handleKeyPress}
-            />
-          </div>
-          <div className="relative">
-            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-            <Input type="date" className="pl-10 h-12" />
-          </div>
-          <div className="relative">
-            <Users className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-            <Input
-              placeholder="Số người"
-              type="number"
-              min="1"
-              className="pl-10 h-12"
-            />
-          </div>
-          <Button
-            size="lg"
-            className="h-12 bg-primary hover:bg-primary/90 text-primary-foreground"
-            onClick={handleSearch}
-          >
-            <Search className="w-5 h-5 mr-2" />
-            Tìm kiếm
-          </Button>
+    <div className="absolute bottom-0 left-1/2 z-20 w-[90%] max-w-3xl -translate-x-1/2 translate-y-1/2 transform rounded-2xl bg-white p-4 shadow-xl sm:w-full">
+      <div className="flex items-center gap-4">
+        <div className="flex flex-1 items-center gap-2 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 transition-all focus-within:border-transparent focus-within:ring-2 focus-within:ring-primary">
+          <Search className="text-gray-400" size={20} />
+          <input
+            type="text"
+            placeholder="Tìm kiếm tour, địa điểm..."
+            className="w-full bg-transparent text-gray-800 placeholder-gray-400 outline-none"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
         </div>
+        <button
+          onClick={handleSearch}
+          className="hidden rounded-xl bg-primary px-8 py-3 font-semibold text-white transition-all hover:bg-primary/80 hover:shadow-orange-500/30 sm:block"
+        >
+          Tìm kiếm
+        </button>
+        <button
+          onClick={handleSearch}
+          className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg transition-all hover:bg-orange-700 sm:hidden"
+        >
+          <Search size={20} />
+        </button>
       </div>
-    </section>
+    </div>
   );
 }

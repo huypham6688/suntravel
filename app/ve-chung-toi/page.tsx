@@ -9,16 +9,20 @@ import {
   Target,
   Heart,
   Lightbulb,
+  History,
+  Smile,
+  Globe,
+  Trophy,
 } from "lucide-react";
 import Image from "next/image";
 import Partners from "@/components/partners";
 import { DreamDestination } from "@/components/sections/dream-destination";
 
 const stats = [
-  { number: "15+", label: "Năm kinh nghiệm", icon: Calendar },
-  { number: "50,000+", label: "Khách hàng hài lòng", icon: Users },
-  { number: "500+", label: "Tour đa dạng", icon: MapPin },
-  { number: "20+", label: "Giải thưởng", icon: Award },
+  { number: "15+", label: "Năm kinh nghiệm", icon: History },
+  { number: "50,000+", label: "Khách hàng hài lòng", icon: Smile },
+  { number: "500+", label: "Tour đa dạng", icon: Globe },
+  { number: "20+", label: "Giải thưởng", icon: Trophy },
 ];
 
 const values = [
@@ -80,7 +84,7 @@ export default function VeChungToiPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-x divide-dashed divide-primary/20">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center px-4 group">
-                  <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                  <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 text-primary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
                     <stat.icon className="w-8 h-8" />
                   </div>
                   <p className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:text-red-600 group-hover:scale-125">
@@ -309,9 +313,9 @@ export default function VeChungToiPage() {
               ))}
 
               {/* Decorative Box */}
-              <div className="flex items-center justify-center p-8 rounded-2xl border-2 border-dashed border-white/30 bg-white/10">
-                <p className="text-white font-semibold text-center">
-                  Và nhiều dịch vụ mở rộng khác...
+              <div className="flex items-center justify-center p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <p className="text-red-500 font-bold text-5xl text-center">
+                  +++
                 </p>
               </div>
             </div>

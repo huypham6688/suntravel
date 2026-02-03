@@ -44,11 +44,13 @@ export default function HomePage() {
     <>
       <Header />
       <main>
-        <Suspense fallback={<HeroSkeleton />}>
-          <HeroBannerWrapper />
-        </Suspense>
+        <div className="relative">
+          <Suspense fallback={<HeroSkeleton />}>
+            <HeroBannerWrapper />
+          </Suspense>
 
-        <SearchBar />
+          <SearchBar />
+        </div>
 
         <Suspense fallback={<SectionSkeleton />}>
           <NewToursWrapper />

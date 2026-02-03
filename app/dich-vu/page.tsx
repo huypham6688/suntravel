@@ -8,7 +8,7 @@ import {
   Ticket,
   Camera,
   FileText,
-  CreditCard,
+  Shield,
   Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -102,7 +102,7 @@ const services = [
     ],
   },
   {
-    icon: CreditCard,
+    icon: Shield,
     title: "Bảo hiểm du lịch",
     description:
       "Gói bảo hiểm du lịch toàn diện, bảo vệ bạn trong suốt hành trình với mức phí hợp lý và quyền lợi tối đa.",
