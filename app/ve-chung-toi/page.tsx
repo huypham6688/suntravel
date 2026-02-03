@@ -46,6 +46,15 @@ const values = [
   },
 ];
 
+const businessFields = [
+  { stt: "01", content: "Dịch vụ lữ hành quốc tế và nội địa chuyên nghiệp" },
+  { stt: "02", content: "Dịch vụ vé máy bay" },
+  { stt: "03", content: "Tổ chức hội nghị, hội thảo, xúc tiến thương mại" },
+  { stt: "04", content: "Định hướng nghề nghiệp & Team building" },
+  { stt: "05", content: "Dịch vụ vận chuyển hành khách và hàng hoá" },
+  { stt: "+++", content: "Và đa dạng các dịch vụ khác tuỳ theo yêu cầu của bạn" },
+];
+
 export default function VeChungToiPage() {
   return (
     <>
@@ -288,13 +297,7 @@ export default function VeChungToiPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto ">
-              {[
-                "Dịch vụ lữ hành quốc tế và nội địa chuyên nghiệp",
-                "Dịch vụ vé máy bay",
-                "Tổ chức hội nghị, hội thảo, xúc tiến thương mại",
-                "Định hướng nghề nghiệp & Team building",
-                "Dịch vụ vận chuyển hành khách và hàng hoá",
-              ].map((field, idx) => (
+              {businessFields.map((field, idx) => (
                 <div
                   key={idx}
                   className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-white/20 overflow-hidden hover:scale-105"
@@ -303,21 +306,14 @@ export default function VeChungToiPage() {
 
                   <div className="relative z-10 flex flex-col h-full">
                     <span className="text-5xl font-bold text-red-500 mb-4 transition-colors duration-300">
-                      0{idx + 1}
+                      {field.stt}
                     </span>
                     <h4 className="text-lg font-bold text-black group-hover:text-blue-600 transition-colors flex-grow">
-                      {field}
+                      {field.content}
                     </h4>
                   </div>
                 </div>
               ))}
-
-              {/* Decorative Box */}
-              <div className="flex items-center justify-center p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <p className="text-red-500 font-bold text-5xl text-center">
-                  +++
-                </p>
-              </div>
             </div>
           </div>
         </section>

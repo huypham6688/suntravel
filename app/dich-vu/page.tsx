@@ -13,10 +13,13 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
-    icon: Plane,
+    icon: "/icons/flight.svg",
+    width: 44,
+    height: 44,
     title: "Đặt vé máy bay",
     description:
       "Đặt vé máy bay nội địa và quốc tế với giá ưu đãi. Hỗ trợ đặt vé khứ hồi, một chiều với tất cả các hãng hàng không.",
@@ -28,7 +31,9 @@ const services = [
     ],
   },
   {
-    icon: Hotel,
+    icon: "/icons/five-star.svg",
+    width: 40,
+    height: 40,
     title: "Đặt phòng khách sạn",
     description:
       "Hệ thống khách sạn đối tác từ 3-5 sao trên toàn quốc và quốc tế. Cam kết giá tốt nhất với nhiều ưu đãi hấp dẫn.",
@@ -40,7 +45,9 @@ const services = [
     ],
   },
   {
-    icon: FileText,
+    icon: "/icons/visa.svg",
+    width: 48,
+    height: 48,
     title: "Làm visa",
     description:
       "Dịch vụ làm visa du lịch, công tác cho tất cả các quốc gia. Tư vấn hồ sơ miễn phí, tỷ lệ đậu cao.",
@@ -53,7 +60,9 @@ const services = [
     detailHref: "/visa",
   },
   {
-    icon: Users,
+    icon: "/icons/tour.svg",
+    width: 40,
+    height: 40,
     title: "Tour theo yêu cầu",
     description:
       "Thiết kế tour riêng theo yêu cầu của khách hàng. Lịch trình linh hoạt, trải nghiệm độc đáo, phù hợp mọi ngân sách.",
@@ -65,7 +74,9 @@ const services = [
     ],
   },
   {
-    icon: Car,
+    icon: "/icons/bus.svg",
+    width: 48,
+    height: 48,
     title: "Thuê xe du lịch",
     description:
       "Dịch vụ cho thuê xe du lịch từ 4-45 chỗ với tài xế kinh nghiệm. Xe đời mới, sạch sẽ, an toàn tuyệt đối.",
@@ -77,7 +88,9 @@ const services = [
     ],
   },
   {
-    icon: Ticket,
+    icon: "/icons/ticket.svg",
+    width: 44,
+    height: 44,
     title: "Vé tham quan",
     description:
       "Đặt trước vé tham quan các điểm du lịch nổi tiếng trong và ngoài nước với giá ưu đãi, không cần xếp hàng.",
@@ -90,7 +103,9 @@ const services = [
   },
 
   {
-    icon: Camera,
+    icon: "/icons/camera.svg",
+    width: 44,
+    height: 44,
     title: "Chụp ảnh du lịch",
     description:
       "Dịch vụ chụp ảnh chuyên nghiệp tại các điểm du lịch. Lưu giữ những khoảnh khắc đẹp nhất của chuyến đi.",
@@ -102,7 +117,9 @@ const services = [
     ],
   },
   {
-    icon: Shield,
+    icon: "/icons/insurance.svg",
+    width: 48,
+    height: 48,
     title: "Bảo hiểm du lịch",
     description:
       "Gói bảo hiểm du lịch toàn diện, bảo vệ bạn trong suốt hành trình với mức phí hợp lý và quyền lợi tối đa.",
@@ -143,8 +160,13 @@ export default function DichVuPage() {
                   key={index}
                   className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group"
                 >
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                    <service.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
+                  <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-gray-100 group-hover:shadow-md group-hover:border-primary/20 group-hover:scale-105 transition-all duration-300">
+                    <Image
+                      src={service.icon}
+                      alt={service.title}
+                      width={service.width || 40}
+                      height={service.height || 40}
+                    />
                   </div>
                   <h3 className="text-xl font-semibold text-red-600 mb-3 ">
                     {service.title}
