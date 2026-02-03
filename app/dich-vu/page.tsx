@@ -160,7 +160,7 @@ export default function DichVuPage() {
                   key={index}
                   className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group"
                 >
-                  <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-gray-100 group-hover:shadow-md group-hover:border-primary/20 group-hover:scale-105 transition-all duration-300">
+                  <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm  border-2 border-primary group-hover:shadow-md group-hover:border-primary/80 group-hover:scale-105 transition-all duration-300">
                     <Image
                       src={service.icon}
                       alt={service.title}
