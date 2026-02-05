@@ -77,7 +77,15 @@ export default async function TourDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const tour = await getTour(id);
+  const config = await configPromise;
+  const payload = await getPayload({ config });
+
+  const [tour, companyInfo] = await Promise.all([
+    getTour(id),
+    payload.findGlobal({
+      slug: "company-info",
+    }),
+  ]);
 
   if (!tour) {
     notFound();
@@ -305,7 +313,7 @@ export default async function TourDetailPage({
                       <Badge variant="destructive">
                         -
                         {Math.round(
-                          (1 - tour.price / tour.originalPrice) * 100
+                          (1 - tour.price / tour.originalPrice) * 100,
                         )}
                         %
                       </Badge>
@@ -355,50 +363,44 @@ export default async function TourDetailPage({
                     Liên hệ tư vấn trực tiếp:
                   </p>
                   <div className="space-y-3">
-                    <a
-                      href="tel:0903287313"
-                      className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
-                    >
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="font-medium">Ms. Quyên</p>
-                        <p className="text-sm text-muted-foreground">
-                          0903.287.313
-                        </p>
-                      </div>
-                    </a>
-                    <a
-                      href="tel:0974248805"
-                      className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
-                    >
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="font-medium">Ms. Hồng Anh</p>
-                        <p className="text-sm text-muted-foreground">
-                          0974.248.805
-                        </p>
-                      </div>
-                    </a>
-                    <a
-                      href="https://zalo.me/0974248805"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
-                    >
-                      <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center">
-                        <MessageCircle className="w-5 h-5 text-blue-500" />
-                      </div>
-                      <div>
-                        <p className="font-medium">Chat Zalo</p>
-                        <p className="text-sm text-muted-foreground">
-                          Tư vấn nhanh 24/7
-                        </p>
-                      </div>
-                    </a>
+                    {companyInfo.supportStaff?.map(
+                      (staff: any, index: number) => (
+                        <a
+                          key={index}
+                          href={`tel:${staff.phone.replace(/\./g, "").replace(/\s/g, "")}`}
+                          className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+                        >
+                          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                            <Phone className="w-5 h-5 text-primary" />
+                          </div>
+                          <div>
+                            <p className="font-medium">{staff.name}</p>
+                            <p className="text-sm text-muted-foreground">
+                              {staff.phone}
+                            </p>
+                          </div>
+                        </a>
+                      ),
+                    )}
+
+                    {companyInfo.socialLinks?.zalo && (
+                      <a
+                        href={companyInfo.socialLinks.zalo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center">
+                          <MessageCircle className="w-5 h-5 text-blue-500" />
+                        </div>
+                        <div>
+                          <p className="font-medium">Chat Zalo</p>
+                          <p className="text-sm text-muted-foreground">
+                            Tư vấn nhanh 24/7
+                          </p>
+                        </div>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

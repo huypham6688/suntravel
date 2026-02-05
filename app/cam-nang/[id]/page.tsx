@@ -20,6 +20,7 @@ import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/header";
 import { FloatingChat } from "@/components/floating-chat";
 import { Footer } from "@/components/footer";
+import { useCompanyInfo } from "@/hooks/use-company-info";
 
 // Hàm hỗ trợ format ngày tháng
 const formatDate = (dateString: string) => {
@@ -32,6 +33,7 @@ export default function ArticleDetailPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  const { data: companyInfo } = useCompanyInfo();
   // --- STATE ---
   const [id, setId] = useState<string | null>(null);
   const [article, setArticle] = useState<any>(null);
@@ -64,7 +66,7 @@ export default function ArticleDetailPage({
           setArticle(articleData.data);
           // Lọc bài viết hiện tại ra khỏi danh sách liên quan
           const filtered = (relatedData.docs || []).filter(
-            (item: any) => item.id !== id
+            (item: any) => item.id !== id,
           );
           setRelatedArticles(filtered.slice(0, 3));
         } else {
@@ -118,7 +120,9 @@ export default function ArticleDetailPage({
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
             <div className="container mx-auto">
               <Badge className="bg-secondary text-secondary-foreground mb-4 uppercase">
-                {article.category === "trong-nuoc" ? "Trong nước" : "Nước ngoài"}
+                {article.category === "trong-nuoc"
+                  ? "Trong nước"
+                  : "Nước ngoài"}
               </Badge>
               <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 max-w-4xl">
                 {article.title}
@@ -145,11 +149,17 @@ export default function ArticleDetailPage({
         <div className="bg-muted/50 py-4">
           <div className="container mx-auto px-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Link href="/" className="hover:text-primary">Trang chủ</Link>
+              <Link href="/" className="hover:text-primary">
+                Trang chủ
+              </Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/cam-nang" className="hover:text-primary">Dịch vụ du lịch</Link>
+              <Link href="/cam-nang" className="hover:text-primary">
+                Dịch vụ du lịch
+              </Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-foreground line-clamp-1">{article.title}</span>
+              <span className="text-foreground line-clamp-1">
+                {article.title}
+              </span>
             </div>
           </div>
         </div>
@@ -174,7 +184,9 @@ export default function ArticleDetailPage({
                   <div className="flex items-center gap-2 flex-wrap">
                     <Tag className="w-5 h-5 text-muted-foreground" />
                     {article.hash_tags.map((item: any, idx: number) => (
-                      <Badge key={idx} variant="secondary">#{item.tag}</Badge>
+                      <Badge key={idx} variant="secondary">
+                        #{item.tag}
+                      </Badge>
                     ))}
                   </div>
                 </div>
@@ -182,10 +194,14 @@ export default function ArticleDetailPage({
 
               <div className="mt-12 flex items-center justify-between gap-4">
                 <Button variant="outline" asChild className="flex-1">
-                  <Link href="/cam-nang"><ArrowLeft className="mr-2 h-4 w-4" /> Quay lại</Link>
+                  <Link href="/cam-nang">
+                    <ArrowLeft className="mr-2 h-4 w-4" /> Quay lại
+                  </Link>
                 </Button>
                 <Button asChild className="flex-1">
-                  <Link href="/lien-he">Tư vấn ngay <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                  <Link href="/lien-he">
+                    Tư vấn ngay <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -194,9 +210,35 @@ export default function ArticleDetailPage({
             <div className="lg:col-span-1">
               <div className="bg-primary/5 border border-primary/10 rounded-2xl p-6 mb-8">
                 <h3 className="font-bold text-lg mb-3">Liên hệ đặt tour</h3>
-                <p className="text-sm text-muted-foreground mb-4">Nhận tư vấn miễn phí từ chuyên viên của chúng tôi.</p>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Nhận tư vấn miễn phí từ chuyên viên của chúng tôi.
+                </p>
                 <div className="space-y-2 mb-4">
-                  <p className="text-sm font-semibold">Hotline: 0903.287.313</p>
+                   <p className="text-sm font-semibold">
+                      Hotline:{" "}
+                      <a
+                        href={`tel:${companyInfo.hotline.replace(/\./g, "").replace(/\s/g, "")}`}
+                        className="hover:text-primary transition-colors"
+                      >
+                        {companyInfo.hotline}
+                      </a>
+                    </p>
+                  {companyInfo.supportStaff &&
+                  companyInfo.supportStaff.length > 0 ? (
+                    companyInfo.supportStaff.map((staff, idx) => (
+                      <p key={idx} className="text-sm font-semibold">
+                        {staff.name}:{" "}
+                        <a
+                          href={`tel:${staff.phone.replace(/\./g, "").replace(/\s/g, "")}`}
+                          className="hover:text-primary transition-colors"
+                        >
+                          {staff.phone}
+                        </a>
+                      </p>
+                    ))
+                  ) : (
+                   ""
+                  )}
                 </div>
                 <Button className="w-full" asChild>
                   <Link href="/lien-he">Gửi yêu cầu</Link>
@@ -207,13 +249,26 @@ export default function ArticleDetailPage({
                 <h3 className="font-bold text-lg mb-4">Bài viết mới</h3>
                 <div className="space-y-4">
                   {relatedArticles.map((related: any) => (
-                    <Link key={related.id} href={`/cam-nang/${related.id}`} className="flex gap-4 group">
+                    <Link
+                      key={related.id}
+                      href={`/cam-nang/${related.id}`}
+                      className="flex gap-4 group"
+                    >
                       <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                        <Image src={related.thumbnail} alt={related.title} fill className="object-cover" />
+                        <Image
+                          src={related.thumbnail}
+                          alt={related.title}
+                          fill
+                          className="object-cover"
+                        />
                       </div>
                       <div>
-                        <h4 className="text-sm font-medium line-clamp-2 group-hover:text-primary transition-colors">{related.title}</h4>
-                        <p className="text-[10px] text-muted-foreground mt-1">{formatDate(related.createdAt)}</p>
+                        <h4 className="text-sm font-medium line-clamp-2 group-hover:text-primary transition-colors">
+                          {related.title}
+                        </h4>
+                        <p className="text-[10px] text-muted-foreground mt-1">
+                          {formatDate(related.createdAt)}
+                        </p>
                       </div>
                     </Link>
                   ))}
