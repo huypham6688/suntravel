@@ -17,6 +17,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { Home } from "lucide-react";
+import { getPayload } from "payload";
+import configPromise from "../../../../payload.config";
 
 const conferenceDetails: Record<
   string,
@@ -120,6 +122,11 @@ export default async function ConferenceDetailPage({
 }) {
   const { id } = await params;
   const data = conferenceDetails[id];
+  const config = await configPromise;
+  const payload = await getPayload({ config });
+  const companyInfo = await payload.findGlobal({
+    slug: "company-info",
+  });
 
   if (!data) {
     return (
@@ -163,8 +170,8 @@ export default async function ConferenceDetailPage({
     id === "hoi-nghi-khach-hang"
       ? "https://landmark72.intercontinental.com/wp-content/uploads/intercontinental-hanoi-grand-ballroom-event-venue.jpg" // image:3
       : id === "kick-off-sales"
-      ? "https://media.rheemsingapore.com/blobazrheem/wp-content/uploads/sites/47/2023/12/RAD-58-scaled.jpg" // image:14
-      : "https://grandfresa-saigon.sotetsu-hotels.com/banquet/img/slide/1.webp"; // image:18
+        ? "https://media.rheemsingapore.com/blobazrheem/wp-content/uploads/sites/47/2023/12/RAD-58-scaled.jpg" // image:14
+        : "https://grandfresa-saigon.sotetsu-hotels.com/banquet/img/slide/1.webp"; // image:18
 
   return (
     <>
@@ -260,8 +267,13 @@ export default async function ConferenceDetailPage({
                 </p>
               </div>
               <div className="space-y-4">
-                <Button className="w-full text-lg" size="lg">
-                  <Phone className="mr-2 h-5 w-5" /> Gọi ngay: 024 3939 3539
+                <Button className="w-full text-lg" size="lg" asChild>
+                  <a
+                    href={`tel:${companyInfo.hotline.replace(/\./g, "").replace(/\s/g, "")}`}
+                  >
+                    <Phone className="mr-2 h-5 w-5" /> Gọi ngay:{" "}
+                    {companyInfo.hotline}
+                  </a>
                 </Button>
                 <Button variant="outline" className="w-full text-lg" size="lg">
                   <Mail className="mr-2 h-5 w-5" /> Yêu cầu báo giá chi tiết

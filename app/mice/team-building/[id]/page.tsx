@@ -17,6 +17,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { Home } from "lucide-react";
+import { getPayload } from "payload";
+import configPromise from "../../../../payload.config";
 
 const teamDetails: Record<
   string,
@@ -142,6 +144,11 @@ export default async function TeamDetailPage({
 }) {
   const { id } = await params;
   const data = teamDetails[id];
+  const config = await configPromise;
+  const payload = await getPayload({ config });
+  const companyInfo = await payload.findGlobal({
+    slug: "company-info",
+  });
 
   if (!data) {
     return (
@@ -185,8 +192,8 @@ export default async function TeamDetailPage({
     id === "team-building-bien"
       ? "https://sungetawaystravel.com/wp-content/uploads/2024/03/dia_diem_to_chuc_team_building_da_nang_by_vietpower_dh0iwbw-fullview.jpg" // 15
       : id === "team-building-nui-rung"
-      ? "https://localvietnam.com/wp-content/uploads/2021/05/trekking-pu-mat-national-park.jpg" // 6
-      : "https://jackfruitadventure.com/wp-content/uploads/2025/12/JK_NETCOMPANY_2208-68-1200x800.jpg"; // 1
+        ? "https://localvietnam.com/wp-content/uploads/2021/05/trekking-pu-mat-national-park.jpg" // 6
+        : "https://jackfruitadventure.com/wp-content/uploads/2025/12/JK_NETCOMPANY_2208-68-1200x800.jpg"; // 1
 
   return (
     <>
@@ -293,8 +300,13 @@ export default async function TeamDetailPage({
                 ))}
               </ul>
               <div className="space-y-4">
-                <Button className="w-full text-lg" size="lg">
-                  <Phone className="mr-2 h-5 w-5" /> Gọi ngay: 024 3939 3539
+                <Button className="w-full text-lg" size="lg" asChild>
+                  <a
+                    href={`tel:${companyInfo.hotline.replace(/\./g, "").replace(/\s/g, "")}`}
+                  >
+                    <Phone className="mr-2 h-5 w-5" /> Gọi ngay:{" "}
+                    {companyInfo.hotline}
+                  </a>
                 </Button>
                 <Button variant="outline" className="w-full text-lg" size="lg">
                   <Mail className="mr-2 h-5 w-5" /> Yêu cầu báo giá chi tiết

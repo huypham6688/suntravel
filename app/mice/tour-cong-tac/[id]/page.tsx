@@ -6,6 +6,8 @@ import { MapPin, Clock, Star, Phone, Mail, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Home } from "lucide-react";
+import { getPayload } from "payload";
+import configPromise from "../../../../payload.config";
 
 // Dữ liệu chi tiết tour (đầy đủ 6 tour)
 const tourDetails: Record<
@@ -180,6 +182,11 @@ export default async function TourDetail({
 }) {
   const { id } = await params;
   const tour = tourDetails[id];
+  const config = await configPromise;
+  const payload = await getPayload({ config });
+  const companyInfo = await payload.findGlobal({
+    slug: "company-info",
+  });
 
   if (!tour) {
     return (
@@ -217,6 +224,20 @@ export default async function TourDetail({
     );
   }
 
+  // Chọn ảnh hero dựa trên id
+  const heroImageUrl =
+    id === "singapore-malaysia"
+      ? "https://media.istockphoto.com/id/1939500219/photo/singapore-cityscape-at-night-twilight-drone-flight-panorama.jpg?s=612x612&w=0&k=20&c=WzBoQ0MoFPfwXVjICcjSGJHUOWlCvARaDIbhBK7hBig="
+      : id === "nhat-ban"
+        ? "https://media.istockphoto.com/id/1087403002/photo/the-sun-rises-over-the-city-of-tokyo-in-the-morning-japan.jpg?s=612x612&w=0&k=20&c=I-SEZxKHPxKOA3K2khwq7ekU1TOqjciW2V6GLROvc1s="
+        : id === "chau-au"
+          ? "https://thumbs.dreamstime.com/b/view-modern-business-district-paris-la-defense-may-old-town-eiffel-tower-may-france-41119366.jpg"
+          : id === "han-quoc"
+            ? "https://media.istockphoto.com/id/464629385/photo/seoul-skyline.jpg?s=612x612&w=0&k=20&c=Wo9LYxk6L9z0VORPkMxjubMcAZfWAJtRJWVfiJR8jmw="
+            : id === "thai-lan"
+              ? "https://media.istockphoto.com/id/505779722/photo/bangkok-city-view-from-above-thailand.jpg?s=612x612&w=0&k=20&c=rCvIhLpKQwr_HnRKArjTvqBLCmXNVvh4XWYAcA0vN6E="
+              : "https://media.gettyimages.com/id/2192851005/photo/hudson-yards-business-district-and-manhattan-skyline-at-sunset-aerial-view-new-york-city-usa.jpg?s=612x612&w=gi&k=20&c=NluDW9ISMBVdDa4F-QVMxqF0lMaOFJkb1KM-hqwZOvE=";
+
   return (
     <>
       <Header />
@@ -224,19 +245,7 @@ export default async function TourDetail({
       {/* Hero */}
       <section className="relative h-96 md:h-[80vh] overflow-hidden">
         <Image
-          src={
-            id === "singapore-malaysia"
-              ? "https://media.istockphoto.com/id/1939500219/photo/singapore-cityscape-at-night-twilight-drone-flight-panorama.jpg?s=612x612&w=0&k=20&c=WzBoQ0MoFPfwXVjICcjSGJHUOWlCvARaDIbhBK7hBig="
-              : id === "nhat-ban"
-              ? "https://media.istockphoto.com/id/1087403002/photo/the-sun-rises-over-the-city-of-tokyo-in-the-morning-japan.jpg?s=612x612&w=0&k=20&c=I-SEZxKHPxKOA3K2khwq7ekU1TOqjciW2V6GLROvc1s="
-              : id === "chau-au"
-              ? "https://thumbs.dreamstime.com/b/view-modern-business-district-paris-la-defense-may-old-town-eiffel-tower-may-france-41119366.jpg"
-              : id === "han-quoc"
-              ? "https://media.istockphoto.com/id/464629385/photo/seoul-skyline.jpg?s=612x612&w=0&k=20&c=Wo9LYxk6L9z0VORPkMxjubMcAZfWAJtRJWVfiJR8jmw="
-              : id === "thai-lan"
-              ? "https://media.istockphoto.com/id/505779722/photo/bangkok-city-view-from-above-thailand.jpg?s=612x612&w=0&k=20&c=rCvIhLpKQwr_HnRKArjTvqBLCmXNVvh4XWYAcA0vN6E="
-              : "https://media.gettyimages.com/id/2192851005/photo/hudson-yards-business-district-and-manhattan-skyline-at-sunset-aerial-view-new-york-city-usa.jpg?s=612x612&w=gi&k=20&c=NluDW9ISMBVdDa4F-QVMxqF0lMaOFJkb1KM-hqwZOvE="
-          }
+          src={heroImageUrl}
           alt={tour.title}
           fill
           className="object-cover"
@@ -300,13 +309,13 @@ export default async function TourDetail({
               <div className="mb-8">
                 <p className="text-3xl md:text-4xl font-bold text-primary">
                   {typeof tour.price === "number"
-                    ? `Từ ${tour.price.toLocaleString("vi-VN")} VNĐ`
+                    ? `${tour.price.toLocaleString("vi-VN")} đ`
                     : tour.price}
                   /người
                 </p>
                 {tour.originalPrice && (
                   <p className="text-lg text-muted-foreground line-through mt-2">
-                    {tour.originalPrice.toLocaleString("vi-VN")} VNĐ
+                    {tour.originalPrice.toLocaleString("vi-VN")} đ
                   </p>
                 )}
               </div>
@@ -322,8 +331,13 @@ export default async function TourDetail({
               </ul>
 
               <div className="space-y-4">
-                <Button className="w-full text-lg" size="lg">
-                  <Phone className="mr-2 h-5 w-5" /> Gọi ngay: 024 3939 3539
+                <Button className="w-full text-lg" size="lg" asChild>
+                  <a
+                    href={`tel:${companyInfo.hotline.replace(/\./g, "").replace(/\s/g, "")}`}
+                  >
+                    <Phone className="mr-2 h-5 w-5" /> Gọi ngay:{" "}
+                    {companyInfo.hotline}
+                  </a>
                 </Button>
                 <Button variant="outline" className="w-full text-lg" size="lg">
                   <Mail className="mr-2 h-5 w-5" /> Yêu cầu báo giá chi tiết

@@ -14,6 +14,8 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { getPayload } from "payload";
+import configPromise from "../../payload.config";
 
 const services = [
   {
@@ -127,7 +129,13 @@ const services = [
   },
 ];
 
-export default function DichVuPage() {
+export default async function DichVuPage() {
+  const config = await configPromise;
+  const payload = await getPayload({ config });
+  const companyInfo = await payload.findGlobal({
+    slug: "company-info",
+  });
+
   return (
     <>
       <Header />
@@ -222,8 +230,12 @@ export default function DichVuPage() {
               đặc biệt
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">
-                Gọi ngay: 024 39393539
+              <Button size="lg" variant="secondary" asChild>
+                <a
+                  href={`tel:${companyInfo.hotline.replace(/\./g, "").replace(/\s/g, "")}`}
+                >
+                  Gọi ngay: {companyInfo.hotline}
+                </a>
               </Button>
               <Button
                 asChild
