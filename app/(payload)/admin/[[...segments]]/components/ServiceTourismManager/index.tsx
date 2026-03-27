@@ -46,6 +46,39 @@ export default function ServiceTourismManager() {
     content: null,
   });
 
+  const [uploadingImage, setUploadingImage] = useState(false);
+
+  const handleFileUpload = async (file: File) => {
+    try {
+      setUploadingImage(true);
+      const formDataUpload = new FormData();
+      formDataUpload.append("file", file);
+      formDataUpload.append("alt", file.name.replace(/\.[^/.]+$/, ""));
+
+      const response = await fetch("/api/upload-cloudinary", {
+        method: "POST",
+        body: formDataUpload,
+      });
+
+      if (!response.ok) {
+        throw new Error("Upload failed");
+      }
+
+      const data = await response.json();
+      if (!data.success) {
+        throw new Error(data.error || "Upload failed");
+      }
+
+      setFormData(prev => ({ ...prev, thumbnail: data.doc.url }));
+      toast.success("Upload ảnh thành công!");
+    } catch (error) {
+      console.error("Error uploading:", error);
+      toast.error("Có lỗi khi upload ảnh");
+    } finally {
+      setUploadingImage(false);
+    }
+  };
+
   useEffect(() => {
     fetchCategories();
   }, []);
@@ -114,6 +147,13 @@ export default function ServiceTourismManager() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const validTags = formData.hash_tags.filter((t) => t.tag.trim() !== "");
+    if (validTags.length === 0) {
+      toast.error("Vui lòng nhập ít nhất 1 hashtag");
+      return;
+    }
+
     setLoading(true);
 
     const isUpdate = !!formData.id;
@@ -123,7 +163,7 @@ export default function ServiceTourismManager() {
       const response = await fetch("/api/info-tourism", {
         method: method,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, content: editorHtml }),
+        body: JSON.stringify({ ...formData, content: editorHtml, hash_tags: validTags }),
       });
 
       if (response.ok) {
@@ -487,17 +527,46 @@ export default function ServiceTourismManager() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-xs font-bold text-gray-500 uppercase">
-                Thumbnail URL
+                Thumbnail (URL hoặc Upload)
               </label>
-              <input
-                type="text"
-                required
-                className="w-full border p-3 rounded-xl outline-none"
-                value={formData.thumbnail}
-                onChange={(e) =>
-                  setFormData({ ...formData, thumbnail: e.target.value })
-                }
-              />
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  required
+                  placeholder="Nhập URL hoặc upload ảnh bên cạnh..."
+                  className="flex-1 w-full border p-3 rounded-xl outline-none"
+                  value={formData.thumbnail}
+                  onChange={(e) =>
+                    setFormData({ ...formData, thumbnail: e.target.value })
+                  }
+                />
+                <div className="relative">
+                  <button
+                    type="button"
+                    disabled={uploadingImage}
+                    className="h-full px-4 border rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center justify-center text-sm font-medium transition-colors"
+                  >
+                    {uploadingImage ? "Đang tải..." : "Upload ảnh"}
+                  </button>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    disabled={uploadingImage}
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                    onChange={(e) => {
+                      if (e.target.files && e.target.files.length > 0) {
+                        handleFileUpload(e.target.files[0]);
+                        e.target.value = '';
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+              {formData.thumbnail && (
+                <div className="mt-2">
+                   <img src={formData.thumbnail} alt="preview" className="h-20 w-auto object-cover rounded-md border" />
+                </div>
+              )}
             </div>
             <div className="space-y-2">
               <label className="text-xs font-bold text-gray-500 uppercase">
@@ -575,14 +644,28 @@ export default function ServiceTourismManager() {
             </div>
             <div className="flex flex-wrap gap-2">
               {formData.hash_tags.map((tag, index) => (
-                <input
-                  key={index}
-                  type="text"
-                  className="border p-2 rounded-lg text-sm w-32"
-                  value={tag.tag}
-                  onChange={(e) => updateTag(index, e.target.value)}
-                  placeholder="Tag..."
-                />
+                <div key={index} className="relative flex items-center">
+                  <input
+                    type="text"
+                    className="border p-2 pr-8 rounded-lg text-sm w-32 outline-none focus:border-blue-500 transition-colors"
+                    value={tag.tag}
+                    onChange={(e) => updateTag(index, e.target.value)}
+                    placeholder="Tag..."
+                  />
+                  {formData.hash_tags.length > 1 && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const newTags = formData.hash_tags.filter((_, i) => i !== index);
+                        setFormData({ ...formData, hash_tags: newTags });
+                      }}
+                      className="absolute right-2 text-gray-400 hover:text-red-500 transition-colors"
+                      title="Xóa tag"
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  )}
+                </div>
               ))}
             </div>
           </div>
